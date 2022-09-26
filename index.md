@@ -4,12 +4,9 @@
 
 layout: home
 ---
+### March 25th 2023
 
-# Orlando Codecamp 2023
-
-#### March 25th 2023
-
-#### Seminole State College, Sanford, FL
+### Seminole State College, Sanford, FL
 
 The event will start at 8am and end at 5pm.
 
