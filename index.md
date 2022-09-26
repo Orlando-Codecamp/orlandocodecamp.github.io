@@ -5,8 +5,6 @@
 layout: home
 ---
 
-## Orlando Codecamp 2023
-
 ### March 25th 2023
 
 ### Seminole State College, Sanford, FL
