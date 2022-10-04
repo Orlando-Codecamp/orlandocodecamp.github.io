@@ -10,10 +10,20 @@ layout: home
 
 ### Seminole State College, Sanford, FL
 
+Orlando Codecamp 2023 is organized by [Orlando .NET User Group (ONETUG)](https://onetug.net) and hosted by [Seminole State College](https://www.seminolestate.edu/).
+
+![ONETUG Logo](./img/onetug.png "Orlando .NET User Group")![Seminole State College Logo](./img/SeminoleState.png "Seminole State College")
+
 The event will start at 8am and end at 5pm.
 
-This event is FREE to attend for all, thanks to our generous sponsors.
+The event entry is **FREE** to all attendees, thanks to our generous sponsors.
 
-We will feature multiple tracks of hard core technical and tech-adjacent talks of 50 minutes each.
+We will feature multiple tracks of hard core technical and tech industry-adjacent talks of 50 minutes each.
 
-Stay tuned for further announcements by signing up for our newsletter
+[Learn more about the event and organizers](/about)
+
+[Latest information for attendees](/attendee)
+
+[Interested in speaking?](/speaker)
+
+[Interested in sponsoring?](/sponsor)
