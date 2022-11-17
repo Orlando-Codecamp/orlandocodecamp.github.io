@@ -16,7 +16,7 @@ Orlando Code Camp is dedicated to providing a harassment-free conference experie
 
 If a participant engages in harassing behavior, the conference organizers may take any action they deem appropriate, including warning the offender, expulsion from the event and/or a ban on attending future events.
 
-We also prohibit solicitation for non-sponsoring organizations during the conference or a sponsored after-hours gathering by a non-sponsoring party. There are plenty of [sponsorship opportunities](https://drive.google.com/file/d/1tFwl_kTL8WG904G2Yw0T33K_MfaCzNvS/view) available for the Orlando Code Camp if you or your organization are interested.
+We also prohibit solicitation for non-sponsoring organizations during the conference or a sponsored after-hours gathering by a non-sponsoring party. There are plenty of sponsorship opportunities available for the Orlando Code Camp if you or your organization are interested.
 
 ## The Full Version
 
