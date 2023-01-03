@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Orlando Codecamp 2023 will be held on March 25th 2023 at Seminole State College in Sanford, FL
+Orlando Codecamp 2023 will be held on March 25th 2023 between 7:30am-5:00pm EST at Seminole State College in Sanford, FL
 
 **Physical/Driving Address:**
 
