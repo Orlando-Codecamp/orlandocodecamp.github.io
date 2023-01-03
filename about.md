@@ -6,6 +6,12 @@ permalink: /about/
 
 Orlando Codecamp 2023 will be held on March 25th 2023 at Seminole State College in Sanford, FL
 
+**Physical/Driving Address:**
+
+Wayne M. Densch Partnership Center
+
+Seminole State College, 100 Weldon Blvd, Sanford FL 32773
+
 **Nearest airport(s):**
 
 Orlando International Airport (MCO) - largest (45 minutes drive from venue)
