@@ -4,7 +4,11 @@ title: Speaker
 permalink: /speaker/
 ---
 
-Welcome speaker. Signup below to get the latest updates including CFP dates.
+Welcome speaker. Signup below to get the latest updates.
+
+[CFP is open until Jan 15th 2023](https://sessionize.com/orlando-code-camp-2023/)
+
+Speaker notifications will be sent out by Jan 31st 2023 at the latest.
 
 <!-- Begin Mailchimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
