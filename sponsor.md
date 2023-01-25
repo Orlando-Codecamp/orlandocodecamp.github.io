@@ -23,3 +23,9 @@ If you're interested in sponsoring, please email [board@onetug.net](mailto:board
 ![TEWS](./../img/TEWS.jpg "TEWS")
 
 ![Signature Consultants](./../img/sigcon.png "Signature Consultants")
+
+# Bronze Sponsors
+
+![Dignitas Technologies](./../img/dignitas.jpg "Dignitas Technologies")
+
+![Tim Corey](./../img/timcorey.png "Tim Corey")
