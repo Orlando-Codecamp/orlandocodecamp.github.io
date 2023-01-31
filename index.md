@@ -12,6 +12,8 @@ layout: home
 
 Orlando Codecamp 2023 is organized by [Orlando .NET User Group (ONETUG)](https://onetug.net) and hosted by [Seminole State College](https://www.seminolestate.edu/).
 
+**[Signup Now!!!](/signup)**
+
 ![Orlando CC Keynote](./img/occ2.jpg "Orlando CC KeyNote")
 
 The event will start at 8am and end at 5pm.
@@ -26,6 +28,6 @@ We will feature multiple tracks of hard core technical and tech industry-adjacen
 
 [Latest information for attendees](/attendee)
 
-[Interested in speaking?](/speaker)
+[Speakers](/speaker)
 
-[Interested in sponsoring?](/sponsor)
+[Sponsors](/sponsor)
