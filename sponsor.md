@@ -4,6 +4,8 @@ title: Sponsor
 permalink: /sponsor/
 ---
 
+![Orlando CC Sponsors](./img/occ5.jpg "Orlando CC Sponsors")
+
 Download our [sponsorship package](./doc/OrlandoCC2023Sponsor.pdf)
 
 If you're interested in sponsoring, please email [board@onetug.net](mailto:board@onetug.net)
