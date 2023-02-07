@@ -3,6 +3,7 @@ layout: page
 title: Sponsor
 permalink: /sponsor/
 ---
+# Sponsors
 
 ![Orlando CC Sponsors](./../img/occ5.jpg "Orlando CC Sponsors")
 
