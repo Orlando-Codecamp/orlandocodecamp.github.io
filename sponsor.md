@@ -27,6 +27,10 @@ If you're interested in sponsoring, please email [board@onetug.net](mailto:board
 
 ![Elastic](./../img/elastic.png "Elastic")
 
+# Attendee Party Sponsor
+
+![NovaCHARGE](./../img/novacharge.png "NovaCHARGE")
+
 # Silver sponsors
 
 ![TEWS](./../img/TEWS.jpg "TEWS")
