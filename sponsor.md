@@ -21,40 +21,40 @@ If you're interested in sponsoring, please email [board@onetug.net](mailto:board
 
 # Speaker Party Sponsor
 
-![XSpirit](./../img/xpirit.jpg "XSpirit")
+<img src="./../img/xpirit.png" alt="XSpirit" style="width:300px"/>
 
 # Gold Sponsors
 
-![Elastic](./../img/elastic.png "Elastic")
+<img src="./../img/elastic.png" alt="Elastic" style="width:300px"/>
 
 # Attendee Party Sponsor
 
-![NovaCHARGE](./../img/novacharge.png "NovaCHARGE")
+<img src="./../img/novacharge.png" alt="NovaCHARGE" style="width:300px"/>
 
 # Silver sponsors
 
-![TEWS](./../img/TEWS.jpg "TEWS")
+<img src="./../img/TEWS.jpg" alt="TEWS" style="width:300px"/>
 
-![Signature Consultants](./../img/sigcon.png "Signature Consultants")
+<img src="./../img/sigcon.png" alt="Signature Consultants" style="width:300px"/>
 
-![SNI Technology](./../img/sni.png "SNI Technology")
-
-# Bronze Sponsors
-
-![Dignitas Technologies](./../img/dignitas.jpg "Dignitas Technologies")
-
-![Tim Corey](./../img/timcorey.png "Tim Corey")
-
-![CyberMedics](./../img/cybermedics.png "CyberMedics")
-
-![Slalom Consulting](./../img/slalom.png "Slalom Consulting")
-
-![SQL Orlando](./../img/sqlorlando.jpeg "SQL Orlando")
+<img src="./../img/sni.png" alt="SNI Technology" style="width:300px"/>
 
 # Coffee Sponsor
 
-![CyberMedics](./../img/cybermedics.png "CyberMedics")
+<img src="./../img/cybermedics.png" alt="CyberMedics" style="width:300px"/>
+
+# Bronze Sponsors
+
+<img src="./../img/dignitas.jpg" alt="Dignitas Technologies" style="width:300px"/>
+
+<img src="./../img/timcorey.png" alt="Tim Corey" style="width:300px"/>
+
+<img src="./../img/cybermedics.png" alt="CyberMedics" style="width:300px"/>
+
+<img src="./../img/slalom.png" alt="Slalom Consulting" style="width:300px"/>
+
+<img src="./../img/sqlorlando.jpeg" alt="SQL Orlando" style="width:300px"/>
 
 # Community Sponsors
 
-![Code Magazine](./../img/code.png "Code Magazine")
+<img src="./../img/code.png" alt="Code Magazine" style="width:300px"/>
