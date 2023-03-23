@@ -13,11 +13,11 @@ If you're interested in sponsoring, please email [board@onetug.net](mailto:board
 
 # Platinum Sponsors
 
-![ONETUG Logo](./../img/onetug.png "Orlando .NET User Group")
+<img src="./../img/onetug.png" alt="Orlando .NET User Group" style="width:300px"/>
 
-![Seminole State College Logo](./../img/SeminoleState.png "Seminole State College")
+<img src="./../img/SeminoleState.png" alt="Seminole State College" style="width:300px"/>
 
-![Amazon Web Services](./../img/aws.png "Amazon Web Services")
+<img src="./../img/aws.png" alt="Amazon Web Services" style="width:300px"/>
 
 # Speaker Party Sponsor
 
