@@ -4,6 +4,6 @@ title: Session
 permalink: /session/
 ---
 
-# Rooms
+# Sessions
 
-<script type="text/javascript" src="https://sessionize.com/api/v2/deawgzlw/view/Sessions"></script>
+Check back for the list of sessions closer to the event.

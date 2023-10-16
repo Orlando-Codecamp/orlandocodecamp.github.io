@@ -1,10 +1,8 @@
-# Orlando Codecamp
+# Orlando Code Camp
 
-Orlando Codecamp 2023 will be held on March 25th 2023 at Seminole State College in Sanford, FL
+Orlando Code Camp 2024 will be held on February 24th 2024 at Seminole State College in Sanford, FL.
 
-The event will start at 8am and end at 5pm.
-
-**[Signup Now!!!](/signup)**
+Check back later for the schedule and the attendee sign-up closer to the event.
 
 This event is FREE to attend for all, thanks to our generous sponsors.
 

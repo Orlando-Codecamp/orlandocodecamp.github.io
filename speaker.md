@@ -4,4 +4,6 @@ title: Speaker
 permalink: /speaker/
 ---
 
-<script type="text/javascript" src="https://sessionize.com/api/v2/2lwd448s/view/SpeakerWall"></script>
+# Speaker
+
+Check back for the list of speakers closer to the event.

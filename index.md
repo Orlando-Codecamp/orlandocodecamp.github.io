@@ -4,19 +4,15 @@
 
 layout: home
 ---
-# Orlando Codecamp 2023
+# Orlando Code Camp 2024
 
-### March 25th 2023
+## February 24th 2024
 
 ### Seminole State College, Sanford, FL
 
-Orlando Codecamp 2023 is organized by [Orlando .NET User Group (ONETUG)](https://onetug.net) and hosted by [Seminole State College](https://www.seminolestate.edu/).
-
-**[Signup Now!!!](/signup)**
+Orlando Code Camp 2024 is organized by [Orlando .NET User Group (ONETUG)](https://onetug.net) and hosted by [Seminole State College](https://www.seminolestate.edu/).
 
 ![Orlando CC Keynote](./img/occ2.jpg "Orlando CC KeyNote")
-
-The event will start at 8am and end at 5pm.
 
 The event entry is **FREE** to all attendees, thanks to our generous sponsors.
 
@@ -27,7 +23,3 @@ We will feature multiple tracks of hard core technical and tech industry-adjacen
 [Learn more about the event and organizers](/about)
 
 [Latest information for attendees](/attendee)
-
-[Speakers](/speaker)
-
-[Sponsors](/sponsor)
