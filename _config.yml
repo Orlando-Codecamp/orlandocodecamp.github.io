@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Orlando Code Camp
+title: Orlando Code Camp 2024
 email: board@onetug.net
 description: >- # this means to ignore newlines until "baseurl:"
   Orlando Code Camp 2024 - February 24th 2024 @ Seminole State College, Sanford, FL
