@@ -1,9 +1,12 @@
 ---
 layout: page
-title: Session
-permalink: /session/
+nav_order: 5
+title: Sessions
+permalink: /sessions/
 ---
 
-# Sessions
+## Sessions
+
+<p />
 
 Check back for the list of sessions closer to the event.

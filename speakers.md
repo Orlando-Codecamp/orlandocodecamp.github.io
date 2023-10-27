@@ -1,9 +1,12 @@
 ---
 layout: page
-title: Speaker
-permalink: /speaker/
+nav_order: 4
+title: Speakers
+permalink: /speakers/
 ---
 
-# Speaker
+## Speakers
+
+<p />
 
 Check back for the list of speakers closer to the event.
