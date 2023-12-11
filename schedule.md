@@ -1,11 +1,11 @@
 ---
 layout: page
-nav_order: 6
 title: Schedule
 permalink: /schedule/
+nav_order: 6
 ---
 
-## Schedule
+# Schedule
 
 <p />
 

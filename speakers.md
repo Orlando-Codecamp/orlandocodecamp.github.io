@@ -1,12 +1,17 @@
 ---
 layout: page
-nav_order: 4
 title: Speakers
 permalink: /speakers/
+nav_order: 4
 ---
 
-## Speakers
+# Speakers (So Far)
 
 <p />
 
-Check back for the list of speakers closer to the event.
+We are approving sessions in batches this year as they are submitted.
+The speakers below have sessions that are approved by the organizers and confirmed by the speakers.
+Check back later as we add more speakers.
+
+<script type="text/javascript"
+  src="https://sessionize.com/api/v2/ht1oni9m/view/SpeakerWall" />
