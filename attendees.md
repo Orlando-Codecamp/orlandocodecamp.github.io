@@ -1,11 +1,11 @@
 ---
 layout: page
-nav_order: 7
 title: Attendees
 permalink: /attendees/
+nav_order: 7
 ---
 
-## Attendees
+# Attendees
 
 <p />
 
@@ -15,4 +15,4 @@ Orlando Code Camp 2024 will be held on February 24th 2024 at Seminole State Coll
 
 Stay tuned for the attendee sign-up.
 
-![Orlando CC Attendees](./../img/occ9.jpg "Orlando CC Attendees")
+![Orlando CC Attendees](./../img/photos/occ-session.jpg "Orlando CC Attendees")

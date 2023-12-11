@@ -1,10 +1,17 @@
 {
     "cSpell.words": [
         "blinkmacsystemfont",
+        "callforspeakers",
         "codeofconduct",
         "Daytona",
         "Densch",
         "toctitle",
         "Westin"
-    ]
+    ],
+    "markdownlint.config": {
+        "MD025": {
+            "front_matter_title": ""
+        },
+        "MD028": false
+    }
 }

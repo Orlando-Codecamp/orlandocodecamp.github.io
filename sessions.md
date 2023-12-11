@@ -1,12 +1,17 @@
 ---
 layout: page
-nav_order: 5
 title: Sessions
 permalink: /sessions/
+nav_order: 5
 ---
 
-## Sessions
+# Sessions (So Far)
 
 <p />
 
-Check back for the list of sessions closer to the event.
+We are approving sessions in batches this year as they are submitted.
+The sessions below have been approved by the organizers and confirmed by the speakers.
+Check back later as we add more sessions.
+
+<script type="text/javascript"
+  src="https://sessionize.com/api/v2/ht1oni9m/view/Sessions" />
