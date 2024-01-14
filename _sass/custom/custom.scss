@@ -7,42 +7,85 @@ body {
     font-size: 1.3rem !important;
 }
 
-h1 { font-weight: 700; }
+a, h1 { font-weight: 700; }
 
-h2, h3, h4, h5, h6, #toctitle  { font-weight: 600; }
+a.nav-list-link, h2, h3, h4, h5, h6, #toctitle  { font-weight: 600; }
 
 .nav-list .nav-list-item { font-size: 1.2rem !important; }
 
 .site-title { font-size: 1.5rem;}
 
-.logo-home-page ,
-.logo-home-page-wide-short,
-.logo-sponsor-page,
-.logo-sponsor-page-wide-short {
+img.logo-home-page-square,
+img.logo-home-page-wide,
+img.logo-home-page-short-wide,
+img.logo-partner-page,
+img.logo-sponsor-page-gold,
+img.logo-sponsor-page-silver {
     vertical-align: middle;
 }
 
-.logo-home-page {
-    width: 200px !important;
-    max-width: 200px !important;
-    margin: 30px 40px 30px 0px !important;
+img.logo-partner-page {
+  width: 360px !important;
+  max-width: 360px !important;
+  margin: 10px 0px !important;
 }
 
-.logo-home-page-wide-short {
-    width: 220px !important;
-    max-width: 220px !important;
-    margin: 30px 20px 30px 0px !important;
+img.logo-sponsor-page-gold {
+  width: 480px !important;
+  max-width: 480px !important;
+  margin: 10px 0px !important;
 }
 
-.logo-sponsor-page {
-    width: 320px !important;
-    max-width: 320px !important;
-    margin: 20px 40px 20px 0px !important;
-    padding: 10px 50px 10px 0px !important;
+img.logo-sponsor-page-silver {
+  width: 420px !important;
+  max-width: 420px !important;
+  margin: 10px 0px !important;
 }
 
-.logo-sponsor-page-wide-short {
-    width: 360px !important;
-    max-width: 360px !important;
-    margin: 50px 0px 50px 0px !important;
+/* Responsive layout - makes the two images stack on top of each other if narrow */
+@media screen and (max-width: 640px) {
+  img.logo-home-page-square {
+    min-width: 70% !important;
+    width: 70% !important;
+    max-width: 70% !important;
+    margin: 20px auto !important;
+  }
+
+  img.logo-home-page-wide {
+    min-width: 80% !important;
+    width: 80% !important;
+    max-width: 80% !important;
+    margin: 20px auto !important;
+  }
+
+  img.logo-home-page-short-wide {
+    min-width: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px 0px !important;
+  }
+}
+
+/* Responsive layout - makes the two images stack next to each other if wide */
+@media screen and (min-width: 641px) {
+  img.logo-home-page-square {
+    min-width: 30% !important;
+    width: 30% !important;
+    max-width: 30% !important;
+    margin: 10px 50px 10px 0px !important;
+  }
+
+  img.logo-home-page-wide {
+    min-width: 40% !important;
+    width: 40% !important;
+    max-width: 40% !important;
+    margin: 10px 30px 10px 0px !important;
+  }
+
+  img.logo-home-page-short-wide {
+    min-width: 45% !important;
+    width: 45% !important;
+    max-width: 45% !important;
+    margin: 10px 20px 10px 0px !important;
+  }
 }
