@@ -5,7 +5,7 @@ permalink: /sponsors/
 nav_order: 3
 ---
 
-# Sponsors
+# Sponsors (So Far)
 
 <p />
 
@@ -23,36 +23,39 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 {::comment}
 
-## Lunch Sponsor
-
 ## Platinum Sponsors
-
-## Speaker Party Sponsor
 
 {:/comment}
 
 ## Gold Sponsors
 
-<p />
+<p/>
 
-![Elastic Logo](./../img/sponsors/Elastic.png "Elastic"){:class="logo-sponsor-page"}
+![Xebia Logo](./../img/sponsors/Xebia_Logo_Purple_RGB-MD.png "Xebia"){:class="logo-sponsor-page-gold"}
 
-<p />
+[Company site](https://xebia.com/am/)
 
-{::comment}
+---
 
-## Attendee Party Sponsor
+![Elastic Logo](./../img/sponsors/Elastic.png "Elastic"){:class="logo-sponsor-page-gold"}
 
-{:/comment}
+[Company site](https://www.elastic.co/)
+
+---
 
 ## Silver Sponsors
 
-<p />
+<p/>
 
-![CyberMedics Logo](./../img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page"}
-![SNI Technologies Logo](./../img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page-wide-short"}
+![CyberMedics Logo](./../img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page-silver"}
 
-<p />
+[Company site](https://www.cybermedics.com/)
+
+---
+
+![SNI Technology Logo](./../img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page-silver"}
+
+[Orlando office](https://www.snicompanies.com/staffing-recruiting/orlando/)
 
 {::comment}
 
