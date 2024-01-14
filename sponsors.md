@@ -66,12 +66,3 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 ## Coffee Sponsor
 
 {:/comment}
-
-## Community Sponsors
-
-<p />
-
-![ONETUG Logo](./../img/sponsors/ONETUG.jpg "Orlando .NET User Group"){:class="logo-sponsor-page"}
-![Seminole State College Logo](./../img/sponsors/Seminole-State.png "Seminole State College"){:class="logo-sponsor-page"}
-
-<p />
