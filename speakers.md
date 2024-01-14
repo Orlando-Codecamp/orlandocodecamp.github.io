@@ -5,13 +5,11 @@ permalink: /speakers/
 nav_order: 4
 ---
 
-# Speakers (So Far)
+# 70+ Speakers (So Far)
 
 <p />
 
-We are approving sessions in batches this year as they are submitted.
-The speakers below have sessions that are approved by the organizers and confirmed by the speakers.
-Check back later as we add more speakers.
+The speakers below have approved sessions and have confirmed their attendance. Check back later as we finalize the list of confirmed speakers.
 
 <script type="text/javascript"
   src="https://sessionize.com/api/v2/ht1oni9m/view/SpeakerWall" />
