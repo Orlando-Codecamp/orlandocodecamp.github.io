@@ -21,23 +21,29 @@ Here is our [sponsorship package](./../doc/OrlandoCodeCamp2024-SponsorInfo.pdf){
 
 If you're interested in sponsoring, please email the OCC organizers at [board@onetug.net](mailto:board@onetug.net).
 
+---
+
 {::comment}
 
 ## Platinum Sponsors
 
 {:/comment}
 
-## Gold Sponsors
+## Speaker Party Sponsor
 
 <p/>
 
-![Xebia Logo](./../img/sponsors/Xebia_Logo_Purple_RGB-MD.png "Xebia"){:class="logo-sponsor-page-gold"}
+![Xebia Logo](./../img/sponsors/Xebia_Logo_Purple_RGB-MD.png "Xebia"){:class="logo-sponsor-page"}
 
 [Company site](https://xebia.com/am/)
 
 ---
 
-![Elastic Logo](./../img/sponsors/Elastic.png "Elastic"){:class="logo-sponsor-page-gold"}
+## Gold Sponsors
+
+<p/>
+
+![Elastic Logo](./../img/sponsors/Elastic.png "Elastic"){:class="logo-sponsor-page"}
 
 [Company site](https://www.elastic.co/)
 
@@ -47,13 +53,13 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 <p/>
 
-![CyberMedics Logo](./../img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page-silver"}
+![CyberMedics Logo](./../img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page"}
 
 [Company site](https://www.cybermedics.com/)
 
 ---
 
-![SNI Technology Logo](./../img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page-silver"}
+![SNI Technology Logo](./../img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page"}
 
 [Orlando office](https://www.snicompanies.com/staffing-recruiting/orlando/)
 
