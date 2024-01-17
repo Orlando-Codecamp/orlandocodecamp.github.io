@@ -9,10 +9,8 @@ nav_order: 7
 
 <p />
 
-Welcome attendee.
+Orlando Code Camp 2024 will be held at Seminole State College in Sanford, FL on February 24th 2024 from 7:30 AM to 5:00 PM.
 
-Orlando Code Camp 2024 will be held on February 24th 2024 at Seminole State College in Sanford, FL.
-
-Stay tuned for the attendee sign-up.
+[Sign up here to attend](https://www.eventbrite.com/e/orlando-code-camp-2024-tickets-800584980227)
 
 ![Orlando CC Attendees](./../img/photos/occ-session.jpg "Orlando CC Attendees")
