@@ -6,7 +6,7 @@ nav_order: 1
 
 # Orlando Code Camp 2024
 
-## February 24th 2024
+## February 24th 2024 from 7:30 AM to 5:00 PM
 
 ### Seminole State College, Sanford, FL
 
@@ -14,6 +14,10 @@ nav_order: 1
 
 Orlando Code Camp is organized by the [Orlando .NET User Group (ONETUG)](https://onetug.net)
 and hosted at the Sanford/Lake Mary campus of [Seminole State College](https://www.seminolestate.edu/slm).
+
+<p />
+
+[Sign up here to attend](https://www.eventbrite.com/e/orlando-code-camp-2024-tickets-800584980227)
 
 <p />
 
