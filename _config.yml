@@ -46,3 +46,7 @@ remote_theme: just-the-docs/just-the-docs
 
 kramdown:
   hard_wrap: true
+
+sass:
+    sass_dir: _sass
+#   style: compressed

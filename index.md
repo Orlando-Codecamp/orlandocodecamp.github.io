@@ -6,6 +6,8 @@ nav_order: 1
 
 # Orlando Code Camp 2024
 
+<div>{% include clock.html %}</div>
+
 ## February 24th 2024 from 7:30 AM to 5:00 PM
 
 ### Seminole State College, Sanford, FL

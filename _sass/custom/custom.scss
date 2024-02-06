@@ -1,3 +1,5 @@
+@import "clock.scss";
+
 body {
     font-family:
         'Open Sans', 'Calibri'
@@ -15,9 +17,9 @@ a.nav-list-link, h3, h4, h5, h6, #toctitle  { font-weight: 600; }
 
 .site-title { font-size: 1.5rem;}
 
-hr {
-  height: 3px;
-}
+h2 { margin-top: 1rem !important; }
+
+hr { height: 3px; }
 
 img.logo-home-page-square,
 img.logo-home-page-wide,
