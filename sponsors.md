@@ -49,6 +49,12 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 ---
 
+![ZeroTrusted.ai Logo](/assets/img/sponsors/ZeroTrusted.ai%20black.png "ZeroTrusted.ai"){:class="logo-sponsor-page"}
+
+[Company site](https://www.zerotrusted.ai/)
+
+--
+
 ## Silver Sponsors
 
 <p/>

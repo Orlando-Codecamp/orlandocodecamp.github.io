@@ -47,6 +47,7 @@ Orlando Code Camp is generously sponsored by the following companies:
 <span float="left">
   ![Xebia Logo](/assets/img/sponsors/Xebia_Logo_Purple_RGB-SM.png "Xebia"){:class="logo-home-page-wide"}
   ![Elastic Logo](/assets/img/sponsors/Elastic.png "Elastic"){:class="logo-home-page-wide"}
+  ![ZeroTrusted.ai Logo](/assets/img/sponsors/ZeroTrusted.ai%20black.png "ZeroTrusted.ai"){:class="logo-home-page-wide"}
   ![CyberMedics Logo](/assets/img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-home-page-square"}
   ![SNI Technologies Logo](/assets/img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-home-page-short-wide"}
 </span>
