@@ -21,7 +21,7 @@ and hosted at the Sanford/Lake Mary campus of [Seminole State College](https://w
 
 <p />
 
-![Orlando CC Keynote](./img/photos/occ-keynote.jpg "Orlando CC KeyNote")
+![Orlando CC Keynote](/assets/img/photos/occ-keynote.jpg "Orlando CC KeyNote")
 
 <p />
 
@@ -45,10 +45,10 @@ We will feature multiple tracks of hard core technical and tech industry-adjacen
 Orlando Code Camp is generously sponsored by the following companies:
 
 <span float="left">
-  ![Xebia Logo](./../img/sponsors/Xebia_Logo_Purple_RGB-SM.png "Xebia"){:class="logo-home-page-wide"}
-  ![Elastic Logo](./../img/sponsors/Elastic.png "Elastic"){:class="logo-home-page-wide"}
-  ![CyberMedics Logo](./../img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-home-page-square"}
-  ![SNI Technologies Logo](./../img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-home-page-short-wide"}
+  ![Xebia Logo](/assets/img/sponsors/Xebia_Logo_Purple_RGB-SM.png "Xebia"){:class="logo-home-page-wide"}
+  ![Elastic Logo](/assets/img/sponsors/Elastic.png "Elastic"){:class="logo-home-page-wide"}
+  ![CyberMedics Logo](/assets/img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-home-page-square"}
+  ![SNI Technologies Logo](/assets/img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-home-page-short-wide"}
 </span>
 
 ---
@@ -56,10 +56,10 @@ Orlando Code Camp is generously sponsored by the following companies:
 Orlando Code Camp proudly partners with the following local organizations:
 
 <span float="left">
-  ![ONETUG Logo](./../img/partners/ONETUG.jpg "Orlando .NET User Group"){:class="logo-home-page-wide"}
-  ![Seminole State College Logo](./../img/partners/Seminole-State.png "Seminole State College"){:class="logo-home-page-square"}
-  ![Google Developer Group (GDG) Central Florida](./../img/partners/GDG-Central-Florida.png "Google Developer Group (GDG) Central Florida"){:class="logo-home-page-short-wide"}
-  ![DevFest Central Florida](./../img/partners/GDG-DevFest-Central-Florida.png "DevFest Central Florida"){:class="logo-home-page-wide"}
-  ![SQLOrlando](./../img/partners/SQLOrlando.jpg "SQLOrlando"){:class="logo-home-page-wide"}
-  ![SQL Saturday Orlando](./../img/partners/SQL-Saturday.png "SQL Saturday"){:class="logo-home-page-square"}
+  ![ONETUG Logo](/assets/img/partners/ONETUG.jpg "Orlando .NET User Group"){:class="logo-home-page-wide"}
+  ![Seminole State College Logo](/assets/img/partners/Seminole-State.png "Seminole State College"){:class="logo-home-page-square"}
+  ![Google Developer Group (GDG) Central Florida](/assets/img/partners/GDG-Central-Florida.png "Google Developer Group (GDG) Central Florida"){:class="logo-home-page-short-wide"}
+  ![DevFest Central Florida](/assets/img/partners/GDG-DevFest-Central-Florida.png "DevFest Central Florida"){:class="logo-home-page-wide"}
+  ![SQLOrlando](/assets/img/partners/SQLOrlando.jpg "SQLOrlando"){:class="logo-home-page-wide"}
+  ![SQL Saturday Orlando](/assets/img/partners/SQL-Saturday.png "SQL Saturday"){:class="logo-home-page-square"}
 </span>
