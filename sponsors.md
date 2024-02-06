@@ -9,7 +9,7 @@ nav_order: 3
 
 <p />
 
-![Orlando CC Sponsors](./../img/photos/occ-sponsors.jpg "Orlando CC Sponsors")
+![Orlando CC Sponsors](/assets/img/photos/occ-sponsors.jpg "Orlando CC Sponsors")
 
 <p />
 
@@ -17,7 +17,7 @@ nav_order: 3
 
 <p />
 
-Here is our [sponsorship package](./../doc/OrlandoCodeCamp2024-SponsorInfo.pdf){:target="_blank"}.
+Here is our [sponsorship package](/assets/doc/OrlandoCodeCamp2024-SponsorInfo.pdf){:target="_blank"}.
 
 If you're interested in sponsoring, please email the OCC organizers at [board@onetug.net](mailto:board@onetug.net).
 
@@ -33,7 +33,7 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 <p/>
 
-![Xebia Logo](./../img/sponsors/Xebia_Logo_Purple_RGB-MD.png "Xebia"){:class="logo-sponsor-page"}
+![Xebia Logo](/assets/img/sponsors/Xebia_Logo_Purple_RGB-MD.png "Xebia"){:class="logo-sponsor-page"}
 
 [Company site](https://xebia.com/am/)
 
@@ -43,23 +43,29 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 <p/>
 
-![Elastic Logo](./../img/sponsors/Elastic.png "Elastic"){:class="logo-sponsor-page"}
+![Elastic Logo](/assets/img/sponsors/Elastic.png "Elastic"){:class="logo-sponsor-page"}
 
 [Company site](https://www.elastic.co/)
 
 ---
 
+![ZeroTrusted.ai Logo](/assets/img/sponsors/ZeroTrusted.ai%20black.png "ZeroTrusted.ai"){:class="logo-sponsor-page"}
+
+[Company site](https://www.zerotrusted.ai/)
+
+--
+
 ## Silver Sponsors
 
 <p/>
 
-![CyberMedics Logo](./../img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page"}
+![CyberMedics Logo](/assets/img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page"}
 
 [Company site](https://www.cybermedics.com/)
 
 ---
 
-![SNI Technology Logo](./../img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page"}
+![SNI Technology Logo](/assets/img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page"}
 
 [Orlando office](https://www.snicompanies.com/staffing-recruiting/orlando/)
 
