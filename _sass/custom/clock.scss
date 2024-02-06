@@ -1,0 +1,79 @@
+
+
+// Colors taken from old ONETUG logo
+// Color names from http://hex.negraru.com/<HexCodeWithoutHash>
+
+// .bg-dark-blue {
+//   background-color: #00449e;
+// }
+
+#clockdiv {
+  font-weight: bold;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.clock-face {
+  background-color: #386cb3; // Azure
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+.digit {
+  background-color: #222222; // Mine Shaft
+  color: #f4f4f4; // Wild Sand (Off White)
+}
+
+.segment {
+  width: 7rem;
+}
+
+.unit {
+  color: #f4f4f4; // Wild Sand (Off White)
+}
+
+// Below values derived from and updated for new UI layout and styles:
+// Author: Blair Anderson - Copyright: Tachyons Templates LLC
+// Source: github.com/blairanderson/countdown-tachyons-jekyll/blob/master/_sass/tachyons-sass/
+
+.br3 {
+  border-radius: 0.5rem;
+}
+
+.center {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.f2 {
+  font-size: 3rem;
+}
+
+.f5 {
+  font-size: 1.3rem;
+}
+
+.pa2 {
+  padding: 0.5rem 0 0.25rem 0;
+}
+
+.pa3 {
+  padding: 0.5rem 1rem;
+}
+
+.pt1 {
+  padding-top: 0.5rem;
+}
+
+.san-serif {
+  font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
+    'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+}
+
+.tc {
+  text-align: center;
+}
