@@ -9,4 +9,4 @@ nav_order: 6
 
 <p />
 
-Check back for the schedule closer to the event.
+<script type="text/javascript" src="https://sessionize.com/api/v2/ht1oni9m/view/GridSmart" />
