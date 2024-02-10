@@ -16,8 +16,6 @@ Orlando Code Camp 2024 will be held on February 24th 2024 at Seminole State Coll
 
 ## Physical/Driving Address
 
-<p />
-
 Wayne M. Densch Partnership Center
 Seminole State College - Sanford/Lake Mary Campus
 100 Weldon Blvd, Sanford FL 32773
@@ -29,8 +27,6 @@ Seminole State College - Sanford/Lake Mary Campus
 
 ## Nearest airport(s)
 
-<p />
-
 MCO - Orlando International Airport - largest (45 minute drive)
 
 SFB - Sanford International Airport - closest (5 minute drive)
@@ -38,8 +34,6 @@ SFB - Sanford International Airport - closest (5 minute drive)
 DAB - Daytona Beach International Airport (45 minute drive)
 
 ## Hotels we recommend
-
-<p />
 
 Orlando Marriott Lake Mary (10 minute drive)
 1501 International Parkway
