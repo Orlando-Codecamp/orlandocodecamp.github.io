@@ -63,12 +63,6 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 ## Silver Sponsor
 
-![SNI Technology Logo](/assets/img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page"}
-
-[Orlando office](https://www.snicompanies.com/staffing-recruiting/orlando/)
-
----
-
 ![CyberMedics Logo](/assets/img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page"}
 
 [Company site](https://www.cybermedics.com/)
