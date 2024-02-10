@@ -11,8 +11,6 @@ nav_order: 8
 
 ## Orlando .NET User Group (ONETUG)
 
-<p/>
-
 ![ONETUG logo](/assets/img/partners/ONETUG.jpg "Orlando .NET User Group"){:class="logo-partner-page"}
 
 [Group events (Meetup)](https://www.meetup.com/onetug/)
@@ -22,8 +20,6 @@ nav_order: 8
 
 ## Seminole State College - Sanford/Lake Mary Campus
 
-<p/>
-
 ![Seminole State College logo](/assets/img/partners/Seminole-State.png "Seminole State College"){:class="logo-partner-page"}
 
 [College site](https://www.seminolestate.edu/slm)
@@ -31,8 +27,6 @@ nav_order: 8
 ---
 
 ## Google Developer Group (GDG) Central Florida
-
-<br />
 
 ![Google Developer Group (GDG) Central Florida logo ](/assets/img/partners/GDG-Central-Florida.png "Google Developer Group (GDG) Central Florida"){:class="logo-partner-page"}
 
@@ -44,8 +38,6 @@ nav_order: 8
 
 ## DevFest Central Florida
 
-<p/>
-
 ![DevFest Central Florida logo](/assets/img/partners/GDG-DevFest-Central-Florida.png "DevFest Central Florida logo"){:class="logo-partner-page"}
 
 [Local event site](https://orlando.devfestflorida.com/)
@@ -53,8 +45,6 @@ nav_order: 8
 ---
 
 ## SQLOrlando
-
-<p/>
 
 ![SQLOrlando logo](/assets/img/partners/SQLOrlando.jpg "SQLOrlando"){:class="logo-partner-page"}
 
@@ -64,8 +54,6 @@ nav_order: 8
 ---
 
 ## SQL Saturday
-
-<p/>
 
 ![SQL Saturday Orlando](/assets/img/partners/SQL-Saturday.png "SQL Saturday"){:class="logo-partner-page"}
 

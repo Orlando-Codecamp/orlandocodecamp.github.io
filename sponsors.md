@@ -31,17 +31,13 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 ## Speaker Party Sponsor
 
-<p/>
-
 ![Xebia Logo](/assets/img/sponsors/Xebia_Logo_Purple_RGB-MD.png "Xebia"){:class="logo-sponsor-page"}
 
 [Company site](https://xebia.com/am/)
 
 ---
 
-## Gold Sponsors
-
-<p/>
+## Gold Sponsor
 
 ![Elastic Logo](/assets/img/sponsors/Elastic.png "Elastic"){:class="logo-sponsor-page"}
 
@@ -49,15 +45,15 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 ---
 
+## Gold Sponsor
+
 ![ZeroTrusted.ai Logo](/assets/img/sponsors/ZeroTrusted.ai%20black.png "ZeroTrusted.ai"){:class="logo-sponsor-page"}
 
 [Company site](https://www.zerotrusted.ai/)
 
---
+---
 
-## Silver Sponsors
-
-<p/>
+## Silver Sponsor
 
 ![SNI Technology Logo](/assets/img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page"}
 
@@ -65,19 +61,23 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 ---
 
+## Silver Sponsor
+
 ![CyberMedics Logo](/assets/img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page"}
 
 [Company site](https://www.cybermedics.com/)
 
 ---
 
+## Silver Sponsor
+
 ![TEKsystems Logo](/assets/img/sponsors/TEKsystems_RGB.PNG "TEKsystems"){:class="logo-sponsor-page"}
 
 [Company site](https://www.teksystems.com/)
 
-## Other Sponsors
+---
 
-<p/>
+## Swag Sponsor
 
 ![CODE Magazine Logo](/assets/img/sponsors/code.png "CODE Magazine"){:class="logo-sponsor-page"}
 
