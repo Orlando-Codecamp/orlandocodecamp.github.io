@@ -5,7 +5,7 @@ permalink: /sessions/
 nav_order: 5
 ---
 
-# 70+ Sessions (So Far)
+# 70+ Sessions
 
 <p />
 

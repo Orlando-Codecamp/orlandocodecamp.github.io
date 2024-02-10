@@ -5,7 +5,7 @@ permalink: /sponsors/
 nav_order: 3
 ---
 
-# Sponsors (So Far)
+# Sponsors
 
 <p />
 
@@ -59,15 +59,29 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 <p/>
 
+![SNI Technology Logo](/assets/img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page"}
+
+[Orlando office](https://www.snicompanies.com/staffing-recruiting/orlando/)
+
+---
+
 ![CyberMedics Logo](/assets/img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page"}
 
 [Company site](https://www.cybermedics.com/)
 
 ---
 
-![SNI Technology Logo](/assets/img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page"}
+![TEKsystems Logo](/assets/img/sponsors/TEKsystems_RGB.PNG "TEKsystems"){:class="logo-sponsor-page"}
 
-[Orlando office](https://www.snicompanies.com/staffing-recruiting/orlando/)
+[Company site](https://www.teksystems.com/)
+
+## Other Sponsors
+
+<p/>
+
+![CODE Magazine Logo](/assets/img/sponsors/code.png "CODE Magazine"){:class="logo-sponsor-page"}
+
+[Company site](https://www.codemag.com/)
 
 {::comment}
 

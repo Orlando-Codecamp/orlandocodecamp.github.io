@@ -5,7 +5,7 @@ permalink: /speakers/
 nav_order: 4
 ---
 
-# 70+ Speakers (So Far)
+# 70+ Speakers
 
 <p />
 

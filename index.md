@@ -50,8 +50,10 @@ Orlando Code Camp is generously sponsored by the following companies:
   ![Xebia Logo](/assets/img/sponsors/Xebia_Logo_Purple_RGB-SM.png "Xebia"){:class="logo-home-page-wide"}
   ![Elastic Logo](/assets/img/sponsors/Elastic.png "Elastic"){:class="logo-home-page-wide"}
   ![ZeroTrusted.ai Logo](/assets/img/sponsors/ZeroTrusted.ai%20black.png "ZeroTrusted.ai"){:class="logo-home-page-wide"}
-  ![CyberMedics Logo](/assets/img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-home-page-square"}
   ![SNI Technologies Logo](/assets/img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-home-page-short-wide"}
+  ![CyberMedics Logo](/assets/img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-home-page-square"}
+  ![TEKsystems Logo](/assets/img/sponsors/TEKsystems_RGB.PNG "TEKsystems"){:class="logo-home-page-short-wide"}
+  ![CODE Magazine Logo](/assets/img/sponsors/code.png "CODE Magazine"){:class="logo-home-page-square"}
 </span>
 
 ---
@@ -60,7 +62,7 @@ Orlando Code Camp proudly partners with the following local organizations:
 
 <span float="left">
   ![ONETUG Logo](/assets/img/partners/ONETUG.jpg "Orlando .NET User Group"){:class="logo-home-page-wide"}
-  ![Seminole State College Logo](/assets/img/partners/Seminole-State.png "Seminole State College"){:class="logo-home-page-square"}
+  ![Seminole State College Logo](/assets/img/partners/Seminole-State.png "Seminole State College"){:class="logo-home-page-short-wide"}
   ![Google Developer Group (GDG) Central Florida](/assets/img/partners/GDG-Central-Florida.png "Google Developer Group (GDG) Central Florida"){:class="logo-home-page-short-wide"}
   ![DevFest Central Florida](/assets/img/partners/GDG-DevFest-Central-Florida.png "DevFest Central Florida"){:class="logo-home-page-wide"}
   ![SQLOrlando](/assets/img/partners/SQLOrlando.jpg "SQLOrlando"){:class="logo-home-page-wide"}

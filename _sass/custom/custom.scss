@@ -21,47 +21,56 @@ h2 { margin-top: 1rem !important; }
 
 hr { height: 3px; }
 
-img.logo-home-page-square,
-img.logo-home-page-wide,
-img.logo-home-page-short-wide,
 img.logo-partner-page,
 img.logo-sponsor-page {
-    vertical-align: middle;
-}
-
-img.logo-partner-page,
-img.logo-sponsor-page {
-  min-width: 90% !important;
-  width: 90% !important;
-  max-width: 90% !important;
+  min-width: 80% !important;
+  width: 80% !important;
+  max-width: 80% !important;
   margin: 10px auto !important;
 }
 
 /* Responsive layout - makes the two images stack on top of each other if narrow */
 @media screen and (max-width: 640px) {
+  img.logo-home-page-square,
+  img.logo-home-page-wide,
+  img.logo-home-page-short-wide,
+  img.logo-partner-page,
+  img.logo-sponsor-page {
+    display: block;
+    margin: 30px auto !important;
+    padding-left: auto !important;
+    padding-right: auto !important;
+  }
+
   img.logo-home-page-square {
     width: 70% !important;
     max-width: 70% !important;
-    margin: 10px auto !important;
   }
 
   img.logo-home-page-wide {
     min-width: 80% !important;
     width: 80% !important;
     max-width: 80% !important;
-    margin: 10px auto !important;
   }
 
   img.logo-home-page-short-wide {
     min-width: 90% !important;
     width: 90% !important;
     max-width: 90% !important;
-    margin: 10px auto !important;
   }
 }
 
 /* Responsive layout - makes the two images stack next to each other if wide */
 @media screen and (min-width: 641px) {
+
+  img.logo-home-page-square,
+  img.logo-home-page-wide,
+  img.logo-home-page-short-wide,
+  img.logo-partner-page,
+  img.logo-sponsor-page {
+    vertical-align: middle;
+  }
+
   img.logo-home-page-square {
     min-width: 30% !important;
     width: 30% !important;
