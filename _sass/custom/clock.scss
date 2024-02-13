@@ -1,13 +1,7 @@
-
-
 // Colors taken from old ONETUG logo
 // Color names from http://hex.negraru.com/<HexCodeWithoutHash>
 
-// .bg-dark-blue {
-//   background-color: #00449e;
-// }
-
-#clockdiv {
+#clock-div {
   font-weight: bold;
   padding-top: 1rem;
   padding-bottom: 0.5rem;
@@ -21,13 +15,9 @@
 
 .digit {
   background-color: #222222; // Mine Shaft
-  color: #f4f4f4; // Wild Sand (Off White)
 }
 
-.segment {
-  width: 7rem;
-}
-
+.digit,
 .unit {
   color: #f4f4f4; // Wild Sand (Off White)
 }
@@ -76,4 +66,23 @@
 
 .tc {
   text-align: center;
+}
+
+@media screen and (max-width: 640px) {
+  .digit {
+    min-width: 6rem;
+    width: 6rem;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  .digit {
+    min-width: 7rem;
+    width: 7rem;
+  }
+}
+
+.debug {
+  display: block;
+  width: auto;
 }
