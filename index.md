@@ -24,6 +24,8 @@ and hosted at the Sanford/Lake Mary campus of [Seminole State College](https://w
 <p />
 
 ![Orlando CC Keynote](/assets/img/photos/occ-keynote.jpg "Orlando CC KeyNote")
+Photo courtesy of Adam Stark
+{: .fs-4 }
 
 <p />
 
