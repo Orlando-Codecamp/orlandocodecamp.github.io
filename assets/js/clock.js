@@ -45,11 +45,6 @@ function initializeClock(id, endTick) {
   var hoursSpan = clock.querySelector('#hours');
   var minutesSpan = clock.querySelector('#minutes');
   var secondsSpan = clock.querySelector('#seconds');
-  var startTimeSpan = clock.querySelector('#start');
-  var endTimeSpan = clock.querySelector('#end');
-  var ticksSpan = clock.querySelector('#ticks');
-
-  endTimeSpan.innerHTML = new Date(endTick).toLocaleString('en-US');
 
   function updateClock() {
     var startTick = new Date().getTime();
@@ -59,8 +54,6 @@ function initializeClock(id, endTick) {
     hoursSpan.innerHTML = ('0' + time.hours).slice(-2);
     minutesSpan.innerHTML = ('0' + time.minutes).slice(-2);
     secondsSpan.innerHTML = ('0' + time.seconds).slice(-2);
-    startTimeSpan.innerHTML = new Date(startTick).toLocaleString('en-US');
-    ticksSpan.innerHTML = time.ticks;
 
     if (time.ticks <= 0) {
       clearInterval(timeInterval);
