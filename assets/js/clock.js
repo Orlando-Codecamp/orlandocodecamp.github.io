@@ -54,7 +54,6 @@ function initializeClock(id, endTick) {
 }
 
 // UTC equivalent of "Sat Feb 24 2024 07:30:00 GMT-0500 (Eastern Standard Time)"
-// People in different timezones will see different dates unless you use UTC
 var endTick = new Date(Date.UTC(2024, 1, 24, 12, 30, 0, 0)).getTime();
 
 initializeClock('clock-div', endTick);
