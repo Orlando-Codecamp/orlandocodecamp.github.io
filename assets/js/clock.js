@@ -1,14 +1,3 @@
-// Author: Blair Anderson - Copyright: Tachyons Templates LLC
-// Source: github.com/blairanderson/countdown-tachyons-jekyll/blob/master/js/clock.js
-// Changes:
-// 1. Fixed typo ("Search") in comment
-// 2. Changed getTimeRemaining to return all zeroes for past deadlines
-// 3. Set UTC date/time for Orlando Code Camp 2024
-// 4. Pass start and end ticks into getTimeRemaining
-// 5. Better variable names (t => time, total => ticks, etc.)
-// 6. Add integer checks to initializeClock and getTimeRemaining
-// 7. Added temporary interim fields for debugging
-
 function getTimeRemaining(startTick, endTick) {
   if (!Number.isInteger(startTick)
       || !Number.isInteger(endTick)
@@ -65,7 +54,6 @@ function initializeClock(id, endTick) {
 }
 
 // UTC equivalent of "Sat Feb 24 2024 07:30:00 GMT-0500 (Eastern Standard Time)"
-// People in different timezones will see different dates unless you use UTC
 var endTick = new Date(Date.UTC(2024, 1, 24, 12, 30, 0, 0)).getTime();
 
 initializeClock('clock-div', endTick);
