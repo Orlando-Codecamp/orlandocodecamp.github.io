@@ -63,7 +63,7 @@ Orlando Code Camp is generously sponsored by the following companies:
 Orlando Code Camp proudly partners with the following local organizations:
 
 <span float="left">
-  ![ONETUG Logo](/assets/img/partners/ONETUG.jpg "Orlando .NET User Group"){:class="logo-home-page-wide"}
+  ![ONETUG Logo](/assets/img/partners/ONETUG.png "Orlando .NET User Group"){:class="logo-home-page-wide"}
   ![Seminole State College Logo](/assets/img/partners/Seminole-State.png "Seminole State College"){:class="logo-home-page-short-wide"}
   ![Google Developer Group (GDG) Central Florida](/assets/img/partners/GDG-Central-Florida.png "Google Developer Group (GDG) Central Florida"){:class="logo-home-page-short-wide"}
   ![DevFest Central Florida](/assets/img/partners/GDG-DevFest-Central-Florida.png "DevFest Central Florida"){:class="logo-home-page-wide"}
