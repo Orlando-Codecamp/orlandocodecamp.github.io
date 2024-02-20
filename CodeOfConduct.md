@@ -2,7 +2,7 @@
 layout: page
 title: Code of Conduct
 permalink: /codeofconduct/
-nav_order: 8
+nav_order: 9
 ---
 
 # Code of Conduct
