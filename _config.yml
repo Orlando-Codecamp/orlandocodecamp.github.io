@@ -50,3 +50,14 @@ kramdown:
 sass:
     sass_dir: _sass
 #   style: compressed
+
+nav_external_links_new_tab: true
+
+# External navigation links
+nav_external_links:
+  - title: Schedule (Sessionize)
+    url: https://sessionize.com/view/ht1oni9m/GridSmart?format=Embed_Styled_Html&isDark=False&title=Orlando%20Code%20Camp%202024
+    hide_icon: true
+  - title: Sign Up (Eventbrite)
+    url: https://www.eventbrite.com/e/orlando-code-camp-2024-tickets-800584980227
+    hide_icon: true

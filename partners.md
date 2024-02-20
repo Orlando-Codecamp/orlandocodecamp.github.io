@@ -2,7 +2,7 @@
 layout: page
 title: Partners
 permalink: /partners/
-nav_order: 8
+nav_order: 7
 ---
 
 # Community Partners and Local Events
@@ -11,7 +11,7 @@ nav_order: 8
 
 ## Orlando .NET User Group (ONETUG)
 
-![ONETUG logo](/assets/img/partners/ONETUG.jpg "Orlando .NET User Group"){:class="logo-partner-page"}
+![ONETUG logo](/assets/img/partners/ONETUG.png "Orlando .NET User Group"){:class="logo-partner-page"}
 
 [Group events (Meetup)](https://www.meetup.com/onetug/)
 [Group site](https://onetug.net)
