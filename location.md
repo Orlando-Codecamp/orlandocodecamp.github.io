@@ -23,7 +23,7 @@ Seminole State College - Sanford/Lake Mary Campus
 Note: there are 3 entrances to campus via
 
 + Wheldon Blvd
-+ Broadmoor Dr
++ Broadmoor Rd
 + College Dr
 
 [Google Maps (external)](https://maps.app.goo.gl/Y85J2V6d3RyRTnPe7){:target="_blank"}
