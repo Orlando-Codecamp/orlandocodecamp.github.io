@@ -3,6 +3,7 @@
         "avenir",
         "blairanderson",
         "blinkmacsystemfont",
+        "Broadmoor",
         "callforspeakers",
         "codeofconduct",
         "Daytona",
@@ -14,6 +15,7 @@
         "timeinterval",
         "toctitle",
         "Westin",
+        "Wheldon",
         "Xebia"
     ],
     "markdownlint.config": {

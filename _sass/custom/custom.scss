@@ -29,6 +29,10 @@ img.logo-sponsor-page {
   margin: 10px auto !important;
 }
 
+li {
+  margin: 0 !important;
+}
+
 /* Responsive layout - makes the two images stack on top of each other if narrow */
 @media screen and (max-width: 640px) {
   img.logo-home-page-square,
