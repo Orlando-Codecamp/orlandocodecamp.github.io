@@ -17,7 +17,7 @@ nav_order: 7
 
 <p />
 
-Here is our [sponsorship package](/assets/doc/OrlandoCodeCamp2024-SponsorInfo.pdf){:target="_blank"}.
+Here is our [sponsorship package](/assets/doc/OrlandoCodeCamp2025-SponsorInfo.pdf){:target="_blank"}.
 
 If you're interested in sponsoring, please email the OCC organizers at [board@onetug.net](mailto:board@onetug.net).
 
