@@ -4,13 +4,17 @@ title: Home
 nav_order: 1
 ---
 
-# Orlando Code Camp 2024
+{::comment}
 
-<div id="countdown-clock">{% include clock.html %}</div>
+# Orlando Code Camp 2025 - April 5th 2025
 
-## February 24th 2024 from 7:30 AM to 5:00 PM
+<div id="countdown-clock" style="text-align: center;">{% include clock.html %}</div>
 
-### Seminole State College, Sanford, FL
+## Seminole State College, Sanford, FL
+
+{:/comment}
+
+![Orlando Code Camp 2025 logo](/assets/img/banners/2025%20Code%20Camp%20-%20Banner.png "Orlando Code Camp 2025 - April 5th, 2025"){:class="banner-home-page"}
 
 <p />
 
