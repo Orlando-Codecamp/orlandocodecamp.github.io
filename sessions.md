@@ -2,8 +2,11 @@
 layout: page
 title: Sessions
 permalink: /sessions/
-nav_order: 5
+# nav_order: 5
+nav_exclude: true
 ---
+
+{::comment}
 
 # 70+ Sessions
 
@@ -13,3 +16,5 @@ The sessions below have approved by the organizers and confirmed by their speake
 
 <script type="text/javascript"
   src="https://sessionize.com/api/v2/ht1oni9m/view/Sessions" />
+
+{:/comment}

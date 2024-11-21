@@ -2,7 +2,8 @@
 layout: page
 title: Speakers
 permalink: /speakers/
-nav_order: 4
+# nav_order: 4
+nav_exclude: true
 ---
 
 # 70+ Speakers

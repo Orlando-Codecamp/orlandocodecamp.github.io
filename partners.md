@@ -34,6 +34,10 @@ nav_order: 8
 [Group events (Meetup)](https://www.meetup.com/gdg-central-florida/)
 [Community events (GDG)](https://gdg.community.dev/gdg-central-florida/)
 
+{::comment}
+
+TODO Move DevFest to a new Other Events page with SQLSaturday plus Atl Dev Con and ???
+
 ---
 
 ## DevFest Central Florida
@@ -41,6 +45,8 @@ nav_order: 8
 ![DevFest Central Florida logo](/assets/img/partners/GDG-DevFest-Central-Florida.png "DevFest Central Florida logo"){:class="logo-partner-page"}
 
 [Local event site](https://orlando.devfestflorida.com/)
+
+{:/comment}
 
 ---
 
@@ -51,6 +57,10 @@ nav_order: 8
 [Group site](https://sqlorlando.org/)
 [Group events (Meetup)](https://www.meetup.com/SQLOrlando/)
 
+{::comment}
+
+TODO Move SQL Saturday to a new Other Events page with DevFest plus Atl Dev Con and ???
+
 ---
 
 ## SQL Saturday
@@ -58,3 +68,5 @@ nav_order: 8
 ![SQL Saturday Orlando](/assets/img/partners/SQL-Saturday.png "SQL Saturday"){:class="logo-partner-page"}
 
 [Global event site](https://sqlsaturday.com/)
+
+{:/comment}
