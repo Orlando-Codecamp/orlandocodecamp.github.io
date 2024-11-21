@@ -53,7 +53,7 @@ function initializeClock(id, endTick) {
   var timeInterval = setInterval(updateClock, 1000);
 }
 
-// UTC equivalent of "Sat Feb 24 2024 07:30:00 GMT-0500 (Eastern Standard Time)"
-var endTick = new Date(Date.UTC(2024, 1, 24, 12, 30, 0, 0)).getTime();
+// UTC equivalent of "Sat Apr 05 2025 07:30:00 GMT-0500 (Eastern Standard Time)"
+var endTick = new Date(Date.UTC(2025, 3, 5, 12, 30, 0, 0)).getTime();
 
 initializeClock('clock-div', endTick);
