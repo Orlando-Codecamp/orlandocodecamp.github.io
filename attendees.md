@@ -2,7 +2,8 @@
 layout: page
 title: Attendees
 permalink: /attendees/
-nav_order: 3
+# nav_order: 3
+nav_exclude: true
 ---
 
 # Attendees

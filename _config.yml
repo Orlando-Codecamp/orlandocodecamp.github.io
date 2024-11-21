@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Orlando Code Camp 2024
+title: Orlando Code Camp
 email: board@onetug.net
 description: >- # this means to ignore newlines until "baseurl:"
-  Orlando Code Camp 2024 - February 24th 2024 @ Seminole State College, Sanford, FL
+  Orlando Code Camp 2025 - April 5th 2025 @ Seminole State College, Sanford, FL
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://orlandocodecamp.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: onetug
@@ -55,10 +55,14 @@ nav_external_links_new_tab: true
 
 # External navigation links
 nav_external_links:
+  - title: Call for Speakers (Sessionize)
+    permalink: /call-for-speakers/
+    url: https://sessionize.com/orlando-code-camp-2025/
+    hide_icon: true
 #   - title: Schedule (Sessionize)
 #     permalink: /schedule/
 #     url: https://sessionize.com/view/ht1oni9m/GridSmart?format=Embed_Styled_Html&isDark=False&title=Orlando%20Code%20Camp%202024
 #     hide_icon: true
-  - title: Sign Up (Eventbrite)
-    url: https://www.eventbrite.com/e/orlando-code-camp-2024-tickets-800584980227
-    hide_icon: true
+  # - title: Sign Up (Eventbrite)
+  #   url: https://www.eventbrite.com/e/orlando-code-camp-2024-tickets-800584980227
+  #   hide_icon: true

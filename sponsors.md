@@ -17,17 +17,15 @@ nav_order: 7
 
 <p />
 
-Here is our [sponsorship package](/assets/doc/OrlandoCodeCamp2024-SponsorInfo.pdf){:target="_blank"}.
+Here is our [sponsorship package](/assets/doc/OrlandoCodeCamp2025-SponsorInfo.pdf){:target="_blank"}.
 
 If you're interested in sponsoring, please email the OCC organizers at [board@onetug.net](mailto:board@onetug.net).
 
----
-
 {::comment}
 
-## Platinum Sponsors
+---
 
-{:/comment}
+## Platinum Sponsors
 
 ## Speaker Party Sponsor
 
@@ -82,8 +80,6 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 ![CODE Magazine Logo](/assets/img/sponsors/code.png "CODE Magazine"){:class="logo-sponsor-page"}
 
 [Company site](https://www.codemag.com/)
-
-{::comment}
 
 ## Breakfast Sponsor
 

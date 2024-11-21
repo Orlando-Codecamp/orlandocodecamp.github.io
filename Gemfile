@@ -31,6 +31,7 @@ install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
 end
 
 # Performance-booster for watching directories on Windows
+# https://jekyllrb.com/docs/installation/windows/#auto-regeneration
 gem "wdm", "~> 0.1.0", :install_if => Gem.win_platform?
 
 # Fix for Ruby 3.* from "Testing your GitHub Pages site locally with Jekyll"
