@@ -21,9 +21,14 @@ h2 { margin: 1rem 0 !important; }
 
 hr { height: 3px; }
 
-img.banner-home-page {
+img.banner-home-page,
+img.banner-speakers-page {
   width: 100% !important;
   margin: 10px auto !important;
+}
+
+img.banner-speakers-page {
+  border:0.5px solid lightgray
 }
 
 img.logo-partner-page,
