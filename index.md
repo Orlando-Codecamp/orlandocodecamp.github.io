@@ -19,7 +19,7 @@ nav_order: 1
 <p />
 
 Orlando Code Camp is organized by the [Orlando .NET User Group (ONETUG)](https://onetug.net)
-and hosted at the Sanford/Lake Mary campus of [Seminole State College](https://www.seminolestate.edu/slm).
+and hosted at the Sanford/Lake Mary campus of [Seminole State College](#disclaimer).
 
 <p />
 
@@ -72,3 +72,7 @@ Orlando Code Camp proudly partners with the following local organizations:
   ![Google Developer Group (GDG) Central Florida](/assets/img/partners/GDG-Central-Florida.png "Google Developer Group (GDG) Central Florida"){:class="logo-home-page-short-wide"}
   ![SQLOrlando](/assets/img/partners/SQLOrlando.jpg "SQLOrlando"){:class="logo-home-page-wide"}
 </span>
+
+---
+ <h3 id=disclaimer>Disclaimer</h3>
+ <p><em>This event and its organizer are neither affiliated with nor endorsed by <a href="https://www.seminolestate.edu/slm" target="_blank">Seminole State College</a> of Florida. Any views expressed at this event are solely those of the person expressing them and not those of Seminole State College of Florida.</em></p>
