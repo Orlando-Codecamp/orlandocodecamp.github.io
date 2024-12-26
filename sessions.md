@@ -2,19 +2,12 @@
 layout: page
 title: Sessions
 permalink: /sessions/
-# nav_order: 5
-nav_exclude: true
+nav_order: 5
+#nav_exclude: true
 ---
 
-{::comment}
+# Confirmed Sessions (So Far)
 
-# 70+ Sessions
+<em>The sessions below have approved by the organizers and confirmed by their speakers. Check back later as we finalize the list of confirmed sessions.</em>
 
-<p />
-
-The sessions below have approved by the organizers and confirmed by their speakers. Check back later as we finalize the list of confirmed sessions.
-
-<script type="text/javascript"
-  src="https://sessionize.com/api/v2/ht1oni9m/view/Sessions" />
-
-{:/comment}
+<script type="text/javascript" src="https://sessionize.com/api/v2/ofd7i82z/view/Sessions"></script>
