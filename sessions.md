@@ -6,7 +6,7 @@ nav_order: 5
 #nav_exclude: true
 ---
 
-# Sessions (So Far)
+# Confirmed Sessions (So Far)
 
 <em>The sessions below have approved by the organizers and confirmed by their speakers. Check back later as we finalize the list of confirmed sessions.</em>
 
