@@ -3,6 +3,7 @@ layout: page
 title: Partners
 permalink: /partners/
 nav_order: 8
+nav_exclude: true
 ---
 
 # Community Partners and Local Events
