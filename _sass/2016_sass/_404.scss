@@ -1,0 +1,14 @@
+.page-not-found {
+	background: lightgray;
+	background-attachment: fixed;
+	h1 {
+		padding-top: 30vh;
+		font-size: 180%;
+	}
+	p {
+		font-size: 120%;
+	}
+	h1, h2, h3, p {
+		text-align: center;
+	}
+}

@@ -3,7 +3,7 @@ layout: page
 title: Speakers
 permalink: /speakers/
 nav_order: 4
-# nav_exclude: true
+nav_exclude: true
 ---
 
 # Speakers
