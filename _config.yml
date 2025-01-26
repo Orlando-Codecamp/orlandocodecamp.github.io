@@ -17,20 +17,24 @@ title: Orlando Code Camp
 email: board@onetug.net
 description: >- # this means to ignore newlines until "baseurl:"
   Orlando Code Camp 2025 - April 5th 2025 @ Seminole State College, Sanford, FL
-baseurl: "/" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://orlandocodecamp.com" # the base hostname & protocol for your site, e.g. http://example.com
+logo: "../css/2016_style/img/icon-large.png"
+
 twitter_username: onetug
 github_username:  onetug
 
+google_site_verification: googleXXXXXXXXXXXXXXXX.html
+
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-seo-tag
 whitelist:
   - jekyll-redirect-from
-remote_theme: just-the-docs/just-the-docs
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
@@ -47,8 +51,10 @@ remote_theme: just-the-docs/just-the-docs
 kramdown:
   hard_wrap: true
 
-sass:
-    sass_dir: _sass
+include: ['_2016_pages']
+
+# sass:
+#     sass_dir: _sass
 #   style: compressed
 
 nav_external_links_new_tab: true

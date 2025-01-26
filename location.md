@@ -4,6 +4,7 @@ title: Location
 permalink: /location/
 nav_order: 2
 has_toc: true
+nav_exclude: true
 ---
 
 {:toc}
