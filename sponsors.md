@@ -21,11 +21,7 @@ Here is our [sponsorship package](/assets/doc/OrlandoCodeCamp2025-SponsorInfo.pd
 
 If you're interested in sponsoring, please email the OCC organizers at [board@onetug.net](mailto:board@onetug.net).
 
-{::comment}
-
 ---
-
-## Platinum Sponsors
 
 ## Speaker Party Sponsor
 
@@ -35,56 +31,29 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 ---
 
-## Gold Sponsor
-
-![Elastic Logo](/assets/img/sponsors/Elastic.png "Elastic"){:class="logo-sponsor-page"}
-
-[Company site](https://www.elastic.co/)
-
----
-
-## Gold Sponsor
-
-![ZeroTrusted.ai Logo](/assets/img/sponsors/ZeroTrusted.ai%20black.png "ZeroTrusted.ai"){:class="logo-sponsor-page"}
-
-[Company site](https://www.zerotrusted.ai/)
-
----
-
 ## Silver Sponsor
 
-![SNI Technology Logo](/assets/img/sponsors/SNI-Technology.png "SNI Technology"){:class="logo-sponsor-page"}
+![SNI Technology Logo](/assets/img/sponsors/SNI-Technology-logo.jpg "SNI Technology"){:class="logo-sponsor-page"}
 
 [Orlando office](https://www.snicompanies.com/staffing-recruiting/orlando/)
 
 ---
 
-## Silver Sponsor
+## Bronze Sponsor
 
-![CyberMedics Logo](/assets/img/sponsors/CyberMedics.png "CyberMedics"){:class="logo-sponsor-page"}
-
-[Company site](https://www.cybermedics.com/)
-
----
-
-## Silver Sponsor
-
-![TEKsystems Logo](/assets/img/sponsors/TEKsystems_RGB.PNG "TEKsystems"){:class="logo-sponsor-page"}
-
-[Company site](https://www.teksystems.com/)
+[DevForge](https://www.devforge.com/)
 
 ---
 
 ## Swag Sponsor
 
-![CODE Magazine Logo](/assets/img/sponsors/code.png "CODE Magazine"){:class="logo-sponsor-page"}
+![CODE Magazine Logo](/assets/img/sponsors/code-sponsor.png "CODE Magazine"){:class="logo-sponsor-page"}
 
 [Company site](https://www.codemag.com/)
 
-## Breakfast Sponsor
-
-## Bronze Sponsors
+---
 
 ## Coffee Sponsor
 
-{:/comment}
+[DynaByte USA](https://dynabytetech.com/en/)
+
