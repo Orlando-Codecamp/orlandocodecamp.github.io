@@ -69,7 +69,9 @@ Orlando Code Camp proudly partners with the following local organizations:
 <div class="partners">
 {% for partner in site.data.partners %}
   <div class="partner {{ partner.logoStyle }}">
-    <img src="{{ partner.logoPath }}" alt="{{ partner.name }}">
+    <a href="{{ partner.url }}">
+      <img src="{{ partner.logoPath }}" alt="{{ partner.name }}" title="{{ partner.name }}">
+    </a>
   </div>
 {% endfor %}
 </div>

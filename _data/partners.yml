@@ -1,15 +1,20 @@
 - name: Orlando .NET User Group
   logoPath: /assets/img/partners/ONETUG.png
   logoStyle: standard
+  url: https://onetug.net/
 - name: Seminole State College
   logoPath: /assets/img/partners/Seminole-State.png
   logoStyle: standard
+  url: https://www.seminolestate.edu/
 - name: Google Developer Group (GDG) Central Florida
   logoPath: /assets/img/partners/GDG-Central-Florida.png
   logoStyle: wide
+  url: https://gdg.community.dev/gdg-central-florida/
 - name: SQLOrlando
   logoPath: /assets/img/partners/SQLOrlando.jpg
   logoStyle: wide
+  url: https://sqlorlando.org/
 - name: CyberMedics
   logoPath: /assets/img/partners/CyberMedics.svg
   logoStyle: wide
+  url: https://www.cybermedics.com/
