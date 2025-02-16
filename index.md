@@ -86,6 +86,7 @@ Orlando Code Camp proudly partners with the following local organizations:
     grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     border-radius: 15px;   
     padding: 10px;
+    user-select: none;
   }
 
   .partners img {
