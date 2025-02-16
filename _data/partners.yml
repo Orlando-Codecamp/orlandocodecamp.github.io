@@ -1,0 +1,15 @@
+- name: Orlando .NET User Group
+  logoPath: /assets/img/partners/ONETUG.png
+  logoStyle: standard
+- name: Seminole State College
+  logoPath: /assets/img/partners/Seminole-State.png
+  logoStyle: standard
+- name: Google Developer Group (GDG) Central Florida
+  logoPath: /assets/img/partners/GDG-Central-Florida.png
+  logoStyle: wide
+- name: SQLOrlando
+  logoPath: /assets/img/partners/SQLOrlando.jpg
+  logoStyle: wide
+- name: CyberMedics
+  logoPath: /assets/img/partners/CyberMedics.svg
+  logoStyle: wide

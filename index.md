@@ -66,13 +66,73 @@ Orlando Code Camp is generously sponsored by the following companies:
 
 Orlando Code Camp proudly partners with the following local organizations:
 
-<span float="left">
-  ![ONETUG Logo](/assets/img/partners/ONETUG.png "Orlando .NET User Group"){:class="logo-home-page-wide"}
-  ![Seminole State College Logo](/assets/img/partners/Seminole-State.png "Seminole State College"){:class="logo-home-page-short-wide"}
-  ![Google Developer Group (GDG) Central Florida](/assets/img/partners/GDG-Central-Florida.png "Google Developer Group (GDG) Central Florida"){:class="logo-home-page-short-wide"}
-  ![SQLOrlando](/assets/img/partners/SQLOrlando.jpg "SQLOrlando"){:class="logo-home-page-wide"}
-</span>
+<div class="partners">
+{% for partner in site.data.partners %}
+  <div class="partner {{ partner.logoStyle }}">
+    <img src="{{ partner.logoPath }}" alt="{{ partner.name }}">
+  </div>
+{% endfor %}
+</div>
 
 ---
  <h3 id=disclaimer>Disclaimer</h3>
  <p><em>This event and its organizer are neither affiliated with nor endorsed by <a href="https://www.seminolestate.edu/slm" target="_blank">Seminole State College</a> of Florida. Any views expressed at this event are solely those of the person expressing them and not those of Seminole State College of Florida.</em></p>
+
+{% raw %}
+
+<style>
+  .partners {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    border-radius: 15px;   
+    padding: 10px;
+  }
+
+  .partners img {
+    background-color: white;
+
+     /* These properties ensure that the image always fills the container but maintains proportions */
+    width: 100%; 
+    height: 100%;    
+    object-fit: contain; 
+  }
+
+  .partner.wide {
+    grid-column: span 2;
+  }
+
+  .partner.standard {
+    grid-column: span 1;
+  }
+
+  .partner {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    text-align: center;
+    max-height: 250px;
+  }
+
+  @media (min-width: 765px) {
+    .partner.standard {
+      grid-column: span 1;
+    }
+
+    .partners {
+      gap: 10px; 
+      background-color: #f7f7f7; 
+    }
+
+    .partners img {
+      padding: 20px;
+    }
+  }
+
+  @media (max-width: 765px) {
+    .partner.standard {
+      grid-column: span 2;
+    }
+  }
+</style>
+
+{% endraw %}
