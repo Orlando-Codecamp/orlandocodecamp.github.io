@@ -39,6 +39,14 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 
 ---
 
+## Silver Sponsor
+
+![CyberMedics](/assets/img/sponsors/CyberMedics.svg "CyberMedics"){:class="logo-sponsor-page"}
+
+[Company Site](https://www.cybermedics.com/)
+
+---
+
 ## Bronze Sponsor
 
 [DevForge](https://www.devforge.com/)
@@ -54,6 +62,8 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 ---
 
 ## Coffee Sponsor
+
+![DynaByte Logo](/assets/img/sponsors/dynabyte.svg "DynaByte"){:class="logo-sponsor-page"}
 
 [DynaByte USA](https://dynabytetech.com/en/)
 

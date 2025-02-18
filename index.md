@@ -63,12 +63,25 @@ Orlando Code Camp is generously sponsored by the following companies:
 -->
 
 ---
+Orlando Code Camp is generously sponsored by the following companies:
+
+<div class="sponsors">
+{% for sponsor in site.data.sponsors %}
+  <div class="sponsor-partner {{ sponsor.logoStyle }}">
+    <a href="{{ sponsor.url }}">
+      <img src="{{ sponsor.logoPath }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
+    </a>
+  </div>
+{% endfor %}
+</div>
+
+---
 
 Orlando Code Camp proudly partners with the following local organizations:
 
 <div class="partners">
 {% for partner in site.data.partners %}
-  <div class="partner {{ partner.logoStyle }}">
+  <div class="sponsor-partner {{ partner.logoStyle }}">
     <a href="{{ partner.url }}">
       <img src="{{ partner.logoPath }}" alt="{{ partner.name }}" title="{{ partner.name }}">
     </a>
@@ -83,7 +96,7 @@ Orlando Code Camp proudly partners with the following local organizations:
 {% raw %}
 
 <style>
-  .partners {
+  .partners, .sponsors {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two equal columns */
     border-radius: 15px;   
@@ -91,7 +104,7 @@ Orlando Code Camp proudly partners with the following local organizations:
     user-select: none;
   }
 
-  .partners img {
+  .partners img, .sponsors img {
     background-color: white;
 
      /* These properties ensure that the image always fills the container but maintains proportions */
@@ -100,15 +113,15 @@ Orlando Code Camp proudly partners with the following local organizations:
     object-fit: contain; 
   }
 
-  .partner.wide {
+  .sponsor-partner.wide {
     grid-column: span 2;
   }
 
-  .partner.standard {
+  .sponsor-partner.standard {
     grid-column: span 1;
   }
 
-  .partner {
+  .sponsor-partner {
     padding: 10px;
     border-radius: 15px;
     background-color: white;
@@ -117,22 +130,22 @@ Orlando Code Camp proudly partners with the following local organizations:
   }
 
   @media (min-width: 765px) {
-    .partner.standard {
+    .sponsor-partner.standard {
       grid-column: span 1;
     }
 
-    .partners {
+    .partners, .sponsors {
       gap: 10px; 
       background-color: #f7f7f7; 
     }
 
-    .partners img {
+    .partners img, .sponsors img {
       padding: 20px;
     }
   }
 
   @media (max-width: 765px) {
-    .partner.standard {
+    .sponsor-partner.standard {
       grid-column: span 2;
     }
   }

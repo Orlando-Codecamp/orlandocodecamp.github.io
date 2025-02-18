@@ -1,0 +1,20 @@
+- name: Xebia
+  logoPath: /assets/img/sponsors/Xebia_Logo_Purple_RGB-MD.png
+  logoStyle: standard
+  url: https://xebia.com/
+- name: SNI Technology
+  logoPath: /assets/img/sponsors/SNI-Technology-logo.jpg
+  logoStyle: standard
+  url: https://www.snicompanies.com/staffing-recruiting/orlando/
+- name: CyberMedics
+  logoPath: /assets/img/sponsors/CyberMedics.svg
+  logoStyle: standard
+  url: https://www.cybermedics.com/
+- name: CODE Magazine
+  logoPath: /assets/img/sponsors/code-sponsor.png
+  logoStyle: standard
+  url: https://www.codemag.com/
+- name: DynaByte
+  logoPath: /assets/img/sponsors/dynabyte.svg
+  logoStyle: wide
+  url: https://dynabytetech.com/en/
