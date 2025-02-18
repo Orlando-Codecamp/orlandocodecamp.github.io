@@ -14,6 +14,9 @@
   logoStyle: standard
   url: https://www.cybermedics.com/
   level: Silver
+- name: DevForge
+  url: https://https://www.devforge.com/
+  level: Bronze
 - name: CODE Magazine
   logoPath: /assets/img/sponsors/code-sponsor.png
   logoStyle: standard

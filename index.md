@@ -67,11 +67,13 @@ Orlando Code Camp is generously sponsored by the following companies:
 
 <div class="sponsors">
 {% for sponsor in site.data.sponsors %}
-  <div class="sponsor-partner {{ sponsor.logoStyle }}">
-    <a href="{{ sponsor.url }}">
-      <img src="{{ sponsor.logoPath }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
-    </a>
-  </div>
+  {% if sponsor.logoPath %}
+    <div class="sponsor-partner {{ sponsor.logoStyle }}">
+      <a href="{{ sponsor.url }}">
+        <img src="{{ sponsor.logoPath }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
+      </a>
+    </div>
+  {% endif %}
 {% endfor %}
 </div>
 

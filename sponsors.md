@@ -25,12 +25,15 @@ If you're interested in sponsoring, please email the OCC organizers at [board@on
 ---
 ## {{ sponsor.level }} Sponsor
 
+{% if sponsor.logoPath %}
 ![{{ sponsor.name }}]({{ sponsor.logoPath }}){:class="logo-sponsor-page"}
 
-{% if sponsor.urlLabelOverride %}
-  [ {{sponsor.urlLabelOverride}} ]({{ sponsor.url }})
+[ {{sponsor.urlLabelOverride | default: "Company Site"}} ]({{ sponsor.url }})
+
 {% else %}
-  [Company site]({{ sponsor.url }})
+
+[ {{sponsor.name}} ]( {{sponsor.url}} )
+
 {% endif %}
 
 {% endfor %}
