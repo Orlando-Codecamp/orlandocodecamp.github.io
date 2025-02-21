@@ -1,0 +1,31 @@
+- name: Xebia
+  logoPath: /assets/img/sponsors/Xebia_Logo_Purple_RGB-MD.png
+  logoStyle: standard
+  url: https://xebia.com/
+  level: Speaker Party
+- name: SNI Technology
+  logoPath: /assets/img/sponsors/SNI-Technology-logo.jpg
+  logoStyle: standard
+  url: https://www.snicompanies.com/staffing-recruiting/orlando/
+  urlLabelOverride: Orlando office
+  level: Silver
+- name: CyberMedics
+  logoPath: /assets/img/sponsors/CyberMedics.svg
+  logoStyle: standard
+  url: https://www.cybermedics.com/
+  level: Silver
+- name: Tim Corey's DevForge
+  logoPath: /assets/img/sponsors/Tim_Coreys_DevForge_Blue.png
+  logoStyle: standard
+  url: https://devforge.com/
+  level: Silver
+- name: Dynabyte
+  logoPath: /assets/img/sponsors/dynabyte.svg
+  logoStyle: standard
+  url: https://dynabytetech.com/en/
+  level: Coffee
+- name: CODE Magazine
+  logoPath: /assets/img/sponsors/code-sponsor.png
+  logoStyle: standard
+  url: https://www.codemag.com/
+  level: Swag

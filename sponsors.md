@@ -21,39 +21,19 @@ Here is our [sponsorship package](/assets/doc/OrlandoCodeCamp2025-SponsorInfo.pd
 
 If you're interested in sponsoring, please email the OCC organizers at [board@onetug.net](mailto:board@onetug.net).
 
+{% for sponsor in site.data.sponsors %}
 ---
+## {{ sponsor.level }} Sponsor
 
-## Speaker Party Sponsor
+{% if sponsor.logoPath %}
+![{{ sponsor.name }}]({{ sponsor.logoPath }}){:class="logo-sponsor-page"}
 
-![Xebia Logo](/assets/img/sponsors/Xebia_Logo_Purple_RGB-MD.png "Xebia"){:class="logo-sponsor-page"}
+[ {{sponsor.urlLabelOverride | default: "Company Site"}} ]({{ sponsor.url }})
 
-[Company site](https://xebia.com/am/)
+{% else %}
 
----
+[ {{sponsor.name}} ]( {{sponsor.url}} )
 
-## Silver Sponsor
+{% endif %}
 
-![SNI Technology Logo](/assets/img/sponsors/SNI-Technology-logo.jpg "SNI Technology"){:class="logo-sponsor-page"}
-
-[Orlando office](https://www.snicompanies.com/staffing-recruiting/orlando/)
-
----
-
-## Bronze Sponsor
-
-[DevForge](https://www.devforge.com/)
-
----
-
-## Swag Sponsor
-
-![CODE Magazine Logo](/assets/img/sponsors/code-sponsor.png "CODE Magazine"){:class="logo-sponsor-page"}
-
-[Company site](https://www.codemag.com/)
-
----
-
-## Coffee Sponsor
-
-[DynaByte USA](https://dynabytetech.com/en/)
-
+{% endfor %}
