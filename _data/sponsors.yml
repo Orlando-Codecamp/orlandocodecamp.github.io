@@ -14,16 +14,18 @@
   logoStyle: standard
   url: https://www.cybermedics.com/
   level: Silver
-- name: DevForge
-  url: https://https://www.devforge.com/
+- name: Tim Corey's DevForge
+  logoPath: /assets/img/sponsors/Tim_Coreys_DevForge_Blue.png
+  logoStyle: standard
+  url: https://devforge.com/
   level: Bronze
+- name: Dynabyte
+  logoPath: /assets/img/sponsors/dynabyte.svg
+  logoStyle: standard
+  url: https://dynabytetech.com/en/
+  level: Coffee
 - name: CODE Magazine
   logoPath: /assets/img/sponsors/code-sponsor.png
   logoStyle: standard
   url: https://www.codemag.com/
   level: Swag
-- name: DynaByte
-  logoPath: /assets/img/sponsors/dynabyte.svg
-  logoStyle: wide
-  url: https://dynabytetech.com/en/
-  level: Coffee
