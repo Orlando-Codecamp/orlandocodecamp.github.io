@@ -1,0 +1,52 @@
+<html>
+{% include head.html %}
+<body class="no-headers-body">
+  <ul class="links-container">
+    {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+
+    {% for page in sorted_pages %}
+    {% unless page.nav_exclude == true %}
+      {% if page.path contains '.md' %}
+          <li><a href="{{ page.url | relative_url }}">{{ page.title | default: page.url }}</a></li>
+      {% endif %}
+    {% endunless %}
+    {% endfor %}
+
+    {% for page in site.nav_external_links %}
+          <li><a href="{{ page.url }}">{{ page.title | default: page.url }}</a></li>
+    {% endfor %}
+  </ul>
+
+{{ content }}
+
+  {% if page.has_children == true and page.has_toc != false %}
+    {% include components/children_nav.html %}
+  {% endif %}
+
+  {% include components/footer.html %}
+
+  <style>
+    .no-headers-body {
+        padding: 5px 10px;
+    }
+
+    .links-container {
+        text-align: center;
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 10px; 
+        justify-content: center;
+        margin-top: 15px;
+        font-size: 1.0em;
+    }
+
+    @media (min-width: 50rem) {
+        .links-container {
+            font-size: 1.3em;
+        }
+    }
+  </style>
+</body>
+</html>
