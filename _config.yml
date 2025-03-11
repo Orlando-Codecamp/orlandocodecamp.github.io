@@ -59,10 +59,10 @@ nav_external_links:
     permalink: /call-for-speakers/
     url: https://sessionize.com/orlando-code-camp-2025/
     hide_icon: true
-#   - title: Schedule (Sessionize)
-#     permalink: /schedule/
-#     url: https://sessionize.com/view/ht1oni9m/GridSmart?format=Embed_Styled_Html&isDark=False&title=Orlando%20Code%20Camp%202024
-#     hide_icon: true
+  # - title: Schedule (Sessionize)
+  #   permalink: /schedule-external/
+  #   url: https://sessionize.com/view/ht1oni9m/GridSmart?format=Embed_Styled_Html&isDark=False&title=Orlando%20Code%20Camp%202024
+  #   hide_icon: true
   # - title: Sign Up (Eventbrite)
   #   url: https://www.eventbrite.com/e/orlando-code-camp-2024-tickets-800584980227
   #   hide_icon: true
