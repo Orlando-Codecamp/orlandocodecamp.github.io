@@ -33,7 +33,7 @@ Orlando Code Camp 2025 will be held on April 5th 2025 at Seminole State College 
 
 Note: there are 3 entrances to campus via
 
-+ Wheldon Blvd
++ Weldon Blvd
 + Broadmoor Rd
 + College Dr
 
