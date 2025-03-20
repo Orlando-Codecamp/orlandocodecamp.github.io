@@ -17,7 +17,7 @@ nav_exclude: true
 <style>
     #sessionize-frame {
         width: 100%;
-        height: 2000px;
+        height: 100%;
         border: none;
     }
 </style>
