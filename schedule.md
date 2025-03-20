@@ -3,7 +3,6 @@ layout: full-width
 title: Schedule
 permalink: /schedule/
 nav_order: 6
-nav_exclude: true
 ---
 
 # Schedule
