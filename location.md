@@ -8,9 +8,11 @@ has_toc: true
 
 {:toc}
 
-# Location
 
-<p />
+<div id="countdown-clock" style="text-align: center;">{% include clock.html %}</div>
+
+
+# Location
 
 Orlando Code Camp 2025 will be held on April 5th 2025 at Seminole State College in Sanford, FL.
 

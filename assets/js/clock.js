@@ -37,7 +37,7 @@ function initializeClock(id, endTick) {
 
   function updateClock() {
     var startTick = new Date().getTime();
-    var time = getTimeRemaining(startTick,endTick);
+    var time = getTimeRemaining(startTick, endTick);
 
     daysSpan.innerHTML = time.days;
     hoursSpan.innerHTML = ('0' + time.hours).slice(-2);
