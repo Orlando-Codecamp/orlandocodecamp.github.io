@@ -11,6 +11,7 @@ has_toc: true
 
 <div id="countdown-clock" style="text-align: center;">{% include clock.html %}</div>
 
+{% include signup-link.md %}
 
 # Location
 

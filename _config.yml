@@ -63,6 +63,6 @@ nav_external_links:
   #   permalink: /schedule-external/
   #   url: https://sessionize.com/view/ofd7i82z/GridSmart?format=Embed_Styled_Html&isDark=False&title=Orlando%20Code%20Camp%202025
   #   hide_icon: true
-  - title: Sign Up (Eventbrite)
-    url: https://www.eventbrite.com/e/orlando-code-camp-2025-tickets-1244003330449
-    hide_icon: true
+  # - title: Sign Up (Eventbrite)
+  #   url: https://www.eventbrite.com/e/orlando-code-camp-2025-tickets-1244003330449
+  #   hide_icon: true

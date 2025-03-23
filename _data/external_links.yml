@@ -1,0 +1,14 @@
+- id: 1
+  title: Register Now for Orlando Code Camp!
+  menu_title: Sign up (Eventbrite)
+  permalink: /sign-up/
+  url: https://www.eventbrite.com/e/orlando-code-camp-2025-tickets-1244003330449
+  hide_icon: true
+  nav_exclude: false
+- id: 2
+  title: Register Never
+  menu_title: Sign up Never
+  permalink: /never-sign-up/
+  url: https://www.eventbrite.com
+  hide_icon: true
+  nav_exclude: true
