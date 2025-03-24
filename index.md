@@ -5,12 +5,14 @@ nav_order: 1
 ---
 
 {::comment}
-
 # Orlando Code Camp 2025 - April 5th 2025
-
 {:/comment}
 
-<div id="countdown-clock" style="text-align: center;">{% include clock.html %}</div>
+<div id="countdown-clock" style="text-align: center;">
+  {% include clock.html %}
+</div>
+
+{% include signup-link.md %}
 
 {::comment}
 ## Seminole State College, Sanford, FL
@@ -19,28 +21,25 @@ nav_order: 1
 
 ![Orlando Code Camp 2025 logo](/assets/img/banners/2025%20Code%20Camp%20-%20Banner.png "Orlando Code Camp 2025 - April 5th, 2025"){:class="banner-home-page"}
 
-<p />
+<p></p>
 
 Orlando Code Camp is organized by the [Orlando .NET User Group (ONETUG)](https://onetug.net)
 and hosted at the Sanford/Lake Mary campus of [Seminole State College](#disclaimer).
 
-<p />
+<p></p>
 
-<!-- [Sign up here to attend](https://www.eventbrite.com/e/orlando-code-camp-2024-tickets-800584980227) -->
-
-<p />
+<p></p>
 
 ![Orlando CC Keynote](/assets/img/photos/occ-keynote.jpg "Orlando CC KeyNote")
 Photo courtesy of Adam Stark
 {: .fs-4 }
 
-<p />
+<p></p>
 
 The event entry is **FREE** to all attendees, thanks to our generous sponsors.
 
-We will feature multiple tracks of hard core technical and tech industry-adjacent talks of 50 minutes each.
+Our conference will showcase multiple tracks featuring cutting-edge technical deep dives and strategic industry insights, with focused 50-minute sessions presented by speakers from across the tech and software development landscape.
 
-[Sign up to speak](/speakers)
 [Check out the sponsorship packages](/sponsors)
 [Find out about our community partners](/partners)
 [Learn more about the event location](/location)
@@ -54,16 +53,6 @@ We will feature multiple tracks of hard core technical and tech industry-adjacen
 [Find out about our community partners and local events](/partners)
 {:/comment}
 
-<!--
-
----
-
-Orlando Code Camp is generously sponsored by the following companies:
-
-<span float="left">
-</span>
-
--->
 
 ---
 Orlando Code Camp is generously sponsored by the following companies:
