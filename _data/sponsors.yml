@@ -3,9 +3,14 @@
   logoStyle: standard
   url: https://xebia.com/
   level: Speaker Party
+- name: Umbraco
+  logoPath: /assets/img/sponsors/umbraco_logo_blue05.webp
+  logoStyle: standard
+  url: https://umbraco.com/
+  level: Gold
 - name: SNI Technology
   logoPath: /assets/img/sponsors/SNI-Technology-logo.jpg
-  logoStyle: standard
+  logoStyle: wide
   url: https://www.snicompanies.com/staffing-recruiting/orlando/
   urlLabelOverride: Orlando office
   level: Silver
