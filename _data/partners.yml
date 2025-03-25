@@ -14,3 +14,7 @@
   logoPath: /assets/img/partners/SQLOrlando.jpg
   logoStyle: wide
   url: https://sqlorlando.org/
+- name: Orlando DevOps
+  logoPath: /assets/img/partners/Orlando-DevOps-with-text.png
+  logoStyle: wide
+  url: https://orlandodevs.com/groups/orlando-devops/
