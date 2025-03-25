@@ -70,3 +70,12 @@ TODO Move SQL Saturday to a new Other Events page with DevFest plus Atl Dev Con 
 [Global event site](https://sqlsaturday.com/)
 
 {:/comment}
+
+---
+
+## Orlando DevOps
+
+![Orlando DevOps](/assets/img/partners/Orlando-DevOps-with-text.png "Orlando DevOps"){:class="logo-partner-page"}
+
+[Group site](https://orlandodevs.com/groups/orlando-devops/)
+[Meetup](https://www.meetup.com/Orlando-DevOps/)
