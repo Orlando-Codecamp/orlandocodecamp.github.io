@@ -21,6 +21,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://orlandocodecamp.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: onetug
 github_username:  onetug
+search_enabled: false
 
 # Build settings
 markdown: kramdown
