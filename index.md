@@ -40,18 +40,19 @@ The event entry is **FREE** to all attendees, thanks to our generous sponsors.
 
 Our conference will showcase multiple tracks featuring cutting-edge technical deep dives and strategic industry insights, with focused 50-minute sessions presented by speakers from across the tech and software development landscape.
 
+
+{::comment}
 [Check out the sponsorship packages](/sponsors)
 [Find out about our community partners](/partners)
 [Learn more about the event location](/location)
+{:/comment}
 
-{::comment}
-[Learn more about the event and organizers](/about)
-[Latest information for attendees](/attendees)
-[Check out the sponsors and sponsorship packages](/sponsors)
+[Learn more about the event](/attendees)
+[Look at the schedule](/schedule)
+[Check out our sponsors](/sponsors)
 [See 70+ confirmed speakers](/speakers)
 [Pick from 70+ confirmed sessions](/sessions)
-[Find out about our community partners and local events](/partners)
-{:/comment}
+[Explore our community partners](/partners)
 
 
 ---
