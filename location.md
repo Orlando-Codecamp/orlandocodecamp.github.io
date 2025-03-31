@@ -231,16 +231,14 @@ has_toc: true
   }
 </style>
 
-{:toc}
-
+<h1>Location</h1>
+  
 <div class="event-banner">
   <div id="countdown-clock" class="countdown-container">{% include clock.html %}</div>
   <div class="cta-button">{% include signup-link.md %}</div>
 </div>
 
 <div class="location-container">
-  <h1>Location</h1>
-  
   <div class="event-highlight">
     <p>Orlando Code Camp 2025 will be held on <strong>April 5th, 2025</strong> at <strong>Seminole State College</strong> in Sanford, FL.</p>
   </div>
