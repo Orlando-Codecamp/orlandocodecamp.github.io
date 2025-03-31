@@ -2,7 +2,7 @@
 layout: page
 title: Sponsors
 permalink: /sponsors/
-nav_order: 8
+nav_order: 9
 ---
 
 # Sponsors
