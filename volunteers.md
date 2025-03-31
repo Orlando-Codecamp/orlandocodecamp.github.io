@@ -3,7 +3,7 @@ layout: page
 title: Volunteers
 permalink: /volunteers/
 description: "Orlando Code Camp is run by volunteers. We are always looking for more help! If you would like to volunteer, please let us know."
-nav_order: 5
+nav_order: 4
 ---
 
 <style>
