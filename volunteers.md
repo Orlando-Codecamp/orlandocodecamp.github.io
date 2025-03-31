@@ -140,7 +140,7 @@ nav_order: 4
   <h2>Ready to Join Our Volunteer Team?</h2>
   <p>Contact us today to be part of Orlando Code Camp 2025!</p>
   <div class="cta-email">
-    <span class="cta-email-text">board@onetug.org</span>
+    <span class="cta-email-text">volunteers@onetug.org</span>
     <button id="copyEmailBtn" class="cta-copy-btn" aria-label="Copy email address to clipboard" title="Copy email address">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
         <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
