@@ -131,6 +131,25 @@ nav_order: 4
     height: 20px;
     fill: currentColor;
   }
+  
+  /* Sign-up button styles */
+  .signup-btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #2c5282;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
 </style>
 
 # Volunteers
@@ -138,7 +157,11 @@ nav_order: 4
 <!-- Hero CTA Section -->
 <div class="hero-cta">
   <h2>Ready to Join Our Volunteer Team?</h2>
-  <p>Contact us today to be part of Orlando Code Camp 2025!</p>
+  <p>Sign up using the link below to register as a volunteer for Orlando Code Camp 2025!</p>
+  <a href="https://schedule.planhero.com/events/472d672d9/orlando-code-camp" class="signup-btn" target="_blank" rel="noopener">
+    Register as a Volunteer
+  </a>
+  <p>Have questions? Feel free to contact us:</p>
   <div class="cta-email">
     <span class="cta-email-text">volunteers@onetug.org</span>
     <button id="copyEmailBtn" class="cta-copy-btn" aria-label="Copy email address to clipboard" title="Copy email address">

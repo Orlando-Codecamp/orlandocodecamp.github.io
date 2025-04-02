@@ -12,3 +12,10 @@
   url: https://www.eventbrite.com
   hide_icon: true
   nav_exclude: true
+- id: 3
+  title: Sign-Up to Voluneer!
+  menu_title: Volunteer Sign-Up
+  permalink: /volunteer-sign-up/
+  url: https://schedule.planhero.com/events/472d672d9/orlando-code-camp
+  hide_icon: true
+  nav_exclude: false
