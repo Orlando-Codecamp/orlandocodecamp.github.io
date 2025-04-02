@@ -240,7 +240,7 @@ has_toc: true
 
 <div class="location-container">
   <div class="event-highlight">
-    <p>Orlando Code Camp 2025 will be held on <strong>April 5th, 2025</strong> at <strong>Seminole State College</strong> in Sanford, FL.</p>
+    <p>Orlando Code Camp 2025 will be held on <strong>April 5th, 2025</strong> at <strong>Seminole State College</strong> in Sanford, FL. Please be aware that there are several Seminole State College campuses, so be sure to navigate to the Sanford location shown below!</p> 
   </div>
 
   <h2>Event Address</h2>
