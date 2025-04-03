@@ -23,8 +23,8 @@ More information on the location of the event and parking can be found on the [L
 ## Food
 
 The following will be provided to attendees:
-- Breakfast is sponsored by [Dynabyte](https://dynabytetech.com/en/) and will be provided by Dunkin Donuts - it will include donuts, bagels, and coffee.
-- Lunch will be provided Toojay's Deli - it will include sandwiches, chips, and various drinks (place your lunch order when you register!)
+- Breakfast is sponsored by [Dynabyte](https://dynabytetech.com/en/) and the donuts and coffee will be provided by Dunkin Donuts.
+- Lunch will be provided Jason's Deli - it will include sandwiches, chips, and various drinks (place your lunch order when you register!)
 - An afternoon snack
 - Coffee, soda, and water (all day!)
 
@@ -49,7 +49,7 @@ Thanks to our excellent **[sponsors](/sponsors/)**, we'll be having a raffle for
 In order to participate:
 
 - Visit each of our sponsors for a stamp on your sponsors bingo card (provided on arrival at the event)
-- Drop off your bingo card at the ONETUG desk the lobby (rotunda) at some point during the afternoon (make sure that your **name is written on the card**!) - you'll then receive a raffle ticket to hold onto until the raffle event
+- Drop off your bingo card at the ONETUG desk in the lobby (rotunda) at some point during the afternoon (make sure that your **name is written on the card**!) - you'll then receive a raffle ticket to hold onto until the raffle event
 - You **must be present** for the raffle give-away at the end of the event in order to win!
 - Only one (1) raffle ticket per attendee
 
