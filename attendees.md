@@ -10,38 +10,48 @@ nav_exclude: false
 
 Orlando Code Camp 2025 will be held at Seminole State College in Sanford, FL on April 5, 2025 from 7:30 AM to 5:00 PM. We're looking forward to seeing you! Here's some helpful information about the event:
 
-# Sign-Up 
+## Sign-Up 
 
 To sign up to attend OCC2025, click the link below:
 
 {% include signup-link.md %}
 
-# Location
+## Location
 
 More information on the location of the event and parking can be found on the [Location page](/location/). 
 
-# Food
+## Food
 
 The following will be provided to attendees:
-- A breakfast selection including doughnuts and (TODO - ???)
-- Lunch (sandwiches, chips, beverage)
+- Breakfast is sponsored by [Dynabyte](https://dynabytetech.com/en/) and will be provided by Dunkin Donuts - it will include donuts, bagels, and coffee.
+- Lunch will be provided Toojay's Deli - it will include sandwiches, chips, and various drinks (place your lunch order when you register!)
 - An afternoon snack
 - Coffee, soda, and water (all day!)
 
 There will additionally be an after-party where food will be available!
 
-# Directions to the After-Party
+## Directions to the After-Party
 
-TODO - add directions
+After-party will be held at 4th Street Bar & Grill
 
-# Raffle
+After party will be at [4th Street Bar & Grill](https://4thstreetbargrill.com/).
+
+132 North 4th Street
+Suite 1200
+Lake Mary, FL 32746
+
+[Google Maps link](https://maps.app.goo.gl/vaApnmw9vsDyofqK6)
+
+## Raffle
 
 Thanks to our excellent **[sponsors](/sponsors/)**, we'll be having a raffle for some fun prizes! 
 
 In order to participate:
+
 - Visit each of our sponsors for a stamp on your sponsors bingo card (provided on arrival at the event)
-- Drop off your bingo card in the lobby after the event sessions (make sure that your **name is written on the card**!)
-- You **must be present** for the raffle give-away at the end of the even in order to win!
+- Drop off your bingo card at the ONETUG desk the lobby (rotunda) at some point during the afternoon (make sure that your **name is written on the card**!) - you'll then receive a raffle ticket to hold onto until the raffle event
+- You **must be present** for the raffle give-away at the end of the event in order to win!
+- Only one (1) raffle ticket per attendee
 
 
 <!-- "coming soon" section Commented out until next year!
