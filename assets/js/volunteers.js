@@ -5,7 +5,7 @@
     });
 
     function copyEmailToClipboard() {
-        const email = "volunteers@onetug.org";
+        const email = "volunteers@onetug.net";
         if(!navigator.clipboard) {
             alert("Copying to clipboard is not supported in this browser.");
             return;
