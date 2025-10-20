@@ -8,13 +8,14 @@ nav_exclude: false
 
 # Attendees
 
-Orlando Code Camp 2025 will be held at Seminole State College in Sanford, FL on April 5, 2025 from 7:30 AM to 5:00 PM. We're looking forward to seeing you! Here's some helpful information about the event:
+## Save the Date!
+Orlando Code Camp 2026 will be held at Seminole State College in Sanford, FL on April 11, 2026 from 7:30 AM to 5:00 PM. We're looking forward to seeing you! Here's some helpful information about the event:
 
-## Sign-Up 
+<!-- ## Sign-Up 
 
-To sign up to attend OCC2025, click the link below:
-
-{% include signup-link.md %}
+To sign up to attend OCC2026, click the link below:
+{::comment}
+include signup-link.md -->
 
 ## Location
 
@@ -23,7 +24,7 @@ More information on the location of the event and parking can be found on the [L
 ## Food
 
 The following will be provided to attendees:
-- Breakfast is sponsored by [Dynabyte](https://dynabytetech.com/en/) and the donuts and coffee will be provided by Dunkin Donuts.
+- Breakfast and coffee will be provided by Dunkin.
 - Lunch will be provided Jason's Deli - it will include sandwiches, chips, and various drinks (place your lunch order when you register!)
 - An afternoon snack
 - Coffee, soda, and water (all day!)
