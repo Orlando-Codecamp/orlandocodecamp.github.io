@@ -233,14 +233,14 @@ has_toc: true
 
 <h1>Location</h1>
   
-<div class="event-banner">
-  <div id="countdown-clock" class="countdown-container">{% include clock.html %}</div>
-  <div class="cta-button">{% include signup-link.md %}</div>
-</div>
+<!-- <div class="event-banner">
+  <div id="countdown-clock" class="countdown-container">include clock02.html</div>
+  <div class="cta-button">include signup-link.md</div>
+</div> -->
 
 <div class="location-container">
   <div class="event-highlight">
-    <p>Orlando Code Camp 2025 will be held on <strong>April 5th, 2025</strong> at <strong>Seminole State College</strong> in Sanford, FL. Please be aware that there are several Seminole State College campuses, so be sure to navigate to the Sanford location shown below!</p> 
+    <p>Orlando Code Camp 2026 will be held on <strong>April 11th, 2026</strong> at <strong>Seminole State College</strong> in Sanford, FL. Please be aware that there are several Seminole State College campuses, so be sure to navigate to the Sanford location shown below!</p> 
   </div>
 
   <h2>Event Address</h2>
@@ -303,7 +303,7 @@ has_toc: true
       </div>
     </div>
 
-    <div class="hotel-info">
+    <!-- <div class="hotel-info">
       <h3>Recommended Hotels</h3>
       <div class="hotel-cards">
         <div class="hotel-card">
@@ -319,7 +319,7 @@ has_toc: true
           <a href="tel:+14075313555" class="phone-link">+1 407-531-3555</a>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 

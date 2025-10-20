@@ -435,28 +435,26 @@ nav_order: 1
       <img src="/assets/img/occ-tree-logo.png" alt="Orlando Code Camp Logo" class="hero-logo">
       
       <div class="hero-title-container">
-        <span class="hero-annual">17th Annual</span>
+        <span class="hero-annual">18th Annual</span>
         <h1 class="hero-title">Orlando<br>Code Camp</h1>
-        <span class="hero-year">2025</span>
+        <span class="hero-year">2026</span>
       </div>
     </div>
     
-    <h2 class="hero-subtitle">April 5th, 2025 • Seminole State College, Sanford, FL</h2>
+    <h2 class="hero-subtitle">April 11th, 2026 • Seminole State College, Sanford, FL</h2>
     <p class="hero-description">A full day of learning, networking, and technical sessions with over 70 speakers and sessions.</p>
     
-    <div class="hero-cta-container">
+    <!-- <div class="hero-cta-container">
       <a href="https://www.eventbrite.com/e/orlando-code-camp-2025-tickets-1244003330449" target="_blank" class="primary-cta">Register Now - It's Free!</a>
       <a href="/schedule/" class="secondary-cta">View Schedule</a>
-    </div>
+    </div> -->
   </div>
 </div>
 
 <!-- Countdown Section -->
 <div id="countdown-clock" class="countdown-section">
-  {% include clock.html %}
+  {% include clock02.html %}
 </div>
-
-{% include keynote-highlight-section.html %}
 
 <!-- Event Info -->
 <div class="event-info">
@@ -469,34 +467,33 @@ nav_order: 1
 
 <!-- Event Photo -->
 <div class="event-photo">
-  <img src="/assets/img/photos/occ-keynote.jpg" alt="Orlando CC KeyNote">
-  <p class="photo-credit">Photo courtesy of Adam Stark</p>
+  <img src="/assets/img/photos/orlando-code-camp-2025-keynote-001.jpeg" alt="Orlando CC KeyNote">
 </div>
 
 <!-- Quick Links Section -->
 <div class="quick-links-section">
   <h2>Explore More</h2>
   <div class="quick-links">
-    <a href="/attendees" class="quick-link">
+    <!-- <a href="/attendees" class="quick-link">
       <span class="quick-link-icon">📋</span>
       <span class="quick-link-text">Attendee Info</span>
-    </a>
-    <a href="/schedule" class="quick-link">
+    </a> -->
+    <!-- <a href="/schedule" class="quick-link">
       <span class="quick-link-icon">🗓️</span>
       <span class="quick-link-text">Event Schedule</span>
-    </a>
+    </a> -->
     <a href="/sponsors" class="quick-link">
       <span class="quick-link-icon">🤝</span>
       <span class="quick-link-text">Our Sponsors</span>
     </a>
-    <a href="/speakers/#speaker-list" class="quick-link">
+    <!-- <a href="/speakers/#speaker-list" class="quick-link">
       <span class="quick-link-icon">🎤</span>
       <span class="quick-link-text">70+ Speakers</span>
-    </a>
-    <a href="/sessions" class="quick-link">
+    </a> -->
+    <!-- <a href="/sessions" class="quick-link">
       <span class="quick-link-icon">💻</span>
       <span class="quick-link-text">70+ Sessions</span>
-    </a>
+    </a> -->
     <a href="/partners" class="quick-link">
       <span class="quick-link-icon">🔗</span>
       <span class="quick-link-text">Community Partners</span>
@@ -507,7 +504,7 @@ nav_order: 1
 ---
 
 <!-- Sponsors Section -->
-<h2 class="section-title">Our Sponsors</h2>
+<!-- <h2 class="section-title">Our Sponsors</h2>
 <p class="section-subtitle">Orlando Code Camp is generously sponsored by the following companies:</p>
 
 <div class="sponsors">
@@ -520,7 +517,7 @@ nav_order: 1
     </div>
   {% endif %}
 {% endfor %}
-</div>
+</div> -->
 
 ---
 
