@@ -9,7 +9,7 @@ nav_order: 9
 
 <p />
 
-![Orlando CC Sponsors](/assets/img/photos/occ-sponsors.jpg "Orlando CC Sponsors")
+![Orlando CC Sponsors](/assets/img/photos/sponsors-gallery-2025.jpeg "Orlando CC Sponsors"){:class="photo-sponsors-page"}
 
 <p />
 
@@ -17,7 +17,7 @@ nav_order: 9
 
 <p />
 
-Here is our [sponsorship package](/assets/doc/OrlandoCodeCamp2025-SponsorInfo.pdf){:target="_blank"}.
+Here is our [sponsorship package](/assets/doc/Orlando-Code-Camp-2026-Sponsor-Info.pdf){:target="_blank"}.
 
 If you're interested in sponsoring, please email the OCC organizers at [board@onetug.net](mailto:board@onetug.net).
 
