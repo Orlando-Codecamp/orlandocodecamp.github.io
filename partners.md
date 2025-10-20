@@ -7,8 +7,6 @@ nav_order: 10
 
 # Community Partners and Local Events
 
-<p />
-
 ## Orlando .NET User Group (ONETUG)
 
 ![ONETUG logo](/assets/img/partners/ONETUG.png "Orlando .NET User Group"){:class="logo-partner-page"}

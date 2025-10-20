@@ -3,7 +3,7 @@ layout: page
 title: Sessions
 permalink: /sessions/
 nav_order: 7
-#nav_exclude: true
+nav_exclude: true
 ---
 
 # Sessions

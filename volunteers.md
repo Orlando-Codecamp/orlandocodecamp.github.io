@@ -4,6 +4,7 @@ title: Volunteers
 permalink: /volunteers/
 description: "Orlando Code Camp is run by volunteers. We are always looking for more help! If you would like to volunteer, please let us know."
 nav_order: 4
+nav_exclude: false
 ---
 
 <style>
@@ -157,8 +158,8 @@ nav_order: 4
 <!-- Hero CTA Section -->
 <div class="hero-cta">
   <h2>Ready to Join Our Volunteer Team?</h2>
-  <p>Sign up using the link below to register as a volunteer for Orlando Code Camp 2025!</p>
-  <a href="https://schedule.planhero.com/events/472d672d9/orlando-code-camp" class="signup-btn" target="_blank" rel="noopener">
+  <p>Sign up using the link below to register as a volunteer for Orlando Code Camp 2026!</p>
+  <a href="https://schedule.planhero.com/events/31bbd1d55/orlando-code-camp-2026" class="signup-btn" target="_blank" rel="noopener">
     Register as a Volunteer
   </a>
   <p>Have questions? Feel free to contact us:</p>
@@ -185,7 +186,7 @@ As a volunteer, you'll help with various aspects of the event, from registration
 
 ## Details Coming Soon
 
-We're currently finalizing our volunteer roles and schedules for the 2025 event. More detailed information will be posted here in the next couple of days.
+We're currently finalizing our volunteer roles and schedules for the 2026 event. More detailed information will be posted here in the coming weeks.
 
 ## Previous Volunteer Activities
 

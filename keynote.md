@@ -3,7 +3,7 @@ layout: page
 title: Keynote
 permalink: /keynote/
 nav_order: 5
-# nav_exclude: true
+nav_exclude: true
 ---
 
 
@@ -141,29 +141,29 @@ nav_order: 5
   <div class="keynote-speaker">
     <div class="keynote-content">
       <div class="keynote-image">
-        <img src="/assets/img/photos/shaun-walker.jpg" alt="Shaun Walker" width="250" height="250" />
+        <!-- <img src="/assets/img/photos/shaun-walker.jpg" alt="Shaun Walker" width="250" height="250" /> -->
       </div>
       <div class="keynote-details">
-        <h2>Shaun Walker</h2>
-        <span class="speaker-title">Creator of DotNetNuke & Chair of the .NET Foundation Project Committee</span>
+        <h2>To Be Determined</h2>
+        <span class="speaker-title">_</span>
         
         <div>
           <div class="section-label">Topic</div>
-          <h3>Who Pays for Open Source</h3>
+          <h3>Coming Soon</h3>
         </div>
         
         <div class="abstract">
           <div class="section-label">Abstract</div>
-          <p>
+          <!-- <p>
             Open source software plays a critical role in the infrastructure of most modern organizations. Yet despite this fact, the health and long-term viability of most open source projects are fraught with risk and uncertainty. Establishing sustainable business models to support open source is a non-trivial problem. A few companies have demonstrated that it is possible to build a successful business around open source software, however far more open source maintainers are suffering from fatigue and burnout. In this session we are going to explore the challenges and opportunities related to open source sustainability, including a candid and unbiased view into the mechanics of these fragile ecosystems.
-          </p>
+          </p> -->
         </div>
         
         <div class="bio">
           <div class="section-label">About Shaun</div>
-          <p>
+          <!-- <p>
             Shaun Walker is the original creator of Oqtane and DotNetNuke (DNN), web application frameworks which have earned the recognition of being amongst the most pioneering and widely adopted Open Source projects native to the Microsoft platform. He has 30+ years professional experience in architecting and implementing enterprise software solutions for private and public organizations. Based on his significant community contributions he has been recognized as a Microsoft Most Valuable Professional (MVP) for over 16 years. He was recognized in 2011 as a leading entrepreneur in the Business In Vancouver (BIV) Forty Under 40 business awards, and is currently the Chair of the Project Committee for the .NET Foundation.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
