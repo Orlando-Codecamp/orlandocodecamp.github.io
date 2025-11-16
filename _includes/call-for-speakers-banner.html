@@ -1,0 +1,239 @@
+<style>
+/* Call for Speakers Banner Styles */
+  .cfs-banner {
+    margin: 2rem 0;
+    padding: 1.0rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cfs-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(to right, #4169E1, #FFD700, #228B22, #FF8C00);
+  }
+
+  .cfs-banner-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #e0e0e0;
+  }
+
+  .cfs-banner-label {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #3182ce;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .cfs-banner-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cfs-banner-logo {
+    flex-shrink: 0;
+  }
+
+  .cfs-banner-logo img {
+    width: 140px;
+    height: auto;
+    display: block;
+  }
+
+  .cfs-banner-title-group {
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .cfs-banner-annual {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+  }
+
+  .cfs-banner-title {
+    font-size: 2.5rem !important;
+    font-weight: 800;
+    color: #000000;
+    margin: 0;
+    line-height: 1.1;
+  }
+
+  .cfs-banner-title-line {
+    display: block;
+  }
+
+  .cfs-banner-separator {
+    width: 0.375em;
+    height: 120px;
+    background-color: #4169E1;
+    /* background: linear-gradient(to bottom, #4169E1, #FFD700, #228B22, #FF8C00);  */
+    flex-shrink: 0;
+  }
+
+  .cfs-banner-year {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #4169E1;
+    flex-shrink: 0;
+  }
+
+  .cfs-banner-footer {
+    text-align: center;
+  }
+
+  .cfs-banner-details {
+    font-size: 2.0rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0rem;
+  }
+
+  .cfs-banner-cta {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, #FF8C00 0%, #FF6B00 100%);
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .cfs-banner-cta:hover {
+    background: linear-gradient(135deg, #FF6B00 0%, #FF8C00 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+    color: white;
+  }
+
+  /* Tablet breakpoint */
+  @media (max-width: 1024px) {
+    .cfs-banner-middle {
+      gap: 1.5rem;
+    }
+
+    .cfs-banner-logo img {
+      width: 110px;
+    }
+
+    .cfs-banner-annual {
+      font-size: 1.4rem;
+    }
+
+    .cfs-banner-title {
+      font-size: 2rem !important;
+    }
+
+    .cfs-banner-separator {
+      height: 100px;
+      width: 2px;
+    }
+
+    .cfs-banner-year {
+      font-size: 3rem;
+    }
+
+    .cfs-banner-details {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Tablet and mobile breakpoint */
+  @media (max-width: 768px) {
+    .cfs-banner {
+      padding: 2rem 1.5rem;
+    }
+
+    .cfs-banner-label {
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+    }
+
+    .cfs-banner-middle {
+      gap: 1.5rem;
+    }
+
+    .cfs-banner-logo img {
+      width: 80px;
+    }
+
+    .cfs-banner-annual {
+      font-size: 1.2rem;
+    }
+
+    .cfs-banner-title {
+      font-size: 1.8rem !important;
+    }
+
+    .cfs-banner-separator {
+      height: 80px;
+      width: 2px;
+    }
+
+    .cfs-banner-year {
+      font-size: 2.5rem;
+    }
+
+    .cfs-banner-details {
+      font-size: 1.2rem;
+    }
+
+    .cfs-banner-cta {
+      font-size: 1rem;
+      padding: 0.8rem 2rem;
+    }
+  }
+</style>
+
+<!-- Call for Speakers Banner -->
+<div class="cfs-banner">
+  <div class="cfs-banner-header">
+    <div class="cfs-banner-label">Call for Speakers</div>
+  </div>
+
+  <div class="cfs-banner-middle">
+    <div class="cfs-banner-logo">
+      <img src="/assets/img/occ-tree-logo.png" alt="Orlando Code Camp Logo" />
+    </div>
+
+    <div class="cfs-banner-title-group">
+      <div class="cfs-banner-annual">18th Annual</div>
+      <h2 class="cfs-banner-title">
+        <span class="cfs-banner-title-line">Orlando</span>
+        <span class="cfs-banner-title-line">Code Camp</span>
+      </h2>
+    </div>
+
+    <div class="cfs-banner-separator"></div>
+
+    <div class="cfs-banner-year">2026</div>
+  </div>
+
+  <div class="cfs-banner-footer">
+    <div class="cfs-banner-details">April 11th - Seminole State College</div>
+    <a href="https://sessionize.com/orlando-code-camp-2026/" target="_blank" rel="noopener noreferrer" class="cfs-banner-cta">Submit Your Session</a>
+  </div>
+</div>
