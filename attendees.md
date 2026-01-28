@@ -11,6 +11,8 @@ nav_exclude: false
 ## Save the Date!
 Orlando Code Camp 2026 will be held at Seminole State College in Sanford, FL on April 11, 2026 from 7:30 AM to 5:00 PM. We're looking forward to seeing you! Here's some helpful information about the event:
 
+{% include registration-banner.html %}
+
 <!-- ## Sign-Up 
 
 To sign up to attend OCC2026, click the link below:
