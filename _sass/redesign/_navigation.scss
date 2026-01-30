@@ -66,12 +66,12 @@
   }
 
   .logo-text {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-bold);
-    display: none;
+    line-height: 1.2;
 
     @include tablet-up {
-      display: block;
+      font-size: var(--font-size-lg);
     }
 
     span {
