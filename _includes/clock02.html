@@ -1,21 +1,22 @@
-<div class="pt1 f3 sans-serif" id="clock-div">
-  <div class="tc pa2 br3 dib clock-face">
-    <div class="pa2 br3 dib">
-      <span class="pa3 br3 dib digit" id="days">0</span>
-      <div class="f5 unit">Days</div>
-    </div>
-    <div class="pa2 br3 dib">
-      <span class="pa3 br3 dib digit" id="hours">0</span>
-      <div class="f5 unit">Hours</div>
-    </div>
-    <div class="pa2 br3 dib">
-      <span class="pa3 br3 dib digit" id="minutes">0</span>
-      <div class="f5 unit">Minutes</div>
-    </div>
-    <div class="pa2 br3 dib">
-      <span class="pa3 br3 dib digit" id="seconds">0</span>
-      <div class="f5 unit">Seconds</div>
-    </div>
+<!-- Countdown Timer - Legacy Include (for backwards compatibility) -->
+<!-- Prefer using {% include countdown.html %} instead -->
+
+<div class="countdown-container" id="clock-div">
+  <div class="countdown-item">
+    <span class="countdown-value" id="days">0</span>
+    <span class="countdown-label">Days</span>
+  </div>
+  <div class="countdown-item">
+    <span class="countdown-value" id="hours">00</span>
+    <span class="countdown-label">Hours</span>
+  </div>
+  <div class="countdown-item">
+    <span class="countdown-value" id="minutes">00</span>
+    <span class="countdown-label">Minutes</span>
+  </div>
+  <div class="countdown-item">
+    <span class="countdown-value" id="seconds">00</span>
+    <span class="countdown-label">Seconds</span>
   </div>
 </div>
 
