@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="200" viewBox="0 0 120 200">
+  <defs>
+    <style>
+      .brace {
+        fill: none;
+        stroke: #38a169;
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+
+  <!-- Left curly brace -->
+  <path class="brace" d="
+    M 40 20
+    Q 30 20, 30 35
+    L 30 85
+    Q 30 100, 20 100
+    Q 30 100, 30 115
+    L 30 165
+    Q 30 180, 40 180
+  "/>
+
+  <!-- Right curly brace -->
+  <path class="brace" d="
+    M 80 20
+    Q 90 20, 90 35
+    L 90 85
+    Q 90 100, 100 100
+    Q 90 100, 90 115
+    L 90 165
+    Q 90 180, 80 180
+  "/>
+</svg>
