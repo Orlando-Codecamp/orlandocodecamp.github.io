@@ -59,8 +59,7 @@ nav_order: 1
 {% include countdown.html %}
 
 <!-- Event Info Section -->
-<section class="section bg-primary section-pattern">
-  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
+<section class="section bg-primary">
   <div class="container">
     <div class="content-wrapper">
       <div class="event-highlight">
@@ -82,8 +81,7 @@ nav_order: 1
 </section>
 
 <!-- Event Photo -->
-<section class="section-sm bg-secondary section-pattern">
-  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
+<section class="section-sm bg-secondary">
   <div class="container">
     <div class="event-photo">
       <img src="{{ '/assets/img/photos/orlando-code-camp-2025-keynote-001.jpeg' | relative_url }}" alt="Orlando Code Camp 2025 Keynote">
@@ -92,8 +90,7 @@ nav_order: 1
 </section>
 
 <!-- Quick Links Section -->
-<section class="section bg-primary section-pattern">
-  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
+<section class="section bg-primary">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Explore</span>
@@ -136,8 +133,7 @@ nav_order: 1
 </section>
 
 <!-- Partners Preview Section -->
-<section class="section-sm bg-secondary section-pattern">
-  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
+<section class="section-sm bg-secondary">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Community</span>
@@ -162,8 +158,7 @@ nav_order: 1
 </section>
 
 <!-- Disclaimer Section -->
-<section class="section-sm bg-primary section-pattern">
-  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
+<section class="section-sm bg-primary">
   <div class="container">
     <div class="disclaimer" id="disclaimer">
       <h3>Disclaimer</h3>
