@@ -15,7 +15,7 @@ Usage: {% include hero.html
 {% assign variant = include.variant | default: "page" %}
 
 <section class="hero hero-{{ variant }} bg-secondary">
-  <div class="hero-pattern"></div>
+  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
   <div class="hero-gradient"></div>
 
   {% if variant == "home" %}

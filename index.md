@@ -81,7 +81,8 @@ nav_order: 1
 </section>
 
 <!-- Event Photo -->
-<section class="section-sm bg-secondary">
+<section class="section-sm bg-secondary section-pattern">
+  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
   <div class="container">
     <div class="event-photo">
       <img src="{{ '/assets/img/photos/orlando-code-camp-2025-keynote-001.jpeg' | relative_url }}" alt="Orlando Code Camp 2025 Keynote">
@@ -133,7 +134,8 @@ nav_order: 1
 </section>
 
 <!-- Partners Preview Section -->
-<section class="section-sm bg-secondary">
+<section class="section-sm bg-secondary section-pattern">
+  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
   <div class="container">
     <div class="section-header">
       <span class="section-label">Community</span>
