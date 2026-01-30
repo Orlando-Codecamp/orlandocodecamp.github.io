@@ -23,7 +23,7 @@ Usage: {% include sponsor-grid.html data=site.data.sponsors title="Our Sponsors"
       {% for item in items %}
         {% if item.logoPath %}
         <a href="{{ item.url }}" target="_blank" rel="noopener" class="logo-item {% if item.logoStyle == 'wide' %}logo-wide{% endif %}" title="{{ item.name }}">
-          <img src="{{ item.logoPath }}" alt="{{ item.name }}" loading="lazy">
+          <img src="{{ item.logoPath | relative_url }}" alt="{{ item.name }}" loading="lazy">
         </a>
         {% endif %}
       {% endfor %}

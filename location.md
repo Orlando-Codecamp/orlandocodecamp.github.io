@@ -51,8 +51,8 @@ nav_order: 2
 </div>
 
 <div class="text-center mt-8">
-  <a href="/assets/img/maps/Seminole State Landmarks - Full-Size.png" target="_blank" rel="noopener">
-    <img src="/assets/img/maps/Seminole State Landmarks - Thumbnail.png" alt="Campus Map with Event Landmarks" class="rounded-lg shadow-lg mx-auto" style="max-width: 100%;">
+  <a href="{{ '/assets/img/maps/Seminole State Landmarks - Full-Size.png' | relative_url }}" target="_blank" rel="noopener">
+    <img src="{{ '/assets/img/maps/Seminole State Landmarks - Thumbnail.png' | relative_url }}" alt="Campus Map with Event Landmarks" class="rounded-lg shadow-lg mx-auto" style="max-width: 100%;">
   </a>
   <p class="text-muted text-sm mt-2">Click to open the annotated campus map in a new window</p>
 </div>

@@ -14,7 +14,7 @@ nav_order: 1
   <div class="hero-container">
     <div class="hero-content">
       <div class="hero-logo-group">
-        <img src="/assets/img/occ-tree-logo-wht-grn.png" alt="Orlando Code Camp Logo" class="hero-logo">
+        <img src="{{ '/assets/img/occ-tree-logo-wht-grn.png' | relative_url }}" alt="Orlando Code Camp Logo" class="hero-logo">
         <div class="hero-title-group">
           <span class="hero-annual">18th Annual</span>
           <h1 class="hero-title">Orlando<br>Code Camp</h1>
@@ -28,7 +28,7 @@ nav_order: 1
       <div class="hero-presented-by">
         <span>Presented by</span>
         <a href="https://onetug.net" target="_blank" rel="noopener" class="presented-by-link">
-          <img src="/assets/img/onetug-tree-logo.png" alt="ONETUG Logo">
+          <img src="{{ '/assets/img/onetug-tree-logo.png' | relative_url }}" alt="ONETUG Logo">
           <span>Orlando .NET User Group</span>
         </a>
       </div>
@@ -38,7 +38,7 @@ nav_order: 1
         <a href="https://www.eventbrite.com/e/orlando-code-camp-2026-tickets" target="_blank" rel="noopener" class="btn btn-primary btn-lg animate-pulse-glow">
           Register Now - It's Free!
         </a>
-        <a href="/schedule/" class="btn btn-secondary btn-lg">
+        <a href="{{ '/schedule/' | relative_url }}" class="btn btn-secondary btn-lg">
           View Schedule
         </a>
       </div>
@@ -84,7 +84,7 @@ nav_order: 1
 <section class="section-sm bg-secondary">
   <div class="container">
     <div class="event-photo">
-      <img src="/assets/img/photos/orlando-code-camp-2025-keynote-001.jpeg" alt="Orlando Code Camp 2025 Keynote">
+      <img src="{{ '/assets/img/photos/orlando-code-camp-2025-keynote-001.jpeg' | relative_url }}" alt="Orlando Code Camp 2025 Keynote">
     </div>
   </div>
 </section>
@@ -99,32 +99,32 @@ nav_order: 1
     </div>
 
     <div class="grid grid-3 stagger-children">
-      <a href="/location/" class="card card-quick-link">
+      <a href="{{ '/location/' | relative_url }}" class="card card-quick-link">
         <span class="card-icon">📍</span>
         <span class="card-text">Location &amp; Directions</span>
       </a>
 
-      <a href="/attendees/" class="card card-quick-link">
+      <a href="{{ '/attendees/' | relative_url }}" class="card card-quick-link">
         <span class="card-icon">🎟️</span>
         <span class="card-text">Attendee Information</span>
       </a>
 
-      <a href="/speakers/" class="card card-quick-link">
+      <a href="{{ '/speakers/' | relative_url }}" class="card card-quick-link">
         <span class="card-icon">🎤</span>
         <span class="card-text">Speakers</span>
       </a>
 
-      <a href="/sessions/" class="card card-quick-link">
+      <a href="{{ '/sessions/' | relative_url }}" class="card card-quick-link">
         <span class="card-icon">💻</span>
         <span class="card-text">Sessions</span>
       </a>
 
-      <a href="/volunteers/" class="card card-quick-link">
+      <a href="{{ '/volunteers/' | relative_url }}" class="card card-quick-link">
         <span class="card-icon">🙋</span>
         <span class="card-text">Volunteer</span>
       </a>
 
-      <a href="/sponsors/" class="card card-quick-link">
+      <a href="{{ '/sponsors/' | relative_url }}" class="card card-quick-link">
         <span class="card-icon">🤝</span>
         <span class="card-text">Sponsors &amp; Partners</span>
       </a>
@@ -145,14 +145,14 @@ nav_order: 1
       {% for partner in site.data.partners %}
         {% if partner.logoPath %}
         <a href="{{ partner.url }}" target="_blank" rel="noopener" class="logo-item {% if partner.logoStyle == 'wide' %}logo-wide{% endif %}" title="{{ partner.name }}">
-          <img src="{{ partner.logoPath }}" alt="{{ partner.name }}" loading="lazy">
+          <img src="{{ partner.logoPath | relative_url }}" alt="{{ partner.name }}" loading="lazy">
         </a>
         {% endif %}
       {% endfor %}
     </div>
 
     <div class="text-center mt-8">
-      <a href="/sponsors/#partners" class="btn btn-secondary">View All Partners</a>
+      <a href="{{ '/sponsors/#partners' | relative_url }}" class="btn btn-secondary">View All Partners</a>
     </div>
   </div>
 </section>

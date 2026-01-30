@@ -17,7 +17,7 @@ nav_order: 4
 </div>
 
 <div class="event-photo">
-  <img src="/assets/img/photos/occ-lunch.jpg" alt="Orlando Code Camp Volunteers">
+  <img src="{{ '/assets/img/photos/occ-lunch.jpg' | relative_url }}" alt="Orlando Code Camp Volunteers">
   <p class="photo-credit">Orlando Code Camp community volunteers</p>
 </div>
 
