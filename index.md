@@ -6,7 +6,7 @@ nav_order: 1
 
 <!-- Hero Section -->
 <section class="hero hero-home bg-secondary">
-  <div class="hero-pattern"></div>
+  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
   <div class="hero-gradient"></div>
   <span class="hero-braces left">{</span>
   <span class="hero-braces right">}</span>
