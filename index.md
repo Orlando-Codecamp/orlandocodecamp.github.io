@@ -59,7 +59,8 @@ nav_order: 1
 {% include countdown.html %}
 
 <!-- Event Info Section -->
-<section class="section bg-primary">
+<section class="section bg-primary section-pattern">
+  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
   <div class="container">
     <div class="content-wrapper">
       <div class="event-highlight">
@@ -91,7 +92,8 @@ nav_order: 1
 </section>
 
 <!-- Quick Links Section -->
-<section class="section bg-primary">
+<section class="section bg-primary section-pattern">
+  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
   <div class="container">
     <div class="section-header">
       <span class="section-label">Explore</span>
@@ -160,7 +162,8 @@ nav_order: 1
 </section>
 
 <!-- Disclaimer Section -->
-<section class="section-sm bg-primary">
+<section class="section-sm bg-primary section-pattern">
+  <div class="hero-pattern" style="background-image: url('{{ '/assets/img/patterns/circuit.svg' | relative_url }}');"></div>
   <div class="container">
     <div class="disclaimer" id="disclaimer">
       <h3>Disclaimer</h3>
