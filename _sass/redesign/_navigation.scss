@@ -1,0 +1,296 @@
+// =============================================================================
+// Navigation
+// Header, Sticky Nav, Mobile Menu
+// =============================================================================
+
+// -------------------------------------------------------------------------
+// Site Header
+// -------------------------------------------------------------------------
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border-default);
+  height: var(--header-height-mobile);
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+
+  @include tablet-up {
+    height: var(--header-height);
+  }
+
+  &.scrolled {
+    background-color: rgba(45, 55, 72, 0.95);
+    backdrop-filter: blur(8px);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+
+  @include tablet-up {
+    padding: 0 var(--spacing-6);
+  }
+}
+
+// -------------------------------------------------------------------------
+// Logo
+// -------------------------------------------------------------------------
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  text-decoration: none;
+  color: var(--color-text-primary);
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  img {
+    height: 40px;
+    width: auto;
+
+    @include tablet-up {
+      height: 48px;
+    }
+  }
+
+  .logo-text {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    display: none;
+
+    @include tablet-up {
+      display: block;
+    }
+
+    span {
+      color: var(--color-accent-primary);
+    }
+  }
+}
+
+// -------------------------------------------------------------------------
+// Desktop Navigation
+// -------------------------------------------------------------------------
+.nav-desktop {
+  display: none;
+
+  @include tablet-up {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-1);
+  }
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-2) var(--spacing-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+
+  @include desktop-up {
+    padding: var(--spacing-2) var(--spacing-4);
+    font-size: var(--font-size-base);
+  }
+
+  &:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-tertiary);
+    text-decoration: none;
+  }
+
+  &.active {
+    color: var(--color-accent-primary);
+  }
+}
+
+.nav-cta {
+  margin-left: var(--spacing-2);
+}
+
+// -------------------------------------------------------------------------
+// Mobile Menu Toggle
+// -------------------------------------------------------------------------
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-primary);
+
+  @include tablet-up {
+    display: none;
+  }
+
+  .hamburger {
+    position: relative;
+    width: 24px;
+    height: 18px;
+
+    span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      border-radius: 1px;
+      transition: all var(--transition-normal);
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &:nth-child(3) {
+        bottom: 0;
+      }
+    }
+  }
+
+  &[aria-expanded="true"] {
+    .hamburger span {
+      &:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+      }
+    }
+  }
+}
+
+// -------------------------------------------------------------------------
+// Mobile Navigation
+// -------------------------------------------------------------------------
+.mobile-nav {
+  position: fixed;
+  top: var(--header-height-mobile);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-modal);
+  background-color: var(--color-bg-primary);
+  padding: var(--spacing-4);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform var(--transition-normal);
+
+  @include tablet-up {
+    display: none;
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.mobile-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-item {
+  margin-bottom: var(--spacing-1);
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: var(--spacing-4);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-secondary);
+    text-decoration: none;
+  }
+
+  &.active {
+    color: var(--color-accent-primary);
+    background-color: var(--color-accent-muted);
+  }
+}
+
+.mobile-nav-cta {
+  margin-top: var(--spacing-6);
+  padding-top: var(--spacing-6);
+  border-top: 1px solid var(--color-border-default);
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+// -------------------------------------------------------------------------
+// Navigation Overlay (when mobile menu is open)
+// -------------------------------------------------------------------------
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-modal-backdrop);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include tablet-up {
+    display: none;
+  }
+}
+
+// -------------------------------------------------------------------------
+// Body Lock (when mobile menu is open)
+// -------------------------------------------------------------------------
+body.nav-open {
+  overflow: hidden;
+
+  @include tablet-up {
+    overflow: auto;
+  }
+}
