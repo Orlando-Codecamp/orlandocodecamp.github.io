@@ -1,24 +1,21 @@
 ---
 layout: default
+title: Page Not Found
+permalink: /404.html
+nav_exclude: true
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
-
-<div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
+<div class="error-page">
+  <div>
+    <div class="error-braces">{ }</div>
+    <h1 class="error-code">404</h1>
+    <h2 class="error-title">Page Not Found</h2>
+    <p class="error-description">
+      Oops! The page you're looking for doesn't exist or has been moved.
+    </p>
+    <div class="flex justify-center gap-4 flex-wrap">
+      <a href="/" class="btn btn-primary">Go Home</a>
+      <a href="/schedule/" class="btn btn-secondary">View Schedule</a>
+    </div>
+  </div>
 </div>

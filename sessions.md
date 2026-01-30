@@ -2,20 +2,14 @@
 layout: page
 title: Sessions
 permalink: /sessions/
+description: "Browse the sessions at Orlando Code Camp 2026 - technical deep dives and strategic industry insights."
 nav_order: 7
-nav_exclude: false
 ---
-
-# Sessions
-
-<!-- ## Call for Speakers
-
-The Call for Speakers for Orlando Code Camp 2026 is now open on [Sessionize](https://sessionize.com/orlando-code-camp-2026/){:target="_blank"}. Read below for our confirmed sessions so far. -->
-
-{% include call-for-speakers-banner.html %}
 
 ## Confirmed Sessions (So Far)
 
-<em>The sessions below have been approved by the organizers and confirmed by their speakers. Check back later as we finalize the list of confirmed sessions.</em>
+The sessions below have been approved by the organizers and confirmed by their speakers. Check back later as we finalize the list of confirmed sessions.
 
-<script type="text/javascript" src="https://sessionize.com/api/v2/5lauy9om/view/Sessions"></script>
+<div class="sessionize-embed">
+  <script type="text/javascript" src="https://sessionize.com/api/v2/ze7ieij7/view/Sessions"></script>
+</div>

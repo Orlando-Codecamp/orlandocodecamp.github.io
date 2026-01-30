@@ -2,12 +2,11 @@
 layout: page
 title: Code of Conduct
 permalink: /codeofconduct/
+description: "Orlando Code Camp's code of conduct - ensuring a safe and welcoming experience for all attendees."
 nav_order: 11
 ---
 
-# Code of Conduct
-
-<p />
+<div class="coc-content">
 
 Orlando Code Camp is dedicated to providing an outstanding conference experience for everyone. We hope you find the sessions informative and entertaining, have a chance to connect with your peers and have a day full of learning and meaningful conversations. We expect all attendees, speakers, sponsors, organizers and volunteers at our conference to show respect and courtesy to others at all times.
 
@@ -17,7 +16,7 @@ Your participation at Orlando Code Camp means you agree to follow the Code of Co
 
 Orlando Code Camp is dedicated to providing a harassment-free conference experience for everyone, regardless of gender identity, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion, technology choices, preferred cloud partner, favorite IDE and tabs - vs - spaces. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate in conference talks, workshops, parties, social media and any other Orlando Code Camp venue.
 
-If a participant engages in harassing behavior, the conference organizers may take any action they deem appropriate, including warning the offender, expulsion from the event and/or a ban on attending future events.
+**If a participant engages in harassing behavior, the conference organizers may take any action they deem appropriate, including warning the offender, expulsion from the event and/or a ban on attending future events.**
 
 We also prohibit solicitation for non-sponsoring organizations during the conference or a sponsored after-hours gathering by a non-sponsoring party. There are plenty of sponsorship opportunities available for the Orlando Code Camp if you or your organization are interested.
 
@@ -35,12 +34,18 @@ Orlando Code Camp has many sponsorship opportunities available and we welcome an
 
 ## If There Is A Problem
 
-1. Attendees should show respect and courtesy to others;
+<div class="banner banner-warning">
 
-2. Individuals are encouraged to resolve simple disagreements;
+1. Attendees should show respect and courtesy to others
 
-3. Escalate harassment or more severe issues to event Organizers or Volunteers;
+2. Individuals are encouraged to resolve simple disagreements
 
-4. Attendees suffering outright assault or extreme harassment should contact campus security: **407-708-2178** or local law enforcement;
+3. Escalate harassment or more severe issues to event Organizers or Volunteers
+
+4. Attendees suffering outright assault or extreme harassment should contact campus security: **407-708-2178** or local law enforcement
+
+</div>
 
 We expect participants to follow these rules at all event venues, online or offline, and all conference-related social events.
+
+</div>

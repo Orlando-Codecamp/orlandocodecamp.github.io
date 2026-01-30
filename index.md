@@ -4,538 +4,165 @@ title: Home
 nav_order: 1
 ---
 
-{% raw %}
-<style>
-  /* Hero Section with Banner Background */
-  .hero-section {
-    position: relative;
-    color: white;
-    padding: 3rem 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    text-align: center;
-    overflow: hidden;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+<!-- Hero Section -->
+<section class="hero hero-home bg-secondary">
+  <div class="hero-pattern"></div>
+  <div class="hero-gradient"></div>
+  <span class="hero-braces left">{</span>
+  <span class="hero-braces right">}</span>
 
-  .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #2c5282; /* Base color that complements the tree logo */
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(44, 82, 130, 0.85), rgba(49, 130, 206, 0.85));
-    z-index: 2;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 3;
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero-logo-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    justify-content: center;
-  }
-
-  .hero-logo {
-    height: 120px;
-    margin-right: 1.5rem;
-    /* Add a slight animation on load */
-    animation: logoAppear 0.8s ease-out forwards;
-  }
-
-  @keyframes logoAppear {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .hero-title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .hero-annual {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: white;
-    margin: 0 0 0.3rem 0;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    opacity: 0.9;
-    letter-spacing: 1px;
-  }
-
-  .hero-title {
-    font-size: 2.8rem;
-    margin: 0;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    line-height: 1.1;
-    text-align: left;
-  }
-
-  .hero-year {
-    color: #FF6347; /* Orange/red color that matches the tree logo */
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
-  .hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin: 0.5rem 0 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  }
-
-  .hero-description {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Enhanced Primary CTA Button */
-  .primary-cta {
-    display: inline-block;
-    padding: 0.85rem 1.75rem;
-    border-radius: 6px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    background-color: #FFD700; /* Bright gold color that complements the logo */
-    color: #333333;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid #FFD700;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    animation: pulse 2s infinite;
-  }
-
-  .primary-cta:hover {
-    background-color: #FFC107;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-    color: #222222;
-  }
-
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
-    }
-    70% {
-      box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
-    }
-  }
-
-  .secondary-cta {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    border: 2px solid white;
-  }
-
-  .secondary-cta:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Hero CTA container */
-  .hero-cta-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-
-  /* Added background pattern for hero section */
-  .hero-pattern {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.3;
-    z-index: 1;
-  }
-
-  @media (max-width: 768px) {
-    .hero-logo-container {
-      flex-direction: column;
-      margin-bottom: 1.5rem;
-    }
-    
-    .hero-logo {
-      height: 100px;
-      margin-right: 0;
-      margin-bottom: 1rem;
-    }
-    
-    .hero-title-container {
-      align-items: center;
-    }
-    
-    .hero-annual {
-      text-align: center;
-    }
-    
-    .hero-title {
-      font-size: 2.2rem;
-      text-align: center;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.2rem;
-      text-align: center;
-    }
-  }
-  
-  /* Countdown Section */
-  .countdown-section {
-    margin: 2rem 0;
-    text-align: center;
-  }
-  
-  /* Event Banner */
-  .event-banner {
-    margin: 2rem 0;
-    text-align: center;
-  }
-  
-  .event-banner img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Event Info */
-  .event-info {
-    margin: 2rem 0;
-    line-height: 1.6;
-  }
-  
-  /* Event Photo */
-  .event-photo {
-    margin: 2rem 0;
-    text-align: center;
-  }
-  
-  .event-photo img {
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .photo-credit {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: #718096;
-  }
-  
-  /* Quick Links Section */
-  .quick-links-section {
-    margin: 3rem 0;
-  }
-  
-  .quick-links-section h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .quick-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-  
-  .quick-link {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
-    background-color: #f7fafc;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #2d3748;
-    transition: all 0.3s ease;
-  }
-  
-  .quick-link:hover {
-    background-color: #edf2f7;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-  
-  .quick-link-icon {
-    font-size: 1.5rem;
-    margin-right: 0.75rem;
-  }
-  
-  .quick-link-text {
-    font-weight: 500;
-  }
-  
-  /* Section Titles */
-  .section-title {
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  
-  .section-subtitle {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: #718096;
-  }
-  
-  /* Sponsors and Partners */
-  .partners, .sponsors {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    border-radius: 15px;   
-    padding: 15px;
-    background-color: #f7f7f7;
-    margin-bottom: 2rem;
-  }
-
-  .partners img, .sponsors img {
-    background-color: white;
-    width: 100%; 
-    height: 100%;    
-    object-fit: contain;
-    padding: 20px;
-  }
-
-  .sponsor-partner.wide {
-    grid-column: span 2;
-  }
-
-  .sponsor-partner.standard {
-    grid-column: span 1;
-  }
-
-  .sponsor-partner {
-    padding: 10px;
-    border-radius: 10px;
-    background-color: white;
-    text-align: center;
-    max-height: 250px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .sponsor-partner:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Ensure the button stands out even more by adding some space around it */
-  .hero-cta-container {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
-
-  @media (min-width: 765px) {
-    .sponsor-partner.standard {
-      grid-column: span 1;
-    }
-  }
-
-  @media (max-width: 765px) {
-    .sponsor-partner.standard {
-      grid-column: span 2;
-    }
-    
-    .hero-section {
-      padding: 3rem 1rem;
-    }
-    
-    .hero-content h1 {
-      font-size: 2rem;
-    }
-    
-    .hero-content h2 {
-      font-size: 1.2rem;
-    }
-    
-    .keynote-highlight {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .keynote-highlight-image {
-      margin: 0 auto;
-    }
-  }
-</style>
-{% endraw %}
-<!-- Hero Section with Banner Background and Tree Logo Image -->
-<div class="hero-section">
-  <div class="hero-background">
-    <!-- This is the base color background -->
-  </div>
-  
-  <div class="hero-pattern">
-    <!-- This adds a subtle pattern to the background -->
-  </div>
-  
-  <div class="hero-overlay">
-    <!-- This creates a semi-transparent overlay to ensure text remains readable -->
-  </div>
-  
-  <div class="hero-content">
-    <div class="hero-logo-container">
-      <!-- Real Tree Logo Image -->
-      <img src="/assets/img/occ-tree-logo.png" alt="Orlando Code Camp Logo" class="hero-logo">
-      
-      <div class="hero-title-container">
-        <span class="hero-annual">18th Annual</span>
-        <h1 class="hero-title">Orlando<br>Code Camp</h1>
-        <span class="hero-year">2026</span>
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-logo-group">
+        <img src="/assets/img/occ-tree-logo-wht-grn.png" alt="Orlando Code Camp Logo" class="hero-logo">
+        <div class="hero-title-group">
+          <span class="hero-annual">18th Annual</span>
+          <h1 class="hero-title">Orlando<br>Code Camp</h1>
+          <span class="hero-year">2026</span>
+        </div>
       </div>
+
+      <p class="hero-subtitle">April 11th, 2026 &bull; Seminole State College, Sanford, FL</p>
+      <p class="hero-description">A full day of learning, networking, and technical sessions with over 70 speakers and sessions. Free to attend!</p>
+
+      <div class="hero-presented-by">
+        <span>Presented by</span>
+        <a href="https://onetug.net" target="_blank" rel="noopener" class="presented-by-link">
+          <img src="/assets/img/onetug-tree-logo.png" alt="ONETUG Logo">
+          <span>Orlando .NET User Group</span>
+        </a>
+      </div>
+
+      <!-- Registration CTA - uncomment when registration opens
+      <div class="hero-cta-group">
+        <a href="https://www.eventbrite.com/e/orlando-code-camp-2026-tickets" target="_blank" rel="noopener" class="btn btn-primary btn-lg animate-pulse-glow">
+          Register Now - It's Free!
+        </a>
+        <a href="/schedule/" class="btn btn-secondary btn-lg">
+          View Schedule
+        </a>
+      </div>
+      -->
     </div>
-    
-    <h2 class="hero-subtitle">April 11th, 2026 • Seminole State College, Sanford, FL</h2>
-    <p class="hero-description">A full day of learning, networking, and technical sessions with over 70 speakers and sessions.</p>
-    
-    <!-- <div class="hero-cta-container">
-      <a href="https://www.eventbrite.com/e/orlando-code-camp-2025-tickets-1244003330449" target="_blank" class="primary-cta">Register Now - It's Free!</a>
-      <a href="/schedule/" class="secondary-cta">View Schedule</a>
-    </div> -->
   </div>
-</div>
+
+  <!-- Scroll Indicator -->
+  <a href="#countdown-section" class="scroll-indicator" aria-label="Scroll down">
+    <span class="scroll-indicator-text">Scroll</span>
+    <svg class="scroll-indicator-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+    </svg>
+  </a>
+</section>
 
 <!-- Countdown Section -->
-<div id="countdown-clock" class="countdown-section">
-  {% include clock02.html %}
-</div>
+{% include countdown.html %}
 
-<!-- Event Info -->
-<div class="event-info">
-  <p>Orlando Code Camp is organized by the <a href="https://onetug.net">Orlando .NET User Group (ONETUG)</a> and hosted at the Sanford/Lake Mary campus of <a href="#disclaimer">Seminole State College</a>.</p>
-  
-  <p>The event entry is <strong>FREE</strong> to all attendees, thanks to our generous sponsors.</p>
-  
-  <p>Our conference will showcase multiple tracks featuring cutting-edge technical deep dives and strategic industry insights, with focused 50-minute sessions presented by speakers from across the tech and software development landscape.</p>
-</div>
+<!-- Event Info Section -->
+<section class="section bg-primary">
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="event-highlight">
+        <span class="highlight-icon">📅</span>
+        <div class="highlight-content">
+          <strong>Save the Date!</strong> Orlando Code Camp 2026 is happening on April 11th at Seminole State College in Sanford, FL.
+        </div>
+      </div>
+
+      <div class="stack-lg">
+        <p>Orlando Code Camp is organized by the <a href="https://onetug.net" target="_blank" rel="noopener">Orlando .NET User Group (ONETUG)</a> and hosted at the Sanford/Lake Mary campus of <a href="https://www.seminolestate.edu/slm" target="_blank" rel="noopener">Seminole State College</a>.</p>
+
+        <p>The event entry is <strong>FREE</strong> to all attendees, thanks to our generous sponsors.</p>
+
+        <p>Our conference will showcase multiple tracks featuring cutting-edge technical deep dives and strategic industry insights, with focused 50-minute sessions presented by speakers from across the tech and software development landscape.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Event Photo -->
-<div class="event-photo">
-  <img src="/assets/img/photos/orlando-code-camp-2025-keynote-001.jpeg" alt="Orlando CC KeyNote">
-</div>
+<section class="section-sm bg-secondary">
+  <div class="container">
+    <div class="event-photo">
+      <img src="/assets/img/photos/orlando-code-camp-2025-keynote-001.jpeg" alt="Orlando Code Camp 2025 Keynote">
+    </div>
+  </div>
+</section>
 
 <!-- Quick Links Section -->
-<div class="quick-links-section">
-  <h2>Explore More</h2>
-  <div class="quick-links">
-    <!-- <a href="/attendees" class="quick-link">
-      <span class="quick-link-icon">📋</span>
-      <span class="quick-link-text">Attendee Info</span>
-    </a> -->
-    <!-- <a href="/schedule" class="quick-link">
-      <span class="quick-link-icon">🗓️</span>
-      <span class="quick-link-text">Event Schedule</span>
-    </a> -->
-    <a href="/sponsors" class="quick-link">
-      <span class="quick-link-icon">🤝</span>
-      <span class="quick-link-text">Our Sponsors</span>
-    </a>
-    <!-- <a href="/speakers/#speaker-list" class="quick-link">
-      <span class="quick-link-icon">🎤</span>
-      <span class="quick-link-text">70+ Speakers</span>
-    </a> -->
-    <!-- <a href="/sessions" class="quick-link">
-      <span class="quick-link-icon">💻</span>
-      <span class="quick-link-text">70+ Sessions</span>
-    </a> -->
-    <a href="/partners" class="quick-link">
-      <span class="quick-link-icon">🔗</span>
-      <span class="quick-link-text">Community Partners</span>
-    </a>
-  </div>
-</div>
+<section class="section bg-primary">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Explore</span>
+      <h2 class="section-title">Event Information</h2>
+      <p class="section-description">Everything you need to know about Orlando Code Camp 2026</p>
+    </div>
 
----
+    <div class="grid grid-3 stagger-children">
+      <a href="/location/" class="card card-quick-link">
+        <span class="card-icon">📍</span>
+        <span class="card-text">Location &amp; Directions</span>
+      </a>
 
-<!-- Sponsors Section -->
-<!-- <h2 class="section-title">Our Sponsors</h2>
-<p class="section-subtitle">Orlando Code Camp is generously sponsored by the following companies:</p>
+      <a href="/attendees/" class="card card-quick-link">
+        <span class="card-icon">🎟️</span>
+        <span class="card-text">Attendee Information</span>
+      </a>
 
-<div class="sponsors">
-{% for sponsor in site.data.sponsors %}
-  {% if sponsor.logoPath %}
-    <div class="sponsor-partner {{ sponsor.logoStyle }}">
-      <a href="{{ sponsor.url }}">
-        <img src="{{ sponsor.logoPath }}" alt="{{ sponsor.name }}" title="{{ sponsor.name }}">
+      <a href="/speakers/" class="card card-quick-link">
+        <span class="card-icon">🎤</span>
+        <span class="card-text">Speakers</span>
+      </a>
+
+      <a href="/sessions/" class="card card-quick-link">
+        <span class="card-icon">💻</span>
+        <span class="card-text">Sessions</span>
+      </a>
+
+      <a href="/volunteers/" class="card card-quick-link">
+        <span class="card-icon">🙋</span>
+        <span class="card-text">Volunteer</span>
+      </a>
+
+      <a href="/sponsors/" class="card card-quick-link">
+        <span class="card-icon">🤝</span>
+        <span class="card-text">Sponsors &amp; Partners</span>
       </a>
     </div>
-  {% endif %}
-{% endfor %}
-</div> -->
-
----
-
-<!-- Partners Section -->
-<h2 class="section-title">Community Partners</h2>
-<p class="section-subtitle">Orlando Code Camp proudly partners with the following local organizations:</p>
-
-<div class="partners">
-{% for partner in site.data.partners %}
-  <div class="sponsor-partner {{ partner.logoStyle }}">
-    <a href="{{ partner.url }}">
-      <img src="{{ partner.logoPath }}" alt="{{ partner.name }}" title="{{ partner.name }}">
-    </a>
   </div>
-{% endfor %}
-</div>
+</section>
 
----
+<!-- Partners Preview Section -->
+<section class="section-sm bg-secondary">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Community</span>
+      <h2 class="section-title">Our Partners</h2>
+      <p class="section-description">Orlando Code Camp proudly partners with these local organizations</p>
+    </div>
 
-<h3 id="disclaimer">Disclaimer</h3>
-<p><em>This event and its organizer are neither affiliated with nor endorsed by <a href="https://www.seminolestate.edu/slm" target="_blank">Seminole State College</a> of Florida. Any views expressed at this event are solely those of the person expressing them and not those of Seminole State College of Florida.</em></p>
+    <div class="logo-grid logo-grid-2">
+      {% for partner in site.data.partners %}
+        {% if partner.logoPath %}
+        <a href="{{ partner.url }}" target="_blank" rel="noopener" class="logo-item {% if partner.logoStyle == 'wide' %}logo-wide{% endif %}" title="{{ partner.name }}">
+          <img src="{{ partner.logoPath }}" alt="{{ partner.name }}" loading="lazy">
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="/sponsors/#partners" class="btn btn-secondary">View All Partners</a>
+    </div>
+  </div>
+</section>
+
+<!-- Disclaimer Section -->
+<section class="section-sm bg-primary">
+  <div class="container">
+    <div class="disclaimer" id="disclaimer">
+      <h3>Disclaimer</h3>
+      <p><em>This event and its organizer are neither affiliated with nor endorsed by <a href="https://www.seminolestate.edu/slm" target="_blank" rel="noopener">Seminole State College</a> of Florida. Any views expressed at this event are solely those of the person expressing them and not those of Seminole State College of Florida.</em></p>
+    </div>
+  </div>
+</section>

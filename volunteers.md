@@ -2,175 +2,18 @@
 layout: page
 title: Volunteers
 permalink: /volunteers/
-description: "Orlando Code Camp is run by volunteers. We are always looking for more help! If you would like to volunteer, please let us know."
+description: "Join our volunteer team and help make Orlando Code Camp 2026 a success!"
 nav_order: 4
-nav_exclude: false
 ---
 
-<style>
-  .volunteer-contact {
-    background-color: #f7fafc;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  }
-  
-  .contact-info {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .copy-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    width: 36px;
-    height: 36px;
-    background-color: #2c5282;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-  .copy-btn:hover {
-    background-color: #1a365d;
-    transform: translateY(-2px);
-  }
-  
-  /* Toast notification */
-  .toast {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background-color: #38a169;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    opacity: 0;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .toast.show {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-  
-  /* New hero CTA styles */
-  .hero-cta {
-    background: linear-gradient(135deg, #2c5282, #3182ce);
-    color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    margin: 1rem 0 2.5rem 0;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-  
-  .hero-cta h2 {
-    margin-top: 0;
-    font-size: 1.8rem;
-    color: white;
-  }
-  
-  .hero-cta p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .cta-email {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 1rem;
-    border-radius: 6px;
-    display: inline-flex;
-    align-items: center;
-    margin: 0 auto;
-    gap: 0.75rem;
-  }
-  
-  .cta-email-text {
-    font-weight: bold;
-    font-size: 1.2rem;
-    letter-spacing: 0.5px;
-  }
-  
-  .cta-copy-btn {
-    background-color: white;
-    color: #2c5282;
-    width: 40px;
-    height: 40px;
-    border-radius: 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-  }
-  
-  .cta-copy-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .cta-copy-btn svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-  }
-  
-  /* Sign-up button styles */
-  .signup-btn {
-    display: inline-block;
-    background-color: #ffffff;
-    color: #2c5282;
-    font-weight: bold;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-bottom: 1.5rem;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .signup-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  }
-</style>
-
-# Volunteers
-
-<!-- Hero CTA Section -->
-<div class="hero-cta">
+<!-- Volunteer CTA Section -->
+<div class="volunteer-cta">
   <h2>Ready to Join Our Volunteer Team?</h2>
   <p>Sign up using the link below to register as a volunteer for Orlando Code Camp 2026!</p>
-  <a href="https://schedule.planhero.com/events/31bbd1d55/orlando-code-camp-2026" class="signup-btn" target="_blank" rel="noopener">
+  <a href="https://schedule.planhero.com/events/31bbd1d55/orlando-code-camp-2026" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
     Register as a Volunteer
   </a>
-  <p>Have questions? Feel free to contact us:</p>
-  <div class="cta-email">
-    <span class="cta-email-text">volunteers@onetug.net</span>
-    <button id="copyEmailBtn" class="cta-copy-btn" aria-label="Copy email address to clipboard" title="Copy email address">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-      </svg>
-    </button>
-  </div>
+  <p class="mt-4 mb-0">Have questions? Email us at <strong>volunteers@onetug.net</strong></p>
 </div>
 
 <div class="event-photo">
@@ -199,11 +42,6 @@ Volunteers at Orlando Code Camp help with:
 - Attendee questions and directions
 - Keeping the event running smoothly throughout the day
 
-Volunteering at Orlando Code Camp is a fantastic way to give back to the tech community while making valuable connections and being part of an exciting, educational event!
-
-<!-- Toast notification -->
-<div id="toast" class="toast" role="alert" aria-live="polite">
-  <span>Email copied to clipboard!</span>
+<div class="banner banner-success mt-8">
+  Volunteering at Orlando Code Camp is a fantastic way to give back to the tech community while making valuable connections and being part of an exciting, educational event!
 </div>
-
-<script src="{{ '/assets/js/volunteers.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
