@@ -1,0 +1,23 @@
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+  <ul class="mobile-nav-list">
+    {% assign nav_pages = site.pages | where_exp: "page", "page.nav_exclude != true" | where_exp: "page", "page.nav_order" | sort: "nav_order" %}
+
+    {% for nav_page in nav_pages %}
+      {% if nav_page.title and nav_page.title != "" %}
+        <li class="mobile-nav-item">
+          <a href="{{ nav_page.url | relative_url }}" class="mobile-nav-link{% if page.url == nav_page.url %} active{% endif %}">
+            {{ nav_page.title }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <!-- Registration CTA (uncomment when registration opens)
+  <div class="mobile-nav-cta">
+    <a href="https://www.eventbrite.com/e/orlando-code-camp-2026-tickets" target="_blank" rel="noopener" class="btn btn-primary">
+      Register Free
+    </a>
+  </div>
+  -->
+</nav>

@@ -1,0 +1,65 @@
+{% comment %}
+Hero Section Include
+Usage: {% include hero.html
+  title="Page Title"
+  subtitle="Optional subtitle"
+  description="Optional description text"
+  show_logo=true
+  show_cta=true
+  cta_text="Register Now"
+  cta_url="https://..."
+  variant="home" or "page"
+%}
+{% endcomment %}
+
+{% assign variant = include.variant | default: "page" %}
+
+<section class="hero hero-{{ variant }} bg-secondary">
+  <div class="hero-pattern"></div>
+  <div class="hero-gradient"></div>
+
+  {% if variant == "home" %}
+  <span class="hero-braces left">{</span>
+  <span class="hero-braces right">}</span>
+  {% endif %}
+
+  <div class="hero-container">
+    <div class="hero-content">
+      {% if include.show_logo %}
+      <div class="hero-logo-group">
+        <img src="/assets/img/occ-tree-logo-wht-grn.png" alt="Orlando Code Camp Logo" class="hero-logo">
+        <div class="hero-title-group">
+          <span class="hero-annual">18th Annual</span>
+          <h1 class="hero-title">Orlando<br>Code Camp</h1>
+          <span class="hero-year">2026</span>
+        </div>
+      </div>
+      {% else %}
+      <h1 class="hero-title">{{ include.title }}</h1>
+      {% endif %}
+
+      {% if include.subtitle %}
+      <p class="hero-subtitle">{{ include.subtitle }}</p>
+      {% endif %}
+
+      {% if include.description %}
+      <p class="hero-description">{{ include.description }}</p>
+      {% endif %}
+
+      {% if include.show_cta %}
+      <div class="hero-cta-group">
+        {% if include.cta_url %}
+        <a href="{{ include.cta_url }}" class="btn btn-primary btn-lg" {% if include.cta_external %}target="_blank" rel="noopener"{% endif %}>
+          {{ include.cta_text | default: "Learn More" }}
+        </a>
+        {% endif %}
+        {% if include.secondary_cta_url %}
+        <a href="{{ include.secondary_cta_url }}" class="btn btn-secondary btn-lg">
+          {{ include.secondary_cta_text | default: "Learn More" }}
+        </a>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

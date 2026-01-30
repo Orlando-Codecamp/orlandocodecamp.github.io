@@ -1,0 +1,41 @@
+{% comment %}
+Sponsor/Partner Grid Include
+Usage: {% include sponsor-grid.html data=site.data.sponsors title="Our Sponsors" %}
+{% endcomment %}
+
+{% assign items = include.data %}
+{% assign title = include.title | default: "Sponsors" %}
+{% assign show_link = include.show_link | default: true %}
+
+{% if items.size > 0 %}
+<section class="section-sm">
+  <div class="container">
+    {% if include.show_header %}
+    <div class="section-header">
+      <h2 class="section-title">{{ title }}</h2>
+      {% if include.description %}
+      <p class="section-description">{{ include.description }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="logo-grid logo-grid-2">
+      {% for item in items %}
+        {% if item.logoPath %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener" class="logo-item {% if item.logoStyle == 'wide' %}logo-wide{% endif %}" title="{{ item.name }}">
+          <img src="{{ item.logoPath }}" alt="{{ item.name }}" loading="lazy">
+        </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if show_link and include.link_url %}
+    <div class="text-center mt-6">
+      <a href="{{ include.link_url }}" class="btn btn-secondary">
+        {{ include.link_text | default: "View All" }}
+      </a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

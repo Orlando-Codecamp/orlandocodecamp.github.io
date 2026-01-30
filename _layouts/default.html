@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO Meta Tags -->
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}">
+  <meta name="author" content="Orlando Code Camp">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}">
+  <meta property="og:image" content="{{ '/assets/img/occ-tree-logo-wht-grn-solid-bg.png' | absolute_url }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@{{ site.twitter_username }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/img/occ-tree-logo-wht-grn-solid-bg.png">
+  <link rel="apple-touch-icon" href="/assets/img/occ-tree-logo-wht-grn-solid-bg.png">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- Feed -->
+  {% feed_meta %}
+
+  {% if page.head_extra %}
+    {{ page.head_extra }}
+  {% endif %}
+</head>
+<body class="{% if page.body_class %}{{ page.body_class }}{% endif %}">
+  <div class="page-wrapper">
+    {% include header.html %}
+
+    <main class="main-content" id="main-content">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </div>
+
+  <!-- Mobile Navigation -->
+  {% include mobile-nav.html %}
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  <!-- Scripts -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
+  {% if page.scripts %}
+    {{ page.scripts }}
+  {% endif %}
+</body>
+</html>
