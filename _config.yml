@@ -14,56 +14,57 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Orlando Code Camp
-email: board@onetug.net
-description: >- # this means to ignore newlines until "baseurl:"
-  Orlando Code Camp 2026 - April 11th 2026 @ Seminole State College, Sanford, FL
+email: board@orlandocodecamp.com
+description: >-
+  Orlando Code Camp 2026 - April 11th 2026 @ Seminole State College, Sanford, FL.
+  Central Florida's premier free technology conference.
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://orlandocodecamp.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: onetug
-github_username:  onetug
+github_username: onetug
 search_enabled: false
 
 # Build settings
 markdown: kramdown
-theme: minima
+
+# Disable themes - using custom design
+theme: null
+remote_theme: null
+
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-seo-tag
+
 whitelist:
   - jekyll-redirect-from
-remote_theme: just-the-docs/just-the-docs
+  - jekyll-seo-tag
 
 # Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
 
 kramdown:
   hard_wrap: true
 
 sass:
-    sass_dir: _sass
-#   style: compressed
+  sass_dir: _sass
+  style: compressed
 
+# Default front matter values
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Navigation settings
 nav_external_links_new_tab: true
-
-# External navigation links
-nav_external_links:
-  # - title: Call for Speakers (Sessionize)
-  #   permalink: /call-for-speakers/
-  #   url: https://sessionize.com/orlando-code-camp-2025/
-  #   hide_icon: true
-  # - title: Schedule (Sessionize)
-  #   permalink: /schedule-external/
-  #   url: https://sessionize.com/view/ofd7i82z/GridSmart?format=Embed_Styled_Html&isDark=False&title=Orlando%20Code%20Camp%202025
-  #   hide_icon: true
-  # - title: Sign Up (Eventbrite)
-  #   url: https://www.eventbrite.com/e/orlando-code-camp-2025-tickets-1244003330449
-  #   hide_icon: true
