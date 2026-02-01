@@ -352,3 +352,4 @@ MigrationBackup/
 # Local Jekyll site install 
 _site/ 
 
+.claude/
