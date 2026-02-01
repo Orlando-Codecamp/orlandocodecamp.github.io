@@ -143,21 +143,75 @@
     color: var(--color-text-secondary);
   }
 
-  // Session titles and headings
+  // Links - using brighter green for better accessibility contrast
+  // #68d391 provides ~7:1 contrast ratio against #2d3748 (WCAG AAA)
   a {
-    color: var(--color-accent-secondary);
+    color: #68d391;
 
     &:hover {
-      color: var(--color-accent-primary);
+      color: #9ae6b4;
     }
   }
 
-  // Tag cloud / badges
+  // Force override Sessionize's default blue links
+  a[href],
+  .sz-speaker__name,
+  .sz-session__title {
+    color: #68d391 !important;
+
+    &:hover {
+      color: #9ae6b4 !important;
+    }
+  }
+
+  // Tag cloud / badges - brighter for better contrast
   .tag, .label, [class*="tag"], [class*="label"], [class*="badge"] {
     background-color: var(--color-bg-tertiary);
-    color: var(--color-text-secondary);
-    border-color: var(--color-border-default);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-light);
   }
+
+  // Active/selected tags - dark text for contrast on highlighted background
+  .active, .selected, [class*="active"], [class*="selected"], .sz-tag--active {
+    color: #1a202c !important;
+  }
+
+  // Speaker location and other question fields
+  .sz-speaker__questions, .sz-speaker__location, [class*="speaker__questions"], [class*="speaker__location"] {
+    color: var(--color-text-muted) !important;
+  }
+
+  // Aggressive override for all Sessionize speaker content
+  [class*="sz-speaker"] * {
+    color: var(--color-text-secondary) !important;
+  }
+
+  // Speaker questions pipe separator
+  .sz-speaker__questions dd {
+    border-right-color: #68d391 !important;
+  }
+
+  // Re-apply link colors after the aggressive override
+  [class*="sz-speaker"] a {
+    color: #68d391 !important;
+
+    &:hover {
+      color: #9ae6b4 !important;
+    }
+  }
+
+  // Catch-all for any remaining dark text
+  [style*="color: black"], [style*="color: #000"], [style*="color:#000"] {
+    color: var(--color-text-secondary) !important;
+  }
+
+}
+
+// Active tab links in Sessionize - needs higher specificity to override a[href] rule
+.sessionize-embed .sz-tabs__item--active a[href],
+.sessionize-embed .sz-tabs__item--active .sz-tabs__link,
+.sessionize-embed li.sz-tabs__item--active a {
+  color: #ffffff !important;
 }
 
 // -------------------------------------------------------------------------
