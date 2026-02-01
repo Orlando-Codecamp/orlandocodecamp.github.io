@@ -66,6 +66,7 @@ nav_order: 2
     <h4 class="info-card-title">SFB</h4>
     <p><strong>Sanford International Airport</strong></p>
     <p class="text-muted">Closest (5 minute drive)</p>
+    <p class="text-sm text-muted mt-2"><em>Note: SFB is a smaller airport with limited flight options. Some attendees may prefer it for its proximity to the venue.</em></p>
   </div>
 
   <div class="info-card">
