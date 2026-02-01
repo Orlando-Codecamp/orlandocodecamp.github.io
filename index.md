@@ -132,8 +132,94 @@ nav_order: 1
   </div>
 </section>
 
-<!-- Partners Preview Section -->
+<!-- Sponsors Preview Section -->
 <section class="section-sm bg-secondary">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Thank You</span>
+      <h2 class="section-title">Our Sponsors</h2>
+      <p class="section-description">Orlando Code Camp is made possible by these generous sponsors</p>
+    </div>
+
+    {% assign platinum_sponsors = site.data.sponsors | where: "level", "Platinum" %}
+    {% assign gold_sponsors = site.data.sponsors | where: "level", "Gold" %}
+    {% assign silver_sponsors = site.data.sponsors | where: "level", "Silver" %}
+    {% assign bronze_sponsors = site.data.sponsors | where: "level", "Bronze" %}
+
+    <div class="sponsor-showcase">
+      {% if platinum_sponsors.size > 0 %}
+      <div class="sponsor-row">
+        <span class="sponsor-row-label">Platinum</span>
+        <div class="sponsor-row-logos">
+          {% for sponsor in platinum_sponsors %}
+            {% if sponsor.logoPath %}
+            <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="sponsor-card sponsor-platinum" title="{{ sponsor.name }}">
+              {% if sponsor.sponsorType %}<span class="sponsor-type-badge">{{ sponsor.sponsorType }}</span>{% endif %}
+              <img src="{{ sponsor.logoPath | relative_url }}" alt="{{ sponsor.name }}" loading="lazy">
+            </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if gold_sponsors.size > 0 %}
+      <div class="sponsor-row">
+        <span class="sponsor-row-label">Gold</span>
+        <div class="sponsor-row-logos">
+          {% for sponsor in gold_sponsors %}
+            {% if sponsor.logoPath %}
+            <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="sponsor-card sponsor-gold" title="{{ sponsor.name }}">
+              {% if sponsor.sponsorType %}<span class="sponsor-type-badge">{{ sponsor.sponsorType }}</span>{% endif %}
+              <img src="{{ sponsor.logoPath | relative_url }}" alt="{{ sponsor.name }}" loading="lazy">
+            </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if silver_sponsors.size > 0 %}
+      <div class="sponsor-row">
+        <span class="sponsor-row-label">Silver</span>
+        <div class="sponsor-row-logos">
+          {% for sponsor in silver_sponsors %}
+            {% if sponsor.logoPath %}
+            <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="sponsor-card sponsor-silver" title="{{ sponsor.name }}">
+              {% if sponsor.sponsorType %}<span class="sponsor-type-badge">{{ sponsor.sponsorType }}</span>{% endif %}
+              <img src="{{ sponsor.logoPath | relative_url }}" alt="{{ sponsor.name }}" loading="lazy">
+            </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if bronze_sponsors.size > 0 %}
+      <div class="sponsor-row">
+        <span class="sponsor-row-label">Bronze</span>
+        <div class="sponsor-row-logos">
+          {% for sponsor in bronze_sponsors %}
+            {% if sponsor.logoPath %}
+            <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="sponsor-card sponsor-bronze" title="{{ sponsor.name }}">
+              {% if sponsor.sponsorType %}<span class="sponsor-type-badge">{{ sponsor.sponsorType }}</span>{% endif %}
+              <img src="{{ sponsor.logoPath | relative_url }}" alt="{{ sponsor.name }}" loading="lazy">
+            </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div class="text-center mt-8">
+      <a href="{{ '/sponsors/' | relative_url }}" class="btn btn-secondary">View All Sponsors</a>
+    </div>
+  </div>
+</section>
+
+<!-- Partners Preview Section -->
+<section class="section-sm bg-primary">
   <div class="container">
     <div class="section-header">
       <span class="section-label">Community</span>

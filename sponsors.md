@@ -6,19 +6,10 @@ description: "Meet the sponsors and community partners who make Orlando Code Cam
 nav_order: 9
 ---
 
-<div class="event-photo mb-8">
-  <img src="{{ '/assets/img/photos/sponsors-gallery-2025.jpeg' | relative_url }}" alt="Orlando Code Camp Sponsors">
-</div>
-
-## Become a Sponsor
-
-Orlando Code Camp is Central Florida's premier free technology conference. We welcome sponsorships from companies who want to connect with our community of developers, engineers, and tech professionals.
-
 <div class="banner banner-cta">
-  <h3 class="banner-title">Sponsorship Opportunities Available</h3>
-  <p class="banner-description">Download our sponsorship package to learn about the different tiers and benefits.</p>
+  <p class="banner-description">We welcome sponsorships from companies who want to connect with our community of developers, engineers, and tech professionals.</p>
   <a href="{{ '/assets/doc/Orlando-Code-Camp-2026-Sponsor-Info.pdf' | relative_url }}" target="_blank" rel="noopener" class="btn btn-primary">
-    View Sponsorship Package
+    Become a Sponsor
   </a>
   <p class="text-muted mt-4 mb-0">
     Questions? Email us at <a href="mailto:board@orlandocodecamp.com">board@orlandocodecamp.com</a>
@@ -29,27 +20,39 @@ Orlando Code Camp is Central Florida's premier free technology conference. We we
 
 ## 2026 Sponsors
 
-<p class="text-muted">Our 2026 sponsor lineup will be announced soon. Check back for updates!</p>
-
-{% comment %}
-Uncomment this section when sponsors are confirmed:
+<p class="text-muted mb-6">The sponsors listed below are our confirmed sponsors so far. Check back for updates as more sponsors come on board!</p>
 
 {% for sponsor in site.data.sponsors %}
 {% if sponsor.logoPath %}
-<div class="sponsor-tier">
-  <h3 class="tier-title">{{ sponsor.level }} Sponsor</h3>
-  <div class="logo-grid logo-grid-2">
-    <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="logo-item {% if sponsor.logoStyle == 'wide' %}logo-wide{% endif %}" title="{{ sponsor.name }}">
-      <img src="{{ sponsor.logoPath }}" alt="{{ sponsor.name }}">
-    </a>
+<div class="sponsor-feature-card mb-6">
+  {% if sponsor.sponsorType %}<span class="sponsor-type-badge sponsor-type-badge-overlay">{{ sponsor.sponsorType }}</span>{% endif %}
+  <div class="sponsor-feature-header">
+    <h3 class="sponsor-feature-name">{{ sponsor.name }}</h3>
   </div>
-  <p class="mt-2">
-    <a href="{{ sponsor.url }}" target="_blank" rel="noopener">{{ sponsor.urlLabelOverride | default: "Visit Website" }}</a>
-  </p>
+  <div class="sponsor-feature-content">
+    <div class="sponsor-feature-logo">
+      <img src="{{ sponsor.logoPath | relative_url }}" alt="{{ sponsor.name }}" style="background: white; padding: 1rem; border-radius: 8px;">
+    </div>
+    <div class="sponsor-feature-info">
+      <p>{{ sponsor.description | default: "More information coming soon." }}</p>
+      <div class="sponsor-feature-cta">
+        <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website</a>
+      </div>
+    </div>
+  </div>
 </div>
 {% endif %}
 {% endfor %}
-{% endcomment %}
+
+---
+
+## Sponsor Experience
+
+<div class="event-photo mt-6">
+  <img src="{{ '/assets/img/photos/sponsors-gallery-2025.jpeg' | relative_url }}" alt="Orlando Code Camp Sponsor Booths">
+</div>
+
+<p class="text-muted text-center mt-4">Sponsors connect with attendees at their booths throughout the event.</p>
 
 ---
 
@@ -125,7 +128,7 @@ Orlando Code Camp proudly partners with the following local organizations:
     <div>
       <p>A community focused on DevOps practices and culture in Orlando.</p>
       <p>
-        <a href="https://orlandodevs.com/groups/orlando-devops/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Website</a>
+        <a href="https://www.orlandodevs.com/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Website</a>
         <a href="https://www.meetup.com/Orlando-DevOps/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Meetup</a>
       </p>
     </div>

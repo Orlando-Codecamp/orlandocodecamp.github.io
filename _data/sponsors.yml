@@ -1,36 +1,54 @@
-# - name: Xebia
-#   logoPath: /assets/img/sponsors/Xebia_Logo_Purple_RGB-MD.png
+# Active 2026 Sponsors
+- name: Progress
+  logoPath: /assets/img/sponsors/Progress/Progress_PrimaryLogo.png
+  logoStyle: wide
+  url: https://www.progress.com/
+  level: Platinum
+  description: "Progress develops AI-powered enterprise solutions across data management, digital experiences, infrastructure operations, and DevOps automation. Their portfolio includes Telerik, Sitefinity CMS, MarkLogic, and Chef infrastructure automation—trusted by approximately 80% of Fortune 500 enterprises globally."
+- name: CyberMedics
+  logoPath: /assets/img/sponsors/CyberMedics/CyberMedics.svg
+  logoStyle: standard
+  url: https://www.cybermedics.com/
+  level: Gold
+  sponsorType: T-Shirt Sponsor
+  description: "CyberMedics is a custom software development company specializing in transforming business operations through tailored solutions. They offer business process automation, custom application development, and Microsoft platform consulting to help enterprises streamline workflows and improve productivity."
+
+# Pending / Invoiced Sponsors (uncomment when paid)
+# - name: Improving
+#   logoPath: /assets/img/sponsors/Improving/logo.png
 #   logoStyle: standard
-#   url: https://xebia.com/
-#   level: Speaker Party
+#   url: https://improving.com/
+#   level: Platinum
 # - name: Umbraco
-#   logoPath: /assets/img/sponsors/umbraco_logo_blue05.webp
+#   logoPath: /assets/img/sponsors/Umbraco/umbraco_logo_blue05.webp
 #   logoStyle: standard
 #   url: https://umbraco.com/
 #   level: Gold
+
+# Previous Year / Potential Sponsors (for reference)
+# - name: Xebia
+#   logoPath: /assets/img/sponsors/Xebia/Xebia_Logo_Purple_RGB-MD.png
+#   logoStyle: standard
+#   url: https://xebia.com/
+#   level: Speaker Party
 # - name: SNI Technology
-#   logoPath: /assets/img/sponsors/SNI-Technology-logo.jpg
+#   logoPath: /assets/img/sponsors/SNI-Technology/SNI-Technology-logo.jpg
 #   logoStyle: wide
 #   url: https://www.snicompanies.com/staffing-recruiting/orlando/
 #   urlLabelOverride: Orlando office
 #   level: Silver
-# - name: CyberMedics
-#   logoPath: /assets/img/sponsors/CyberMedics.svg
-#   logoStyle: standard
-#   url: https://www.cybermedics.com/
-#   level: Silver
 # - name: Tim Corey's DevForge
-#   logoPath: /assets/img/sponsors/Tim_Coreys_DevForge_Blue.png
+#   logoPath: /assets/img/sponsors/Tim-Coreys-DevForge/Tim_Coreys_DevForge_Blue.png
 #   logoStyle: standard
 #   url: https://devforge.com/
 #   level: Silver
 # - name: Dynabyte
-#   logoPath: /assets/img/sponsors/dynabyte.svg
+#   logoPath: /assets/img/sponsors/Dynabyte/dynabyte.svg
 #   logoStyle: standard
 #   url: https://dynabytetech.com/en/
 #   level: Coffee
 # - name: CODE Magazine
-#   logoPath: /assets/img/sponsors/code-sponsor.png
+#   logoPath: /assets/img/sponsors/CODE-Magazine/code-sponsor.png
 #   logoStyle: standard
 #   url: https://www.codemag.com/
 #   level: Swag
