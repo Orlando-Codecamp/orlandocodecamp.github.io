@@ -167,20 +167,25 @@
   gap: var(--spacing-3);
   margin-top: var(--spacing-10);
   margin-bottom: var(--spacing-16);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
   color: var(--color-text-secondary);
+  padding: var(--spacing-4);
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
 
   @include tablet-up {
     flex-direction: row;
     margin-top: var(--spacing-12);
     margin-bottom: 0;
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl);
     gap: var(--spacing-4);
+    padding: var(--spacing-5) var(--spacing-6);
   }
 
   > span {
     opacity: 0.9;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-semibold);
   }
 
   .presented-by-link {
@@ -205,20 +210,20 @@
     }
 
     img {
-      height: 48px;
+      height: 56px;
       width: auto;
 
       @include tablet-up {
-        height: 64px;
+        height: 80px;
       }
     }
 
     span {
       font-weight: var(--font-weight-bold);
-      font-size: var(--font-size-lg);
+      font-size: var(--font-size-xl);
 
       @include tablet-up {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-2xl);
       }
     }
   }
