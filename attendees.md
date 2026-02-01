@@ -21,26 +21,18 @@ More information on the location of the event and parking can be found on the [L
 The following will be provided to attendees:
 
 - **Breakfast** and coffee will be provided by Dunkin
-- **Lunch** will be provided by Jason's Deli - it will include sandwiches, chips, and various drinks (place your lunch order when you register!)
+- **Lunch** will be provided by Jason's Deli - it will include sandwiches, chips, and various drinks. *You'll choose your sandwich selection during Eventbrite registration.*
 - An **afternoon snack**
 - **Coffee, soda, and water** (all day!)
 
-There will additionally be an **after-party** where food will be available!
+## After-Party
 
-## Directions to the After-Party
-
-<div class="info-card info-card-highlight">
-  <h3 class="info-card-title">4th Street Bar & Grill</h3>
-  <div class="info-card-content">
-    <p>
-      132 North 4th Street<br>
-      Suite 1200<br>
-      Lake Mary, FL 32746
-    </p>
-    <p class="mt-4">
-      <a href="https://4thstreetbargrill.com/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Restaurant Website</a>
-      <a href="https://maps.app.goo.gl/vaApnmw9vsDyofqK6" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Get Directions</a>
-    </p>
+<div class="teaser-card">
+  <div class="teaser-card-icon">🎉</div>
+  <div class="teaser-card-content">
+    <h3 class="teaser-card-title">Join Us After the Event!</h3>
+    <p class="teaser-card-description">The learning doesn't stop when the sessions end. Join fellow attendees, speakers, and sponsors for food, drinks, and networking at our after-party.</p>
+    <p class="teaser-card-note">Venue details coming soon — check back for updates!</p>
   </div>
 </div>
 
