@@ -31,7 +31,7 @@ nav_order: 9
   </div>
   <div class="sponsor-feature-content">
     <div class="sponsor-feature-logo">
-      <img src="{{ sponsor.logoPath | relative_url }}" alt="{{ sponsor.name }}" style="background: white; padding: 1rem; border-radius: 8px;">
+      <img src="{{ sponsor.logoPath | relative_url }}" alt="{{ sponsor.name }}">
     </div>
     <div class="sponsor-feature-info">
       <p>{{ sponsor.description | default: "More information coming soon." }}</p>
@@ -64,7 +64,7 @@ Orlando Code Camp proudly partners with the following local organizations:
 
 <div class="info-card mb-6">
   <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/ONETUG.png' | relative_url }}" alt="ONETUG Logo" style="max-width: 200px; background: white; padding: 1rem; border-radius: 8px;">
+    <img src="{{ '/assets/img/partners/ONETUG.png' | relative_url }}" alt="ONETUG Logo" class="partner-logo">
     <div>
       <p>ONETUG is the organizer of Orlando Code Camp and a vibrant community of .NET developers in Central Florida.</p>
       <p>
@@ -79,7 +79,7 @@ Orlando Code Camp proudly partners with the following local organizations:
 
 <div class="info-card mb-6">
   <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/Seminole-State.png' | relative_url }}" alt="Seminole State College Logo" style="max-width: 200px; background: white; padding: 1rem; border-radius: 8px;">
+    <img src="{{ '/assets/img/partners/Seminole-State.png' | relative_url }}" alt="Seminole State College Logo" class="partner-logo">
     <div>
       <p>Our gracious host venue for Orlando Code Camp.</p>
       <p>
@@ -93,7 +93,7 @@ Orlando Code Camp proudly partners with the following local organizations:
 
 <div class="info-card mb-6">
   <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/GDG-Central-Florida.png' | relative_url }}" alt="GDG Central Florida Logo" style="max-width: 200px; background: white; padding: 1rem; border-radius: 8px;">
+    <img src="{{ '/assets/img/partners/GDG-Central-Florida.png' | relative_url }}" alt="GDG Central Florida Logo" class="partner-logo">
     <div>
       <p>A community of Google technology enthusiasts in Central Florida.</p>
       <p>
@@ -109,7 +109,7 @@ Orlando Code Camp proudly partners with the following local organizations:
 
 <div class="info-card mb-6">
   <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/SQLOrlando.jpg' | relative_url }}" alt="SQLOrlando Logo" style="max-width: 200px; background: white; padding: 1rem; border-radius: 8px;">
+    <img src="{{ '/assets/img/partners/SQLOrlando.jpg' | relative_url }}" alt="SQLOrlando Logo" class="partner-logo">
     <div>
       <p>Orlando's SQL Server and data platform user group.</p>
       <p>
@@ -124,7 +124,7 @@ Orlando Code Camp proudly partners with the following local organizations:
 
 <div class="info-card mb-6">
   <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/Orlando-DevOps-with-text.png' | relative_url }}" alt="Orlando DevOps Logo" style="max-width: 200px; background: white; padding: 1rem; border-radius: 8px;">
+    <img src="{{ '/assets/img/partners/Orlando-DevOps-with-text.png' | relative_url }}" alt="Orlando DevOps Logo" class="partner-logo">
     <div>
       <p>A community focused on DevOps practices and culture in Orlando.</p>
       <p>

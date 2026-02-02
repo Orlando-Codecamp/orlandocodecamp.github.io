@@ -13,7 +13,7 @@ nav_order: 4
   <a href="https://schedule.planhero.com/events/31bbd1d55/orlando-code-camp-2026" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
     Register as a Volunteer
   </a>
-  <p class="mt-4 mb-0">Have questions? Email us at <strong>volunteers@onetug.net</strong></p>
+  <p class="mt-4 mb-0">Have questions? Email us at <strong>volunteers@orlandocodecamp.com</strong></p>
 </div>
 
 <div class="event-photo">

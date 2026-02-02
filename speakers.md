@@ -31,7 +31,7 @@ nav_order: 6
 The speakers below have approved sessions and have confirmed their attendance. Check back later as we finalize the list of confirmed speakers.
 
 <div class="sessionize-embed">
-  <script type="text/javascript" src="https://sessionize.com/api/v2/5lauy9om/view/Speakers"></script>
+  <script type="text/javascript" src="https://sessionize.com/api/v2/ze7ieij7/view/Speakers"></script>
 </div>
 
 <div class="banner banner-info mt-8">

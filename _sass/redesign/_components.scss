@@ -677,6 +677,9 @@
     max-width: 200px;
     max-height: 100px;
     object-fit: contain;
+    background: white;
+    padding: var(--spacing-4);
+    border-radius: var(--radius-lg);
 
     @include tablet-up {
       max-width: 240px;
@@ -905,4 +908,14 @@
     transform: translateX(-50%) translateY(0);
     opacity: 1;
   }
+}
+
+// -------------------------------------------------------------------------
+// Partner/Sponsor Logos
+// -------------------------------------------------------------------------
+.partner-logo {
+  max-width: 200px;
+  background: white;
+  padding: var(--spacing-4);
+  border-radius: var(--radius-lg);
 }
