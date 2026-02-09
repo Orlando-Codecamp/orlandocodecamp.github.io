@@ -24,7 +24,7 @@ nav_order: 9
 
 {% for sponsor in site.data.sponsors %}
 {% if sponsor.logoPath %}
-<div class="sponsor-feature-card mb-6">
+<div class="sponsor-feature-card mb-6{% if sponsor.level %} sponsor-tier-{{ sponsor.level | downcase }}{% endif %}">
   {% if sponsor.sponsorType %}<span class="sponsor-type-badge sponsor-type-badge-overlay">{{ sponsor.sponsorType }}</span>{% endif %}
   <div class="sponsor-feature-header">
     <h3 class="sponsor-feature-name">{{ sponsor.name }}</h3>
@@ -34,6 +34,7 @@ nav_order: 9
       <img src="{{ sponsor.logoPath | relative_url }}" alt="{{ sponsor.name }}">
     </div>
     <div class="sponsor-feature-info">
+      {% if sponsor.level %}<span class="sponsor-level-badge sponsor-level-{{ sponsor.level | downcase }}">{{ sponsor.level }} Sponsor</span>{% endif %}
       <p>{{ sponsor.description | default: "More information coming soon." }}</p>
       <div class="sponsor-feature-cta">
         <a href="{{ sponsor.url }}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">Visit Website</a>

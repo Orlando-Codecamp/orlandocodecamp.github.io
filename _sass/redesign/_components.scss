@@ -534,6 +534,7 @@
 
 // Tier-specific sizing
 .sponsor-platinum {
+  border-left: 6px solid #b0bec5;
   padding: var(--spacing-6);
   min-width: 280px;
 
@@ -553,6 +554,7 @@
 }
 
 .sponsor-gold {
+  border-left: 6px solid #d4a017;
   padding: var(--spacing-5);
   min-width: 220px;
 
@@ -572,6 +574,7 @@
 }
 
 .sponsor-silver {
+  border-left: 6px solid #90a4ae;
   padding: var(--spacing-4);
   min-width: 180px;
 
@@ -591,6 +594,7 @@
 }
 
 .sponsor-bronze {
+  border-left: 6px solid #cd7f32;
   padding: var(--spacing-4);
   min-width: 160px;
 
@@ -658,6 +662,56 @@
   }
 }
 
+// Sponsor level badge (tier indicator on sponsor cards)
+.sponsor-level-badge {
+  display: inline-block;
+  width: fit-content;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--spacing-2);
+}
+
+// Tier left-border accents on sponsor cards
+.sponsor-feature-card.sponsor-tier-platinum {
+  border-left: 6px solid #b0bec5;
+}
+
+.sponsor-feature-card.sponsor-tier-gold {
+  border-left: 6px solid #d4a017;
+}
+
+.sponsor-feature-card.sponsor-tier-silver {
+  border-left: 6px solid #90a4ae;
+}
+
+.sponsor-feature-card.sponsor-tier-bronze {
+  border-left: 6px solid #cd7f32;
+}
+
+.sponsor-level-platinum {
+  background: linear-gradient(135deg, #8e9aaf, #cbd5e1, #94a3b8);
+  color: #1e293b;
+}
+
+.sponsor-level-gold {
+  background-color: #78650d;
+  color: #fef3c7;
+}
+
+.sponsor-level-silver {
+  background-color: #6b7280;
+  color: #f9fafb;
+}
+
+.sponsor-level-bronze {
+  background-color: #92400e;
+  color: #fed7aa;
+}
+
 .sponsor-feature-content {
   display: flex;
   flex-direction: column;
@@ -692,6 +746,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 
   p {
     color: var(--color-text-secondary);
@@ -758,8 +813,8 @@
 }
 
 .tier-platinum {
-  background-color: #e5e7eb;
-  color: #374151;
+  background: linear-gradient(135deg, #8e9aaf, #cbd5e1, #94a3b8);
+  color: #1e293b;
 }
 
 .tier-gold {
