@@ -6,12 +6,19 @@ description: "Partner with Orlando Code Camp 2026 and connect with 400+ develope
 nav_exclude: true
 ---
 
+{% assign now = site.time | date: "%s" | plus: 0 %}
+{% assign after_jan31 = "2026-02-01" | date: "%s" | plus: 0 %}
+{% assign after_feb28 = "2026-03-01" | date: "%s" | plus: 0 %}
+{% assign after_mar11 = "2026-03-12" | date: "%s" | plus: 0 %}
+{% assign after_mar28 = "2026-03-29" | date: "%s" | plus: 0 %}
+
 <div class="sponsor-info-page">
 
 <div class="banner banner-cta mb-8">
   <h3 class="banner-title">18th Annual Orlando Code Camp</h3>
   <p class="banner-description">April 11th, 2026 &mdash; Seminole State College, Sanford, FL</p>
-  <p class="text-muted mb-0">Join us in supporting Central Florida's largest free developer conference.</p>
+  <p class="text-muted mb-4">Join us in supporting Central Florida's largest free developer conference.</p>
+  <a href="mailto:sponsors@orlandocodecamp.com" class="btn btn-primary btn-lg">Get in Touch</a>
 </div>
 
 <h2>Event Overview</h2>
@@ -112,26 +119,26 @@ nav_exclude: true
       </tr>
     </tbody>
     <tfoot>
+      <tr class="pricing-row discount-row{% if now >= after_jan31 %} discount-expired{% else %} discount-active{% endif %}">
+        <td>Until Jan 31st {% if now >= after_jan31 %}<span class="discount-badge expired">Expired</span>{% else %}<span class="discount-badge active">20% off &mdash; Act now!</span>{% endif %}</td>
+        <td class="price-cell">$600</td>
+        <td class="price-cell">$1,200</td>
+        <td class="price-cell">$1,800</td>
+        <td class="price-cell">$2,400</td>
+      </tr>
+      <tr class="pricing-row discount-row{% if now >= after_feb28 %} discount-expired{% elsif now >= after_jan31 %} discount-active{% endif %}">
+        <td>Feb 1st &ndash; Feb 28th {% if now >= after_feb28 %}<span class="discount-badge expired">Expired</span>{% elsif now >= after_jan31 %}<span class="discount-badge active">10% off &mdash; Act now!</span>{% else %}<span class="discount-badge">10% off</span>{% endif %}</td>
+        <td class="price-cell">$675</td>
+        <td class="price-cell">$1,350</td>
+        <td class="price-cell">$2,025</td>
+        <td class="price-cell">$2,700</td>
+      </tr>
       <tr class="pricing-row">
         <td>Mar 1st and after</td>
         <td class="price-cell">$750</td>
         <td class="price-cell">$1,500</td>
         <td class="price-cell">$2,250</td>
         <td class="price-cell">$3,000</td>
-      </tr>
-      <tr class="pricing-row discount-row">
-        <td>Feb 1st &ndash; Feb 28th <span class="discount-badge">10% off</span></td>
-        <td class="price-cell">$675</td>
-        <td class="price-cell">$1,350</td>
-        <td class="price-cell">$2,025</td>
-        <td class="price-cell">$2,700</td>
-      </tr>
-      <tr class="pricing-row discount-row best-deal">
-        <td>Until Jan 31st <span class="discount-badge best">20% off</span></td>
-        <td class="price-cell">$600</td>
-        <td class="price-cell">$1,200</td>
-        <td class="price-cell">$1,800</td>
-        <td class="price-cell">$2,400</td>
       </tr>
     </tfoot>
   </table>
@@ -242,7 +249,7 @@ nav_exclude: true
 <h2>Important Deadlines</h2>
 
 <div class="deadlines-list">
-  <div class="deadline-item">
+  <div class="deadline-item{% if now >= after_jan31 %} deadline-expired{% else %} deadline-active{% endif %}">
     <div class="deadline-date">
       <span class="deadline-day">Jan 31</span>
     </div>
@@ -250,9 +257,10 @@ nav_exclude: true
       <strong>Last day for 20% early-payment discount</strong>
       <span class="text-muted">Bronze, Silver, Gold, and Platinum</span>
     </div>
+    {% if now >= after_jan31 %}<span class="discount-badge expired">Expired</span>{% else %}<span class="discount-badge active">Act now!</span>{% endif %}
   </div>
 
-  <div class="deadline-item">
+  <div class="deadline-item{% if now >= after_feb28 %} deadline-expired{% elsif now >= after_jan31 %} deadline-active{% endif %}">
     <div class="deadline-date">
       <span class="deadline-day">Feb 28</span>
     </div>
@@ -260,9 +268,10 @@ nav_exclude: true
       <strong>Last day for 10% early-payment discount</strong>
       <span class="text-muted">Bronze, Silver, Gold, and Platinum</span>
     </div>
+    {% if now >= after_feb28 %}<span class="discount-badge expired">Expired</span>{% elsif now >= after_jan31 %}<span class="discount-badge active">Act now!</span>{% endif %}
   </div>
 
-  <div class="deadline-item">
+  <div class="deadline-item{% if now >= after_mar11 %} deadline-expired{% elsif now >= after_feb28 %} deadline-active{% endif %}">
     <div class="deadline-date">
       <span class="deadline-day">Mar 11</span>
     </div>
@@ -270,9 +279,10 @@ nav_exclude: true
       <strong>Logo submission deadline</strong>
       <span class="text-muted">SVG for print, PNG/JPEG for web &mdash; Silver and above</span>
     </div>
+    {% if now >= after_mar11 %}<span class="discount-badge expired">Expired</span>{% elsif now >= after_feb28 %}<span class="discount-badge active">Coming up!</span>{% endif %}
   </div>
 
-  <div class="deadline-item">
+  <div class="deadline-item{% if now >= after_mar28 %} deadline-expired{% elsif now >= after_mar11 %} deadline-active{% endif %}">
     <div class="deadline-date">
       <span class="deadline-day">Mar 28</span>
     </div>
@@ -280,6 +290,7 @@ nav_exclude: true
       <strong>Booth requests &amp; attendee bag materials due</strong>
       <span class="text-muted">All special requests and marketing materials must be received</span>
     </div>
+    {% if now >= after_mar28 %}<span class="discount-badge expired">Expired</span>{% elsif now >= after_mar11 %}<span class="discount-badge active">Coming up!</span>{% endif %}
   </div>
 </div>
 
@@ -290,21 +301,9 @@ nav_exclude: true
 <div class="sponsor-cta-section">
   <p class="text-lg mb-6">We'd love to have your organization as a sponsor for Orlando Code Camp 2026. Reach out to us to get started!</p>
 
-  <div class="info-cards-grid mb-6">
-    <div class="info-card info-card-highlight text-center">
-      <h4 class="info-card-title">Email Us</h4>
-      <p><a href="mailto:sponsors@orlandocodecamp.com">sponsors@orlandocodecamp.com</a></p>
-    </div>
-    <div class="info-card text-center">
-      <h4 class="info-card-title">Andy Lech</h4>
-      <p><a href="mailto:andy.lech@onetug.net">andy.lech@onetug.net</a></p>
-      <p class="text-muted text-sm">407-412-0189</p>
-    </div>
-    <div class="info-card text-center">
-      <h4 class="info-card-title">Tanner Roe</h4>
-      <p><a href="mailto:tanner.roe@onetug.net">tanner.roe@onetug.net</a></p>
-      <p class="text-muted text-sm">407-729-6129</p>
-    </div>
+  <div class="info-card info-card-highlight text-center mb-6">
+    <h4 class="info-card-title">Email Us</h4>
+    <p><a href="mailto:sponsors@orlandocodecamp.com">sponsors@orlandocodecamp.com</a></p>
   </div>
 
   <p class="text-center text-muted text-sm mt-6">
