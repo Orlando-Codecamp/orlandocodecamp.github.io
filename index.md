@@ -24,7 +24,7 @@ nav_exclude: true
       </div>
 
       <p class="hero-subtitle">April 11th, 2026 &bull; Seminole State College, Sanford, FL</p>
-      <p class="hero-description">A full day of learning, networking, and technical sessions with over 70 speakers and sessions. Free to attend!</p>
+      <p class="hero-description">A full day of learning, networking, and technical sessions with dozens of speakers and sessions. Free to attend!</p>
 
       <div class="hero-presented-by">
         <span>Presented by</span>
