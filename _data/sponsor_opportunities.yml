@@ -1,0 +1,40 @@
+- name: Speaker Party
+  sponsorType: Speaker Party Sponsor
+  price: "$3,500"
+  benefits:
+    - Platinum sponsorship benefits included
+    - Display signs and hand out swag during speaker party
+
+- name: Lunch
+  sponsorType: Lunch Sponsor
+  price: "$3,000"
+  benefits:
+    - Gold sponsorship benefits included
+    - Display signs and hand out swag during lunch
+
+- name: T-shirts
+  sponsorType: T-Shirt Sponsor
+  price: "$2,500"
+  benefits:
+    - Gold sponsorship benefits included
+    - Display signs and hand out swag during registration
+
+- name: Attendee Party
+  sponsorType: Attendee Party Sponsor
+  price: "$2,000"
+  benefits:
+    - Silver sponsorship benefits included
+    - Display signs and hand out swag during attendee party
+
+- name: Breakfast
+  sponsorType: Breakfast Sponsor
+  price: "$1,000"
+  benefits:
+    - Bronze sponsorship benefits included
+    - Display signs in breakfast area
+
+- name: Snack
+  sponsorType: Snack Sponsor
+  price: "$500"
+  benefits:
+    - Display signs in snack area

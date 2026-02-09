@@ -8,7 +8,7 @@ nav_order: 9
 
 <div class="banner banner-cta">
   <p class="banner-description">We welcome sponsorships from companies who want to connect with our community of developers, engineers, and tech professionals.</p>
-  <a href="{{ '/assets/doc/Orlando-Code-Camp-2026-Sponsor-Info.pdf' | relative_url }}" target="_blank" rel="noopener" class="btn btn-primary">
+  <a href="{{ '/become-a-sponsor/' | relative_url }}" class="btn btn-primary">
     Become a Sponsor
   </a>
   <p class="text-muted mt-4 mb-0">
