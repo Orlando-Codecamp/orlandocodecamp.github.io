@@ -94,11 +94,11 @@ Speakers — some hotels offer special rates for Orlando Code Camp speakers. Che
     <h4 class="info-card-title">Orlando Marriott Lake Mary</h4>
     <p>
       1501 International Parkway<br>
-      Lake Mary, Florida 32746
+      Lake Mary, FL 32746
     </p>
     <p class="text-muted">West of Seminole State College</p>
     <p>
-      <a href="https://www.marriott.com/en-us/hotels/mcoml-orlando-marriott-lake-mary/overview/" target="_blank" rel="noopener" class="btn btn-primary">View Hotel</a>
+      <a href="https://www.marriott.com/en-us/hotels/mcoml-orlando-marriott-lake-mary/overview/" target="_blank" rel="noopener" class="btn btn-primary" aria-label="View Orlando Marriott Lake Mary">View Hotel</a>
     </p>
     <p class="text-sm text-muted">+1 407-995-1100<br>+1 800-228-9290</p>
   </div>
@@ -112,7 +112,7 @@ Speakers — some hotels offer special rates for Orlando Code Camp speakers. Che
     </p>
     <p class="text-muted">East of Seminole State College, near Sanford Airport (SFB)</p>
     <p>
-      <a href="https://www.choicehotels.com/florida/sanford/comfort-inn-hotels/fle61" target="_blank" rel="noopener" class="btn btn-primary">View Hotel</a>
+      <a href="https://www.choicehotels.com/florida/sanford/comfort-inn-hotels/fle61" target="_blank" rel="noopener" class="btn btn-primary" aria-label="View Comfort Inn & Suites Orlando Sanford Airport">View Hotel</a>
     </p>
     <p class="text-sm text-muted">+1 407-915-6610</p>
   </div>
@@ -123,11 +123,11 @@ Speakers — some hotels offer special rates for Orlando Code Camp speakers. Che
     <h4 class="info-card-title">The Westin Lake Mary, Orlando North</h4>
     <p>
       2974 International Parkway<br>
-      Lake Mary, Florida 32746
+      Lake Mary, FL 32746
     </p>
     <p class="text-muted">West of Seminole State College</p>
     <p>
-      <a href="https://www.marriott.com/en-us/hotels/mcowl-the-westin-lake-mary-orlando-north/overview/" target="_blank" rel="noopener" class="btn btn-primary">View Hotel</a>
+      <a href="https://www.marriott.com/en-us/hotels/mcowl-the-westin-lake-mary-orlando-north/overview/" target="_blank" rel="noopener" class="btn btn-primary" aria-label="View The Westin Lake Mary, Orlando North">View Hotel</a>
     </p>
     <p class="text-sm text-muted">+1 407-531-3555</p>
   </div>
@@ -136,11 +136,11 @@ Speakers — some hotels offer special rates for Orlando Code Camp speakers. Che
     <h4 class="info-card-title">Hampton Inn & Suites Lake Mary at Colonial TownPark</h4>
     <p>
       850 Village Oak Lane<br>
-      Lake Mary, Florida 32746
+      Lake Mary, FL 32746
     </p>
     <p class="text-muted">West of Seminole State College</p>
     <p>
-      <a href="https://www.hilton.com/en/hotels/lkmhshx-hampton-suites-lake-mary-at-colonial-townpark/" target="_blank" rel="noopener" class="btn btn-primary">View Hotel</a>
+      <a href="https://www.hilton.com/en/hotels/lkmhshx-hampton-suites-lake-mary-at-colonial-townpark/" target="_blank" rel="noopener" class="btn btn-primary" aria-label="View Hampton Inn & Suites Lake Mary at Colonial TownPark">View Hotel</a>
     </p>
     <p class="text-sm text-muted">+1 407-995-9000</p>
   </div>
