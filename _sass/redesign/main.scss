@@ -229,6 +229,12 @@
   @include desktop-up {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  &.info-cards-grid-2 {
+    @include desktop-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
 
 // -------------------------------------------------------------------------

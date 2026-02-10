@@ -82,6 +82,70 @@ nav_order: 2
   </div>
 </div>
 
+## Nearby Hotels
+
+Here are a few hotels we recommend based on current and past experience. All are convenient to the venue.
+
+Speakers — some hotels offer special rates for Orlando Code Camp speakers. Check your email for booking codes, or reach out to <a href="mailto:speakers@orlandocodecamp.com">speakers@orlandocodecamp.com</a> for details.
+
+<div class="info-cards-grid info-cards-grid-2">
+  <div class="info-card info-card-highlight">
+    <span class="badge badge-accent">Special Rates For Speakers</span>
+    <h4 class="info-card-title">Orlando Marriott Lake Mary</h4>
+    <p>
+      1501 International Parkway<br>
+      Lake Mary, Florida 32746
+    </p>
+    <p class="text-muted">West of Seminole State College</p>
+    <p>
+      <a href="https://www.marriott.com/en-us/hotels/mcoml-orlando-marriott-lake-mary/overview/" target="_blank" rel="noopener" class="btn btn-primary">View Hotel</a>
+    </p>
+    <p class="text-sm text-muted">+1 407-995-1100<br>+1 800-228-9290</p>
+  </div>
+
+  <div class="info-card info-card-highlight">
+    <span class="badge badge-accent">Special Rates For Speakers</span>
+    <h4 class="info-card-title">Comfort Inn & Suites Orlando Sanford Airport</h4>
+    <p>
+      3043 E. Lake Mary Blvd.<br>
+      Sanford, FL 32773
+    </p>
+    <p class="text-muted">East of Seminole State College, near Sanford Airport (SFB)</p>
+    <p>
+      <a href="https://www.choicehotels.com/florida/sanford/comfort-inn-hotels/fle61" target="_blank" rel="noopener" class="btn btn-primary">View Hotel</a>
+    </p>
+    <p class="text-sm text-muted">+1 407-915-6610</p>
+  </div>
+</div>
+
+<div class="info-cards-grid info-cards-grid-2">
+  <div class="info-card">
+    <h4 class="info-card-title">The Westin Lake Mary, Orlando North</h4>
+    <p>
+      2974 International Parkway<br>
+      Lake Mary, Florida 32746
+    </p>
+    <p class="text-muted">West of Seminole State College</p>
+    <p>
+      <a href="https://www.marriott.com/en-us/hotels/mcowl-the-westin-lake-mary-orlando-north/overview/" target="_blank" rel="noopener" class="btn btn-primary">View Hotel</a>
+    </p>
+    <p class="text-sm text-muted">+1 407-531-3555</p>
+  </div>
+
+  <div class="info-card">
+    <h4 class="info-card-title">Hampton Inn & Suites Lake Mary at Colonial TownPark</h4>
+    <p>
+      850 Village Oak Lane<br>
+      Lake Mary, Florida 32746
+    </p>
+    <p class="text-muted">West of Seminole State College</p>
+    <p>
+      <a href="https://www.hilton.com/en/hotels/lkmhshx-hampton-suites-lake-mary-at-colonial-townpark/" target="_blank" rel="noopener" class="btn btn-primary">View Hotel</a>
+    </p>
+    <p class="text-sm text-muted">+1 407-995-9000</p>
+  </div>
+</div>
+
 ---
 
 <div class="disclaimer" id="disclaimer">
