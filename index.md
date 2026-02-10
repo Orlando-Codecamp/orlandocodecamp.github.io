@@ -34,26 +34,17 @@ nav_exclude: true
         </a>
       </div>
 
-      <!-- Registration CTA - uncomment when registration opens
-      <div class="hero-cta-group">
-        <a href="https://www.eventbrite.com/e/orlando-code-camp-2026-tickets" target="_blank" rel="noopener" class="btn btn-primary btn-lg animate-pulse-glow">
-          Register Now - It's Free!
-        </a>
-        <a href="{{ '/schedule/' | relative_url }}" class="btn btn-secondary btn-lg">
-          View Schedule
+      <div class="hero-register-link">
+        <a href="https://www.eventbrite.com/e/orlando-code-camp-2026-registration-1982329224072" target="_blank" rel="noopener" class="hero-register-btn">
+          <span class="register-dot"></span>
+          <span>Registration Now Open</span>
+          <svg class="register-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
         </a>
       </div>
-      -->
     </div>
   </div>
-
-  <!-- Scroll Indicator -->
-  <a href="#countdown-section" class="scroll-indicator" aria-label="Scroll down">
-    <span class="scroll-indicator-text">Scroll</span>
-    <svg class="scroll-indicator-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
-    </svg>
-  </a>
 </section>
 
 <!-- Countdown Section -->
