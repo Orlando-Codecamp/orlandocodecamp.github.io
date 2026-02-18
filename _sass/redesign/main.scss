@@ -295,18 +295,184 @@
 // Code of Conduct Page
 // -------------------------------------------------------------------------
 .coc-content {
+  // Override .prose h2 border-bottom and padding
   h2 {
     color: var(--color-accent-primary);
+    margin-top: var(--spacing-10);
+    margin-bottom: var(--spacing-6);
+    padding-bottom: 0;
+    border-bottom: none;
   }
 
-  ul {
-    li {
-      margin-bottom: var(--spacing-3);
-    }
+  ul li {
+    margin-bottom: var(--spacing-3);
   }
 
   strong {
     color: var(--color-warning);
+  }
+
+  // Intro block
+  .coc-intro {
+    background: linear-gradient(135deg, var(--color-accent-muted), transparent);
+    border: 1px solid var(--color-accent-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6) var(--spacing-8);
+    margin-bottom: var(--spacing-4);
+
+    .coc-lead {
+      font-size: var(--font-size-lg);
+      line-height: var(--line-height-relaxed);
+      color: var(--color-text-primary);
+      margin-bottom: var(--spacing-4);
+    }
+
+    p {
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-3);
+      line-height: var(--line-height-relaxed);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Section spacing
+  .coc-section {
+    margin-bottom: var(--spacing-5);
+
+    .info-card p,
+    .banner p {
+      margin-bottom: var(--spacing-3);
+      line-height: var(--line-height-relaxed);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Policy cards grid
+  .coc-policies {
+    display: grid;
+    gap: var(--spacing-5);
+    margin-bottom: var(--spacing-6);
+
+    @include tablet-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .coc-policy {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6);
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+
+    &:hover {
+      border-color: var(--color-accent-primary);
+      box-shadow: 0 0 0 1px var(--color-accent-muted);
+    }
+  }
+
+  .coc-policy-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .coc-policy-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background-color: var(--color-accent-muted);
+    border-radius: var(--radius-md);
+    color: var(--color-accent-primary);
+  }
+
+  .coc-policy-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  .coc-policy-body {
+    p {
+      color: var(--color-text-secondary);
+      line-height: var(--line-height-relaxed);
+      margin-bottom: var(--spacing-3);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // Escalation steps
+  .coc-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-8);
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .coc-step {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-4);
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-4) var(--spacing-5);
+
+    p {
+      margin: 0;
+      color: var(--color-text-secondary);
+      line-height: var(--line-height-relaxed);
+      padding-top: var(--spacing-1);
+    }
+  }
+
+  .coc-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    background-color: var(--color-accent-muted);
+    color: var(--color-accent-primary);
+    border-radius: var(--radius-full);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+  }
+
+  .coc-step-urgent {
+    border-color: var(--color-warning);
+    background-color: var(--color-warning-subtle);
+
+    .coc-step-number {
+      background-color: var(--color-warning-muted);
+      color: var(--color-warning);
+    }
+  }
+
+  // Closing text
+  .coc-closing {
+    color: var(--color-text-muted);
+    font-style: italic;
+    text-align: center;
+    padding-top: var(--spacing-2);
   }
 }
 

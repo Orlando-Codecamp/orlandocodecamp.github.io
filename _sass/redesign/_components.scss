@@ -304,7 +304,7 @@
 }
 
 .banner-warning {
-  background-color: rgba(236, 201, 75, 0.1);
+  background-color: var(--color-warning-muted);
   border-left-color: var(--color-warning);
 }
 
