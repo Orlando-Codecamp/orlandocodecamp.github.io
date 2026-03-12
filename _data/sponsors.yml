@@ -14,23 +14,41 @@
   description: "CyberMedics is a custom software development company specializing in transforming business operations through tailored solutions. They offer business process automation, custom application development, and Microsoft platform consulting to help enterprises streamline workflows and improve productivity."
 
 # Pending / Invoiced Sponsors (uncomment when paid)
-# - name: Improving
-#   logoPath: /assets/img/sponsors/Improving/logo.png
-#   logoStyle: standard
-#   url: https://improving.com/
-#   level: Platinum
-# - name: Umbraco
-#   logoPath: /assets/img/sponsors/Umbraco/umbraco_logo_blue05.webp
-#   logoStyle: standard
-#   url: https://umbraco.com/
-#   level: Gold
+- name: Improving
+  logoPath: /assets/img/sponsors/Improving/improving-full-logo.jpeg
+  logoStyle: standard
+  url: https://www.improving.com/
+  level: Platinum
+  description: "Improving is a technology consulting and software development firm specializing in AI, data engineering, and modern cloud-native applications. They partner with enterprises across North America, Latin America, and India, offering consulting, custom development, platform engineering, and training services."
+- name: Umbraco
+  logoPath: /assets/img/sponsors/Umbraco/umbraco_logo_blue05.webp
+  logoStyle: standard
+  url: https://umbraco.com/
+  level: Gold
+  description: "Umbraco is a flexible, open-source .NET content management system trusted by hundreds of thousands of websites worldwide. They offer a comprehensive platform including cloud hosting, headless SaaS solutions, and enterprise support, providing customizable digital solutions without vendor lock-in."
+
+- name: Xebia
+  logoPath: /assets/img/sponsors/Xebia/Xebia_Logo_Purple_RGB-MD.png
+  logoStyle: standard
+  url: https://xebia.com/
+  level: Gold
+  description: "Xebia is a global AI-first consulting, software engineering, and training company with 5,500+ professionals across 16 countries. With over 25 years of experience, they specialize in AI, data and cloud, intelligent automation, and digital products, helping organizations turn AI strategy into production-ready solutions."
+
+- name: DNSimple
+  logoPath: /assets/img/sponsors/DNSimple/dnsimple-logo-blue.svg
+  logoStyle: standard
+  url: https://dnsimple.com/
+  level: Silver
+  sponsorType: Breakfast Sponsor
+  description: "DNSimple is a DNS hosting provider and domain registrar offering simple, secure automation for domain registration, DNS hosting, and SSL certificates. Their platform enables developers and enterprises to manage domains and DNS records through a unified interface with API integrations across nine programming languages."
+- name: Dexian
+  logoPath: /assets/img/sponsors/Dexian/dexian-tm-logo.webp
+  logoStyle: standard
+  url: https://dexian.com/
+  level: Silver
+  description: "Dexian is one of the largest IT and professional staffing companies in the U.S., with nearly 12,000 employees across 70 locations worldwide. They specialize in staffing, IT, and workforce solutions, sourcing talent for areas like cloud computing, AI, machine learning, and cybersecurity."
 
 # Previous Year / Potential Sponsors (for reference)
-# - name: Xebia
-#   logoPath: /assets/img/sponsors/Xebia/Xebia_Logo_Purple_RGB-MD.png
-#   logoStyle: standard
-#   url: https://xebia.com/
-#   level: Speaker Party
 # - name: SNI Technology
 #   logoPath: /assets/img/sponsors/SNI-Technology/SNI-Technology-logo.jpg
 #   logoStyle: wide
@@ -42,11 +60,12 @@
 #   logoStyle: standard
 #   url: https://devforge.com/
 #   level: Silver
-# - name: Dynabyte
-#   logoPath: /assets/img/sponsors/Dynabyte/dynabyte.svg
-#   logoStyle: standard
-#   url: https://dynabytetech.com/en/
-#   level: Coffee
+- name: Dynabyte
+  logoPath: /assets/img/sponsors/Dynabyte/dynabyte.svg
+  logoStyle: standard
+  url: https://dynabytetech.com/en/
+  sponsorType: Snack Sponsor
+  description: "Dynabyte is a Swedish software solutions firm with offices in Stockholm and St. Petersburg, Florida, specializing in digital enterprise solutions through software development, cloud computing, data engineering, and AI. Their team delivers across sectors including financial services, insurance, and manufacturing, with clients like Spotify, Klarna, and Ikea."
 # - name: CODE Magazine
 #   logoPath: /assets/img/sponsors/CODE-Magazine/code-sponsor.png
 #   logoStyle: standard
