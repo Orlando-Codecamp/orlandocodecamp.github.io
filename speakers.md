@@ -6,8 +6,6 @@ description: "Meet the speakers at Orlando Code Camp 2026 - industry experts sha
 nav_order: 6
 ---
 
-{% include call-for-speakers-banner.html %}
-
 <!-- Keynote Section -->
 <section class="keynote-section" id="keynote">
   <div class="section-header text-left mb-6">
@@ -32,8 +30,4 @@ The speakers below have approved sessions and have confirmed their attendance. C
 
 <div class="sessionize-embed">
   <script type="text/javascript" src="https://sessionize.com/api/v2/ze7ieij7/view/Speakers"></script>
-</div>
-
-<div class="banner banner-info mt-8">
-  <strong>Want to speak?</strong> Our Call for Speakers is currently open. <a href="https://sessionize.com/orlando-code-camp-2026/" target="_blank" rel="noopener">Submit your session on Sessionize</a>!
 </div>
