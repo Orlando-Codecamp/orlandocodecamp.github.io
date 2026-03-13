@@ -1,0 +1,54 @@
+---
+layout: full-width
+title: Sessions
+permalink: /sessions/
+description: "Browse accepted sessions and plan your day. Filter by track, room, or speaker and build your schedule."
+nav_order: 1
+body_class: agenda-page
+
+bookend_events:
+  - time: "7:00 AM"
+    end_time: "8:00 AM"
+    title: "Check-in & Breakfast"
+    description: "Check in, grab your badge, and enjoy breakfast and coffee provided by Dunkin."
+    location: "Breezeway (next to parking lot)"
+    type: "logistics"
+  - time: "8:00 AM"
+    end_time: "9:15 AM"
+    title: "Announcements & Keynote"
+    description: "Welcome announcements and keynote presentation."
+    location: "J100"
+    type: "keynote"
+  - time: "12:20 PM"
+    end_time: "1:30 PM"
+    title: "Lunch"
+    description: "Lunch provided by Jason's Deli. Pre-ordered during registration on Eventbrite."
+    cta_label: "Register Here"
+    cta_link: "/attendees/"
+    location: "Registration Area"
+    type: "logistics"
+  - time: "4:45 PM"
+    end_time: "5:00 PM"
+    title: "Closing Remarks & Raffle"
+    description: "Prize raffle and closing remarks. Must be present to win!"
+    location: "Main Lobby / Rotunda"
+    type: "logistics"
+  - time: "5:00 PM"
+    end_time: "8:00 PM"
+    title: "After-Party"
+    description: "Join us for food, drinks, and networking."
+    location: "4th Street Bar & Grill, Lake Mary"
+    location_link: "https://maps.google.com/?q=4th+Street+Bar+%26+Grill,+Lake+Mary+FL"
+    type: "social"
+---
+
+<div id="agenda-app" data-api-id="er10xu03" data-session-threshold="50">
+  <div class="agenda-loading">
+    <div class="agenda-loading-spinner"></div>
+    <p>Loading agenda...</p>
+  </div>
+</div>
+
+<script id="bookend-events-data" type="application/json">{{ page.bookend_events | jsonify }}</script>
+
+<script type="module" src="{{ '/assets/js/agenda/app.js' | relative_url }}"></script>
