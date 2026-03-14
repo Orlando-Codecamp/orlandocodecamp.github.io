@@ -3,7 +3,7 @@ layout: page
 title: Sponsors
 permalink: /sponsors/
 description: "Meet the sponsors and community partners who make Orlando Code Camp possible."
-nav_order: 9
+nav_order: 4
 ---
 
 <div class="banner banner-cta">
@@ -57,81 +57,10 @@ nav_order: 9
 
 ---
 
-## Community Partners {#partners}
+## Community Partners
 
-Orlando Code Camp proudly partners with the following local organizations:
+Orlando Code Camp proudly partners with local tech organizations. Visit our [Community page]({{ '/community/' | relative_url }}) to learn more about the Orlando tech community and get involved.
 
-### Orlando .NET User Group (ONETUG)
-
-<div class="info-card mb-6">
-  <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/ONETUG.png' | relative_url }}" alt="ONETUG Logo" class="partner-logo">
-    <div>
-      <p>ONETUG is the organizer of Orlando Code Camp and a vibrant community of .NET developers in Central Florida.</p>
-      <p>
-        <a href="https://www.meetup.com/onetug/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Meetup</a>
-        <a href="https://onetug.net" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Website</a>
-      </p>
-    </div>
-  </div>
-</div>
-
-### Seminole State College - Sanford/Lake Mary Campus
-
-<div class="info-card mb-6">
-  <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/Seminole-State.png' | relative_url }}" alt="Seminole State College Logo" class="partner-logo">
-    <div>
-      <p>Our gracious host venue for Orlando Code Camp.</p>
-      <p>
-        <a href="https://www.seminolestate.edu/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Website</a>
-      </p>
-    </div>
-  </div>
-</div>
-
-### Google Developer Group (GDG) Central Florida
-
-<div class="info-card mb-6">
-  <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/GDG-Central-Florida.png' | relative_url }}" alt="GDG Central Florida Logo" class="partner-logo">
-    <div>
-      <p>A community of Google technology enthusiasts in Central Florida.</p>
-      <p>
-        <a href="https://gdgcentralflorida.org/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Blog</a>
-        <a href="https://www.meetup.com/gdg-central-florida/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Meetup</a>
-        <a href="https://gdg.community.dev/gdg-central-florida/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GDG Community</a>
-      </p>
-    </div>
-  </div>
-</div>
-
-### SQLOrlando
-
-<div class="info-card mb-6">
-  <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/SQLOrlando.jpg' | relative_url }}" alt="SQLOrlando Logo" class="partner-logo">
-    <div>
-      <p>Orlando's SQL Server and data platform user group.</p>
-      <p>
-        <a href="https://sqlorlando.org/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Website</a>
-        <a href="https://www.meetup.com/SQLOrlando/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Meetup</a>
-      </p>
-    </div>
-  </div>
-</div>
-
-### Orlando DevOps
-
-<div class="info-card mb-6">
-  <div class="flex items-center gap-4 flex-wrap">
-    <img src="{{ '/assets/img/partners/Orlando-DevOps-with-text.png' | relative_url }}" alt="Orlando DevOps Logo" class="partner-logo">
-    <div>
-      <p>A community focused on DevOps practices and culture in Orlando.</p>
-      <p>
-        <a href="https://www.orlandodevs.com/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Website</a>
-        <a href="https://www.meetup.com/Orlando-DevOps/" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Meetup</a>
-      </p>
-    </div>
-  </div>
+<div class="text-center mt-4">
+  <a href="{{ '/community/' | relative_url }}" class="btn btn-primary">Meet Our Community Partners</a>
 </div>

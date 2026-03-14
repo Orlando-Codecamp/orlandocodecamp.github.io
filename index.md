@@ -217,7 +217,12 @@ nav_exclude: true
 
       <a href="{{ '/sponsors/' | relative_url }}" class="card card-quick-link">
         <span class="card-icon">🤝</span>
-        <span class="card-text">Sponsors &amp; Partners</span>
+        <span class="card-text">Sponsors</span>
+      </a>
+
+      <a href="{{ '/community/' | relative_url }}" class="card card-quick-link">
+        <span class="card-icon">🌐</span>
+        <span class="card-text">Community</span>
       </a>
     </div>
   </div>
@@ -243,7 +248,7 @@ nav_exclude: true
     </div>
 
     <div class="text-center mt-8">
-      <a href="{{ '/sponsors/#partners' | relative_url }}" class="btn btn-secondary">View All Partners</a>
+      <a href="{{ '/community/' | relative_url }}" class="btn btn-secondary">View All Partners</a>
     </div>
   </div>
 </section>
