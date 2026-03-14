@@ -54,16 +54,17 @@ function AgendaApp() {
   const [modalSession, setModalSession] = useState(null);
 
   // Read config from the DOM once (not on every render)
-  const { apiId, sessionThreshold, bookendEvents } = useMemo(() => {
+  const { apiId, sessionThreshold, locationQuestionId, bookendEvents } = useMemo(() => {
     const root = document.getElementById('agenda-app');
     const apiId = root.dataset.apiId;
     const sessionThreshold = parseInt(root.dataset.sessionThreshold, 10) || 50;
+    const locationQuestionId = root.dataset.locationQuestionId ? parseInt(root.dataset.locationQuestionId, 10) : null;
     let bookendEvents = [];
     try {
       const el = document.getElementById('bookend-events-data');
       bookendEvents = JSON.parse(el?.textContent || '[]');
     } catch { /* use empty array */ }
-    return { apiId, sessionThreshold, bookendEvents };
+    return { apiId, sessionThreshold, locationQuestionId, bookendEvents };
   }, []);
 
   // Fetch Sessionize data
@@ -337,10 +338,13 @@ function AgendaApp() {
     ${modalSession && html`
       <${SessionModal}
         session=${modalSession}
+        sessions=${sessions}
         speakerMap=${speakerMap}
         roomMap=${roomMap}
         categoryItemMap=${categoryItemMap}
+        locationQuestionId=${locationQuestionId}
         onClose=${() => setModalSession(null)}
+        onSessionClick=${setModalSession}
       />
     `}
   `;
