@@ -3,7 +3,7 @@ layout: page
 title: Speakers
 permalink: /speakers/
 description: "Meet the speakers at Orlando Code Camp 2026 - industry experts sharing their knowledge on the latest technologies."
-nav_order: 6
+nav_exclude: true
 ---
 
 <!-- Keynote Section -->

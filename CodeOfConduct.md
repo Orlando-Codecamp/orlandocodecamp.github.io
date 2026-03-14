@@ -3,7 +3,7 @@ layout: page
 title: Code of Conduct
 permalink: /codeofconduct/
 description: "Orlando Code Camp's code of conduct - ensuring a safe and welcoming experience for all attendees."
-nav_order: 11
+nav_exclude: true
 ---
 
 <div class="coc-content">
