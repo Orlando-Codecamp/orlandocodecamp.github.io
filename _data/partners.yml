@@ -1,20 +1,63 @@
-- name: Orlando .NET User Group
+- name: Orlando .NET User Group (ONETUG)
   logoPath: /assets/img/partners/ONETUG.png
   logoStyle: standard
   url: https://onetug.net/
-- name: Seminole State College
+  description: ONETUG is the organizer of Orlando Code Camp and a vibrant community of .NET developers in Central Florida.
+  links:
+    - label: Meetup
+      url: https://www.meetup.com/onetug/
+    - label: Website
+      url: https://onetug.net
+
+- name: Seminole State College - Sanford/Lake Mary Campus
   logoPath: /assets/img/partners/Seminole-State.png
   logoStyle: standard
   url: https://www.seminolestate.edu/
+  description: Our gracious host venue for Orlando Code Camp.
+  links:
+    - label: Website
+      url: https://www.seminolestate.edu/
+
+- name: Orlando Devs
+  logoPath: /assets/img/partners/Orlando-Devs-Logo.svg
+  logoStyle: wide
+  url: https://orlandodevs.com/
+  description: Orlando's largest community of software developers, designers, and tech professionals.
+  links:
+    - label: Website
+      url: https://orlandodevs.com/
+
 - name: Google Developer Group (GDG) Central Florida
   logoPath: /assets/img/partners/GDG-Central-Florida.png
   logoStyle: wide
   url: https://gdg.community.dev/gdg-central-florida/
+  description: A community of Google technology enthusiasts in Central Florida.
+  links:
+    - label: Blog
+      url: https://gdgcentralflorida.org/
+    - label: Meetup
+      url: https://www.meetup.com/gdg-central-florida/
+    - label: GDG Community
+      url: https://gdg.community.dev/gdg-central-florida/
+
 - name: SQLOrlando
   logoPath: /assets/img/partners/SQLOrlando.jpg
   logoStyle: wide
   url: https://sqlorlando.org/
+  description: Orlando's SQL Server and data platform user group.
+  links:
+    - label: Website
+      url: https://sqlorlando.org/
+    - label: Meetup
+      url: https://www.meetup.com/SQLOrlando/
+
 - name: Orlando DevOps
   logoPath: /assets/img/partners/Orlando-DevOps-with-text.png
   logoStyle: wide
   url: https://www.meetup.com/orlando-devops/
+  description: A community focused on DevOps practices and culture in Orlando.
+  links:
+    - label: Website
+      url: https://www.orlandodevs.com/
+    - label: Meetup
+      url: https://www.meetup.com/Orlando-DevOps/

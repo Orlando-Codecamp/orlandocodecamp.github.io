@@ -2,7 +2,7 @@
 layout: page
 title: Partners
 permalink: /partners/
-redirect_to: /sponsors/#partners
+redirect_to: /community/
 nav_exclude: true
 ---
 
