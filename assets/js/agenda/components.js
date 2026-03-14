@@ -1,5 +1,5 @@
 import { h } from 'https://esm.sh/preact@10.25.4';
-import { useState, useRef, useEffect, useCallback } from 'https://esm.sh/preact@10.25.4/hooks';
+import { useState, useRef, useEffect, useCallback, useMemo } from 'https://esm.sh/preact@10.25.4/hooks';
 import { html, formatTime } from './helpers.js';
 
 // ---------------------------------------------------------------------------
@@ -337,6 +337,54 @@ export function AgendaTimeline({ timeline, unscheduledSessions, speakerMap, room
 }
 
 // ---------------------------------------------------------------------------
+// SpeakerLocation — displays speaker's city/location
+// ---------------------------------------------------------------------------
+
+function SpeakerLocation({ speaker, locationQuestionId }) {
+  if (!locationQuestionId || !speaker.questionAnswers) return null;
+  const locationAnswer = speaker.questionAnswers.find(qa => qa.questionId === locationQuestionId);
+  if (!locationAnswer || !locationAnswer.answerValue) return null;
+
+  return html`
+    <div class="session-modal-speaker-location">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      ${locationAnswer.answerValue}
+    </div>
+  `;
+}
+
+// ---------------------------------------------------------------------------
+// SpeakerOtherSessions — links to other sessions by the same speaker
+// ---------------------------------------------------------------------------
+
+function SpeakerOtherSessions({ speaker, session, sessions, onSessionClick }) {
+  const otherSessions = useMemo(() =>
+    (sessions || []).filter(s =>
+      !s.isServiceSession && s.id !== session.id && (s.speakers || []).includes(speaker.id)
+    ),
+    [sessions, session.id, speaker.id]
+  );
+
+  if (otherSessions.length === 0) return null;
+
+  return html`
+    <div class="session-modal-speaker-other-sessions">
+      <span class="other-sessions-label">Also presenting:</span>
+      ${otherSessions.map(s => html`
+        <button
+          key=${s.id}
+          class="other-session-link"
+          onClick=${() => onSessionClick(s)}
+        >${s.title}</button>
+      `)}
+    </div>
+  `;
+}
+
+// ---------------------------------------------------------------------------
 // SessionModal — expanded session detail overlay
 // ---------------------------------------------------------------------------
 
@@ -425,20 +473,7 @@ export function SessionModal({ session, sessions, speakerMap, roomMap, categoryI
                       ${speaker.tagLine && html`
                         <div class="session-modal-speaker-tagline">${speaker.tagLine}</div>
                       `}
-                      ${(() => {
-                        if (!locationQuestionId || !speaker.questionAnswers) return null;
-                        const locationAnswer = speaker.questionAnswers.find(qa => qa.questionId === locationQuestionId);
-                        if (!locationAnswer || !locationAnswer.answerValue) return null;
-                        return html`
-                          <div class="session-modal-speaker-location">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                              <circle cx="12" cy="10" r="3"/>
-                            </svg>
-                            ${locationAnswer.answerValue}
-                          </div>
-                        `;
-                      })()}
+                      <${SpeakerLocation} speaker=${speaker} locationQuestionId=${locationQuestionId} />
                     </div>
                   </div>
                   ${speaker.bio && html`
@@ -453,23 +488,7 @@ export function SessionModal({ session, sessions, speakerMap, roomMap, categoryI
                       `)}
                     </div>
                   `}
-                  ${(() => {
-                    const otherSessions = (sessions || []).filter(s =>
-                      !s.isServiceSession && s.id !== session.id && (s.speakers || []).includes(speaker.id)
-                    );
-                    return otherSessions.length > 0 && html`
-                      <div class="session-modal-speaker-other-sessions">
-                        <span class="other-sessions-label">Also presenting:</span>
-                        ${otherSessions.map(s => html`
-                          <button
-                            key=${s.id}
-                            class="other-session-link"
-                            onClick=${() => onSessionClick(s)}
-                          >${s.title}</button>
-                        `)}
-                      </div>
-                    `;
-                  })()}
+                  <${SpeakerOtherSessions} speaker=${speaker} session=${session} sessions=${sessions} onSessionClick=${onSessionClick} />
                 </div>
               `)}
             </div>

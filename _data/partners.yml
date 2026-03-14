@@ -1,3 +1,7 @@
+# url: primary link used by the homepage logo grid
+# logoStyle: "standard" or "wide" controls grid column span on homepage
+# links: detailed links shown on the community page partner cards
+
 - name: Orlando .NET User Group (ONETUG)
   logoPath: /assets/img/partners/ONETUG.png
   logoStyle: standard
