@@ -6,7 +6,8 @@ import {
   AgendaTimeline,
   FilterBar,
   TimeSlotNav,
-  SessionModal
+  SessionModal,
+  ImportExportModal
 } from './components.js';
 
 // ---------------------------------------------------------------------------
@@ -62,6 +63,8 @@ function AgendaApp() {
   const [error, setError] = useState(null);
   const [filters, setFilters] = useState(filtersFromURL);
   const [modalSession, setModalSession] = useState(null);
+  const [importExportMode, setImportExportMode] = useState(null); // 'import' | 'export' | null
+
   // Track session ID from URL to open once data loads
   const pendingSessionIdRef = useRef(sessionIdFromURL());
 
@@ -327,15 +330,15 @@ function AgendaApp() {
     return () => document.removeEventListener('keydown', handler);
   }, [modalSession]);
 
-  // Lock body scroll when modal is open
+  // Lock body scroll when any modal is open
   useEffect(() => {
-    if (modalSession) {
+    if (modalSession || importExportMode) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = '';
     }
     return () => { document.body.style.overflow = ''; };
-  }, [modalSession]);
+  }, [modalSession, importExportMode]);
 
   // Measure timeslot nav height and set CSS variable for filter bar offset
   useEffect(() => {
@@ -387,6 +390,8 @@ function AgendaApp() {
         resultCount=${filteredSessions.length}
         totalCount=${sessions.filter(s => !s.isServiceSession).length}
         savedCount=${agenda.savedCount}
+        onExport=${() => setImportExportMode('export')}
+        onImport=${() => setImportExportMode('import')}
       />
       <${AgendaTimeline}
         timeline=${timeline}
@@ -401,6 +406,13 @@ function AgendaApp() {
         conflictSlots=${conflictSlots}
       />
     </div>
+    ${importExportMode && html`
+      <${ImportExportModal}
+        mode=${importExportMode}
+        agenda=${agenda}
+        onClose=${() => setImportExportMode(null)}
+      />
+    `}
     ${modalSession && html`
       <${SessionModal}
         session=${modalSession}

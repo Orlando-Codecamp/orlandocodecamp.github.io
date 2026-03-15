@@ -65,7 +65,7 @@ export function TimeSlotNav({ timeline }) {
 // FilterBar — search, category dropdown, room dropdown
 // ---------------------------------------------------------------------------
 
-export function FilterBar({ filters, categories, rooms, onFilter, onClear, hasFilters, resultCount, totalCount, savedCount }) {
+export function FilterBar({ filters, categories, rooms, onFilter, onClear, hasFilters, resultCount, totalCount, savedCount, onExport, onImport }) {
   const [expanded, setExpanded] = useState(false);
 
   // Build flat category items list for dropdown
@@ -93,18 +93,46 @@ export function FilterBar({ filters, categories, rooms, onFilter, onClear, hasFi
           ${hasFilters && html`<span class="filter-count">${resultCount}</span>`}
         </button>
 
-        <button
-          class="btn my-agenda-toggle ${filters.myAgenda ? 'active' : ''}"
-          onClick=${() => onFilter('myAgenda', !filters.myAgenda)}
-          aria-pressed=${filters.myAgenda}
-          aria-label="Show my agenda"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill=${filters.myAgenda ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2">
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
-          </svg>
-          My Agenda
-          ${savedCount > 0 && html`<span class="my-agenda-count">${savedCount}</span>`}
-        </button>
+        <div class="my-agenda-controls">
+          <button
+            class="btn my-agenda-toggle ${filters.myAgenda ? 'active' : ''}"
+            onClick=${() => onFilter('myAgenda', !filters.myAgenda)}
+            aria-pressed=${filters.myAgenda}
+            aria-label="Show my agenda"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill=${filters.myAgenda ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+            </svg>
+            My Agenda
+            ${savedCount > 0 && html`<span class="my-agenda-count">${savedCount}</span>`}
+          </button>
+          <button
+            class="btn btn-ghost agenda-io-btn"
+            onClick=${onImport}
+            aria-label="Import agenda"
+            title="Import agenda"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </button>
+          ${savedCount > 0 && html`
+            <button
+              class="btn btn-ghost agenda-io-btn"
+              onClick=${onExport}
+              aria-label="Export agenda"
+              title="Export agenda"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+            </button>
+          `}
+        </div>
       </div>
 
       <div class="filter-controls ${expanded ? 'expanded' : ''}">
@@ -397,6 +425,149 @@ export function AgendaTimeline({ timeline, unscheduledSessions, speakerMap, room
       })}
 
       ${hasScheduled && unscheduledBlock}
+    </div>
+  `;
+}
+
+// ---------------------------------------------------------------------------
+// ImportExportModal — modal for importing/exporting agenda JSON
+// ---------------------------------------------------------------------------
+
+export function ImportExportModal({ mode, agenda, onClose }) {
+  const [result, setResult] = useState(null);
+  const [exportCopied, setExportCopied] = useState(false);
+  const modalRef = useRef(null);
+  const textareaRef = useRef(null);
+
+  const handleImport = useCallback(() => {
+    const text = textareaRef.current?.value || '';
+    if (!text.trim()) return;
+    const res = agenda.importAgenda(text);
+    setResult(res);
+  }, [agenda]);
+
+  const handleExportCopy = useCallback(() => {
+    navigator.clipboard.writeText(agenda.exportAgenda()).then(() => {
+      setExportCopied(true);
+      setTimeout(() => setExportCopied(false), 2000);
+    });
+  }, [agenda]);
+
+  const handleExportDownload = useCallback(() => {
+    const json = agenda.exportAgenda();
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'codecamp-agenda.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  }, [agenda]);
+
+  const handleFileUpload = useCallback((e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      if (textareaRef.current) {
+        textareaRef.current.value = reader.result;
+      }
+      setResult(null);
+    };
+    reader.readAsText(file);
+  }, []);
+
+  // Focus trap
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === 'Escape') { onClose(); return; }
+    if (e.key !== 'Tab') return;
+    const modal = modalRef.current;
+    if (!modal) return;
+    const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }, [onClose]);
+
+  useEffect(() => {
+    const modal = modalRef.current;
+    if (modal) {
+      const closeBtn = modal.querySelector('.import-export-modal-close');
+      if (closeBtn) closeBtn.focus();
+    }
+  }, []);
+
+  return html`
+    <div class="session-modal-overlay" onClick=${onClose} onKeyDown=${handleKeyDown}>
+      <div class="import-export-modal" ref=${modalRef} onClick=${(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-label=${mode === 'export' ? 'Export Agenda' : 'Import Agenda'}>
+        <button class="import-export-modal-close" onClick=${onClose} aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <div class="import-export-modal-body">
+          ${mode === 'export' ? html`
+            <h2 class="import-export-modal-title">Export Agenda</h2>
+            <p class="import-export-modal-description">Copy or download your agenda to transfer it to another device.</p>
+            <textarea
+              class="import-export-textarea"
+              readOnly
+              value=${agenda.exportAgenda()}
+              onClick=${(e) => e.target.select()}
+              aria-label="Agenda JSON"
+            />
+            <div class="import-export-actions">
+              <button class="btn btn-primary" onClick=${handleExportCopy}>
+                ${exportCopied ? 'Copied!' : 'Copy to Clipboard'}
+              </button>
+              <button class="btn btn-secondary" onClick=${handleExportDownload}>
+                Download File
+              </button>
+            </div>
+          ` : html`
+            <h2 class="import-export-modal-title">Import Agenda</h2>
+            <p class="import-export-modal-description">Paste agenda JSON below or upload a file to load your agenda.</p>
+            <textarea
+              class="import-export-textarea"
+              ref=${textareaRef}
+              placeholder="Paste your agenda JSON here..."
+              onInput=${() => setResult(null)}
+              aria-label="Agenda JSON input"
+            />
+            <div class="import-export-file-upload">
+              <label class="btn btn-ghost import-export-file-label">
+                Upload File
+                <input type="file" accept=".json" onChange=${handleFileUpload} class="import-export-file-input" />
+              </label>
+            </div>
+            ${result && html`
+              <div class="import-export-result ${result.success ? 'success' : 'error'}">
+                ${result.success
+                  ? `Imported ${result.count} session${result.count !== 1 ? 's' : ''} to your agenda.`
+                  : result.error
+                }
+              </div>
+            `}
+            <div class="import-export-actions">
+              <button class="btn btn-primary" type="button" onClick=${handleImport}>
+                Import Agenda
+              </button>
+              <button class="btn btn-ghost" onClick=${onClose}>
+                ${result?.success ? 'Close' : 'Cancel'}
+              </button>
+            </div>
+          `}
+        </div>
+      </div>
     </div>
   `;
 }
