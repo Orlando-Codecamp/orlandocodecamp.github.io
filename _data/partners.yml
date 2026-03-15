@@ -65,3 +65,12 @@
       url: https://www.orlandodevs.com/
     - label: Meetup
       url: https://www.meetup.com/Orlando-DevOps/
+
+- name: Orlando Tech and Beer
+  logoPath: /assets/img/partners/Tech-and-Beer-logo.svg
+  logoStyle: standard
+  url: https://luma.com/otab
+  description: "Orlando's \"Tech and Beer\" scene merges a rapidly growing technology hub with a vibrant craft brewery culture. Key highlights include Science on Tap at the Orlando Science Center, which features 30+ local brewers and science experiments, and regular networking meetups by Tech and Beers."
+  links:
+    - label: Website
+      url: https://luma.com/otab

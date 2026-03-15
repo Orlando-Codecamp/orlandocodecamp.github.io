@@ -968,8 +968,17 @@
 // -------------------------------------------------------------------------
 // Partner/Sponsor Logos
 // -------------------------------------------------------------------------
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+}
+
 .partner-logo {
   max-width: 200px;
+  max-height: 100px;
+  object-fit: contain;
   background: white;
   padding: var(--spacing-4);
   border-radius: var(--radius-lg);

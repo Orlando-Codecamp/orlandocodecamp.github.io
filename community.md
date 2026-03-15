@@ -18,18 +18,16 @@ These local organizations help make Orlando Code Camp possible and keep the Orla
 
 {% for partner in site.data.partners %}
 <div class="info-card mb-6">
-  <div class="flex items-center gap-4 flex-wrap">
+  <div class="partner-card">
     <img src="{{ partner.logoPath | relative_url }}" alt="{{ partner.name }} Logo" class="partner-logo">
-    <div>
-      <p>{{ partner.description }}</p>
-      {% if partner.links %}
-      <p>
-        {% for link in partner.links %}
-        <a href="{{ link.url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">{{ link.label }}</a>
-        {% endfor %}
-      </p>
-      {% endif %}
-    </div>
+    <p>{{ partner.description }}</p>
+    {% if partner.links %}
+    <p>
+      {% for link in partner.links %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">{{ link.label }}</a>
+      {% endfor %}
+    </p>
+    {% endif %}
   </div>
 </div>
 {% endfor %}
