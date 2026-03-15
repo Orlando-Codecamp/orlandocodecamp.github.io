@@ -10,6 +10,15 @@ function storageKey(eventId) {
   return `codecamp-agenda-${eventId}`;
 }
 
+function buildAgendaPayload(eventId, sessionIds) {
+  return {
+    version: STORAGE_VERSION,
+    eventId,
+    updatedAt: new Date().toISOString(),
+    sessions: sessionIds
+  };
+}
+
 function loadAgenda(eventId) {
   try {
     const raw = localStorage.getItem(storageKey(eventId));
@@ -23,13 +32,7 @@ function loadAgenda(eventId) {
 }
 
 function saveAgenda(eventId, sessionIds) {
-  const data = {
-    version: STORAGE_VERSION,
-    eventId,
-    updatedAt: new Date().toISOString(),
-    sessions: sessionIds
-  };
-  localStorage.setItem(storageKey(eventId), JSON.stringify(data));
+  localStorage.setItem(storageKey(eventId), JSON.stringify(buildAgendaPayload(eventId, sessionIds)));
 }
 
 export function useAgenda(eventId) {
@@ -47,22 +50,13 @@ export function useAgenda(eventId) {
     });
   }, [eventId]);
 
-  const isSessionSaved = useCallback((sessionId) => {
-    return savedSet.has(sessionId);
-  }, [savedSet]);
-
   const clearAgenda = useCallback(() => {
     setSavedSessionIds([]);
     saveAgenda(eventId, []);
   }, [eventId]);
 
   const exportAgenda = useCallback(() => {
-    return JSON.stringify({
-      version: STORAGE_VERSION,
-      eventId,
-      updatedAt: new Date().toISOString(),
-      sessions: savedSessionIds
-    }, null, 2);
+    return JSON.stringify(buildAgendaPayload(eventId, savedSessionIds), null, 2);
   }, [eventId, savedSessionIds]);
 
   const importAgenda = useCallback((jsonString) => {
@@ -83,11 +77,9 @@ export function useAgenda(eventId) {
   return useMemo(() => ({
     savedSessionIds,
     savedSet,
-    savedCount: savedSessionIds.length,
     toggleSession,
-    isSessionSaved,
     clearAgenda,
     exportAgenda,
     importAgenda
-  }), [savedSessionIds, savedSet, toggleSession, isSessionSaved, clearAgenda, exportAgenda, importAgenda]);
+  }), [savedSessionIds, savedSet, toggleSession, clearAgenda, exportAgenda, importAgenda]);
 }

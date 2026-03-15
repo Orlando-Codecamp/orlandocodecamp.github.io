@@ -256,9 +256,13 @@ function AgendaApp() {
     return new Set(Object.keys(slotCounts).filter(k => slotCounts[k] > 1));
   }, [sessions, agenda.savedSet]);
 
-  // Total scheduled sessions (unfiltered) for threshold check
+  // Total session counts (unfiltered) — memoized to avoid refiltering on every render
   const totalScheduledCount = useMemo(() =>
     sessions.filter(s => !s.isServiceSession && s.startsAt).length,
+    [sessions]
+  );
+  const totalSessionCount = useMemo(() =>
+    sessions.filter(s => !s.isServiceSession).length,
     [sessions]
   );
 
@@ -388,8 +392,8 @@ function AgendaApp() {
         onClear=${clearFilters}
         hasFilters=${hasFilters}
         resultCount=${filteredSessions.length}
-        totalCount=${sessions.filter(s => !s.isServiceSession).length}
-        savedCount=${agenda.savedCount}
+        totalCount=${totalSessionCount}
+        savedCount=${agenda.savedSessionIds.length}
         onExport=${() => setImportExportMode('export')}
         onImport=${() => setImportExportMode('import')}
       />

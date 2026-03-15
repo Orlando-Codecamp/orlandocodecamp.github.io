@@ -1,6 +1,6 @@
 import { h } from 'https://esm.sh/preact@10.25.4';
 import { useState, useRef, useEffect, useCallback, useMemo } from 'https://esm.sh/preact@10.25.4/hooks';
-import { html, formatTime } from './helpers.js';
+import { html, formatTime, createFocusTrapHandler, focusOnMount } from './helpers.js';
 
 // ---------------------------------------------------------------------------
 // TimeSlotNav — horizontal scrollable pill buttons for quick-jump
@@ -68,13 +68,16 @@ export function TimeSlotNav({ timeline }) {
 export function FilterBar({ filters, categories, rooms, onFilter, onClear, hasFilters, resultCount, totalCount, savedCount, onExport, onImport }) {
   const [expanded, setExpanded] = useState(false);
 
-  // Build flat category items list for dropdown
-  const categoryItems = [];
-  (categories || []).forEach(cat => {
-    (cat.items || []).forEach(item => {
-      categoryItems.push({ id: item.id, name: item.name, group: cat.title });
+  // Build flat category items list for dropdown (memoized to avoid rebuild on every keystroke)
+  const categoryItems = useMemo(() => {
+    const items = [];
+    (categories || []).forEach(cat => {
+      (cat.items || []).forEach(item => {
+        items.push({ id: item.id, name: item.name, group: cat.title });
+      });
     });
-  });
+    return items;
+  }, [categories]);
 
   return html`
     <div class="filter-bar">
@@ -199,16 +202,17 @@ export function FilterBar({ filters, categories, rooms, onFilter, onClear, hasFi
 // BookendEvent — static event card (registration, lunch, keynote, etc.)
 // ---------------------------------------------------------------------------
 
+const bookendTypeIcons = {
+  logistics: html`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  keynote: html`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  social: html`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`
+};
+
 export function BookendEvent({ event }) {
-  const typeIcons = {
-    logistics: html`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
-    keynote: html`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
-    social: html`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`
-  };
 
   return html`
     <div class="bookend-event bookend-${event.type}">
-      <div class="bookend-icon">${typeIcons[event.type] || typeIcons.logistics}</div>
+      <div class="bookend-icon">${bookendTypeIcons[event.type] || bookendTypeIcons.logistics}</div>
       <div class="bookend-content">
         <div class="bookend-time">
           ${event.time}${event.end_time ? ` – ${event.end_time}` : ''}
@@ -237,7 +241,7 @@ export function SessionCard({ session, speakerMap, roomMap, categoryItemMap, onC
   const room = roomMap[session.roomId];
   const sessionSpeakers = (session.speakers || []).map(id => speakerMap[id]).filter(Boolean);
   const categoryTags = (session.categoryItems || []).map(id => categoryItemMap[id]).filter(Boolean);
-  const isSaved = agenda?.isSessionSaved(session.id);
+  const isSaved = agenda?.savedSet.has(session.id);
 
   const handleBookmark = useCallback((e) => {
     e.stopPropagation();
@@ -282,19 +286,16 @@ export function SessionCard({ session, speakerMap, roomMap, categoryItemMap, onC
             ${room && html`<span class="session-card-room">${room.name}</span>`}
           </div>
           ${agenda && html`
-            <div
+            <span
               class="session-bookmark ${isSaved ? 'is-saved' : ''}"
-              role="button"
-              tabindex="0"
               onClick=${handleBookmark}
-              onKeyDown=${(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleBookmark(e); }}}
               aria-label=${isSaved ? 'Remove from agenda' : 'Add to agenda'}
               aria-pressed=${isSaved}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill=${isSaved ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2">
                 <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
               </svg>
-            </div>
+            </span>
           `}
         </div>
       </button>
@@ -477,32 +478,9 @@ export function ImportExportModal({ mode, agenda, onClose }) {
     reader.readAsText(file);
   }, []);
 
-  // Focus trap
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === 'Escape') { onClose(); return; }
-    if (e.key !== 'Tab') return;
-    const modal = modalRef.current;
-    if (!modal) return;
-    const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-    if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
-  }, [onClose]);
+  const handleKeyDown = useMemo(() => createFocusTrapHandler(modalRef, onClose), [onClose]);
 
-  useEffect(() => {
-    const modal = modalRef.current;
-    if (modal) {
-      const closeBtn = modal.querySelector('.import-export-modal-close');
-      if (closeBtn) closeBtn.focus();
-    }
-  }, []);
+  useEffect(() => focusOnMount(modalRef, '.import-export-modal-close'), []);
 
   return html`
     <div class="session-modal-overlay" onClick=${onClose} onKeyDown=${handleKeyDown}>
@@ -630,7 +608,7 @@ export function SessionModal({ session, sessions, speakerMap, roomMap, categoryI
   const categoryTags = (session.categoryItems || []).map(id => categoryItemMap[id]).filter(Boolean);
   const modalRef = useRef(null);
   const [shareCopied, setShareCopied] = useState(false);
-  const isSaved = agenda?.isSessionSaved(session.id);
+  const isSaved = agenda?.savedSet.has(session.id);
 
   const handleShare = useCallback(() => {
     const url = `${window.location.origin}${window.location.pathname}#session=${session.id}`;
@@ -640,32 +618,9 @@ export function SessionModal({ session, sessions, speakerMap, roomMap, categoryI
     });
   }, [session.id]);
 
-  // Focus trap: keep Tab cycling within the modal
-  const handleKeyDown = useCallback((e) => {
-    if (e.key !== 'Tab') return;
-    const modal = modalRef.current;
-    if (!modal) return;
-    const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-    if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (e.shiftKey && document.activeElement === first) {
-      e.preventDefault();
-      last.focus();
-    } else if (!e.shiftKey && document.activeElement === last) {
-      e.preventDefault();
-      first.focus();
-    }
-  }, []);
+  const handleKeyDown = useMemo(() => createFocusTrapHandler(modalRef), []);
 
-  // Auto-focus the close button when modal opens
-  useEffect(() => {
-    const modal = modalRef.current;
-    if (modal) {
-      const closeBtn = modal.querySelector('.session-modal-close');
-      if (closeBtn) closeBtn.focus();
-    }
-  }, []);
+  useEffect(() => focusOnMount(modalRef, '.session-modal-close'), []);
 
   return html`
     <div class="session-modal-overlay" onClick=${onClose} onKeyDown=${handleKeyDown}>

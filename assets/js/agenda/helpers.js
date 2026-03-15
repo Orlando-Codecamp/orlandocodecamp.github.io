@@ -36,3 +36,39 @@ export function shuffle(arr) {
   }
   return a;
 }
+
+/** Selector for all focusable elements inside a container. */
+const FOCUSABLE_SELECTOR = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+
+/**
+ * Create a keydown handler that traps Tab focus within a modal and
+ * optionally closes on Escape.
+ */
+export function createFocusTrapHandler(modalRef, onClose) {
+  return (e) => {
+    if (e.key === 'Escape' && onClose) { onClose(); return; }
+    if (e.key !== 'Tab') return;
+    const modal = modalRef.current;
+    if (!modal) return;
+    const focusable = modal.querySelectorAll(FOCUSABLE_SELECTOR);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  };
+}
+
+/** Auto-focus the first element matching `selector` inside `ref` on mount. */
+export function focusOnMount(ref, selector) {
+  const el = ref.current;
+  if (el) {
+    const target = el.querySelector(selector);
+    if (target) target.focus();
+  }
+}
