@@ -65,7 +65,7 @@ export function TimeSlotNav({ timeline }) {
 // FilterBar — search, category dropdown, room dropdown
 // ---------------------------------------------------------------------------
 
-export function FilterBar({ filters, categories, rooms, onFilter, onClear, hasFilters, resultCount, totalCount }) {
+export function FilterBar({ filters, categories, rooms, onFilter, onClear, hasFilters, resultCount, totalCount, savedCount }) {
   const [expanded, setExpanded] = useState(false);
 
   // Build flat category items list for dropdown
@@ -78,19 +78,34 @@ export function FilterBar({ filters, categories, rooms, onFilter, onClear, hasFi
 
   return html`
     <div class="filter-bar">
-      <button
-        class="filter-toggle btn btn-ghost"
-        onClick=${() => setExpanded(!expanded)}
-        aria-expanded=${expanded}
-      >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="4" y1="6" x2="20" y2="6"/>
-          <line x1="8" y1="12" x2="20" y2="12"/>
-          <line x1="12" y1="18" x2="20" y2="18"/>
-        </svg>
-        Filters
-        ${hasFilters && html`<span class="filter-count">${resultCount}</span>`}
-      </button>
+      <div class="filter-bar-top">
+        <button
+          class="filter-toggle btn btn-ghost"
+          onClick=${() => setExpanded(!expanded)}
+          aria-expanded=${expanded}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="4" y1="6" x2="20" y2="6"/>
+            <line x1="8" y1="12" x2="20" y2="12"/>
+            <line x1="12" y1="18" x2="20" y2="18"/>
+          </svg>
+          Filters
+          ${hasFilters && html`<span class="filter-count">${resultCount}</span>`}
+        </button>
+
+        <button
+          class="btn my-agenda-toggle ${filters.myAgenda ? 'active' : ''}"
+          onClick=${() => onFilter('myAgenda', !filters.myAgenda)}
+          aria-pressed=${filters.myAgenda}
+          aria-label="Show my agenda"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill=${filters.myAgenda ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+          My Agenda
+          ${savedCount > 0 && html`<span class="my-agenda-count">${savedCount}</span>`}
+        </button>
+      </div>
 
       <div class="filter-controls ${expanded ? 'expanded' : ''}">
         <div class="filter-row">
@@ -190,47 +205,72 @@ export function BookendEvent({ event }) {
 // SessionCard — individual session card in a time slot
 // ---------------------------------------------------------------------------
 
-export function SessionCard({ session, speakerMap, roomMap, categoryItemMap, onClick }) {
+export function SessionCard({ session, speakerMap, roomMap, categoryItemMap, onClick, agenda }) {
   const room = roomMap[session.roomId];
   const sessionSpeakers = (session.speakers || []).map(id => speakerMap[id]).filter(Boolean);
   const categoryTags = (session.categoryItems || []).map(id => categoryItemMap[id]).filter(Boolean);
+  const isSaved = agenda?.isSessionSaved(session.id);
+
+  const handleBookmark = useCallback((e) => {
+    e.stopPropagation();
+    agenda?.toggleSession(session.id);
+  }, [session.id, agenda]);
 
   return html`
-    <button class="session-card" onClick=${() => onClick(session)} aria-label="View details for ${session.title}">
-      <div class="session-card-header">
-        <h4 class="session-card-title">${session.title}</h4>
-      </div>
+    <div class="session-card-wrapper ${isSaved ? 'is-saved' : ''}">
+      <button class="session-card" onClick=${() => onClick(session)} aria-label="View details for ${session.title}">
+        <div class="session-card-header">
+          <h4 class="session-card-title">${session.title}</h4>
+        </div>
 
-      ${sessionSpeakers.length > 0 && html`
-        <div class="session-card-speakers">
-          ${sessionSpeakers.map(speaker => html`
-            <div class="session-card-speaker" key=${speaker.id}>
-              ${speaker.profilePicture && html`
-                <img
-                  class="session-card-speaker-img"
-                  src=${speaker.profilePicture}
-                  alt=${speaker.fullName}
-                  loading="lazy"
-                />
-              `}
-              <span class="session-card-speaker-name">${speaker.fullName}</span>
+        ${sessionSpeakers.length > 0 && html`
+          <div class="session-card-speakers">
+            ${sessionSpeakers.map(speaker => html`
+              <div class="session-card-speaker" key=${speaker.id}>
+                ${speaker.profilePicture && html`
+                  <img
+                    class="session-card-speaker-img"
+                    src=${speaker.profilePicture}
+                    alt=${speaker.fullName}
+                    loading="lazy"
+                  />
+                `}
+                <span class="session-card-speaker-name">${speaker.fullName}</span>
+              </div>
+            `)}
+          </div>
+        `}
+
+        ${categoryTags.length > 0 && html`
+          <div class="session-card-tags">
+            ${categoryTags.map(tag => html`
+              <span class="session-tag" key=${tag.id}>${tag.name}</span>
+            `)}
+          </div>
+        `}
+
+        <div class="session-card-footer">
+          <div class="session-card-meta">
+            ${room && html`<span class="session-card-room">${room.name}</span>`}
+          </div>
+          ${agenda && html`
+            <div
+              class="session-bookmark ${isSaved ? 'is-saved' : ''}"
+              role="button"
+              tabindex="0"
+              onClick=${handleBookmark}
+              onKeyDown=${(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleBookmark(e); }}}
+              aria-label=${isSaved ? 'Remove from agenda' : 'Add to agenda'}
+              aria-pressed=${isSaved}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill=${isSaved ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2">
+                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+              </svg>
             </div>
-          `)}
+          `}
         </div>
-      `}
-
-      <div class="session-card-meta">
-        ${room && html`<span class="session-card-room">${room.name}</span>`}
-      </div>
-
-      ${categoryTags.length > 0 && html`
-        <div class="session-card-tags">
-          ${categoryTags.map(tag => html`
-            <span class="session-tag" key=${tag.id}>${tag.name}</span>
-          `)}
-        </div>
-      `}
-    </button>
+      </button>
+    </div>
   `;
 }
 
@@ -238,12 +278,22 @@ export function SessionCard({ session, speakerMap, roomMap, categoryItemMap, onC
 // TimeSlotBlock — a time slot header + grid of session cards
 // ---------------------------------------------------------------------------
 
-export function TimeSlotBlock({ slot, slotId, speakerMap, roomMap, categoryItemMap, onSessionClick }) {
+export function TimeSlotBlock({ slot, slotId, speakerMap, roomMap, categoryItemMap, onSessionClick, agenda, hasConflict }) {
   return html`
-    <div class="timeslot-block">
+    <div class="timeslot-block ${hasConflict ? 'has-conflict' : ''}">
       <div class="timeslot-header" data-timeslot-id=${slotId}>
         <div class="timeslot-time">
           ${slot.label}${slot.endLabel ? html` <span class="timeslot-separator">–</span> ${slot.endLabel}` : ''}
+          ${hasConflict && html`
+            <span class="timeslot-conflict-badge" title="Multiple saved sessions in this time slot">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              Conflict
+            </span>
+          `}
         </div>
         <div class="timeslot-count">${slot.sessions.length} session${slot.sessions.length !== 1 ? 's' : ''}</div>
       </div>
@@ -256,6 +306,7 @@ export function TimeSlotBlock({ slot, slotId, speakerMap, roomMap, categoryItemM
             roomMap=${roomMap}
             categoryItemMap=${categoryItemMap}
             onClick=${onSessionClick}
+            agenda=${agenda}
           />
         `)}
       </div>
@@ -267,11 +318,22 @@ export function TimeSlotBlock({ slot, slotId, speakerMap, roomMap, categoryItemM
 // AgendaTimeline — full day view with bookend events + session time slots
 // ---------------------------------------------------------------------------
 
-export function AgendaTimeline({ timeline, unscheduledSessions, speakerMap, roomMap, categoryItemMap, onSessionClick, hasFilters }) {
+export function AgendaTimeline({ timeline, unscheduledSessions, speakerMap, roomMap, categoryItemMap, onSessionClick, hasFilters, agenda, isMyAgenda, conflictSlots }) {
   const hasScheduled = timeline.length > 0;
   const hasUnscheduled = unscheduledSessions && unscheduledSessions.length > 0;
 
   if (!hasScheduled && !hasUnscheduled && hasFilters) {
+    if (isMyAgenda) {
+      return html`
+        <div class="agenda-empty agenda-empty-my-agenda">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+          <p>Your agenda is empty.</p>
+          <p class="agenda-empty-hint">Bookmark sessions to build your personal agenda for the day.</p>
+        </div>
+      `;
+    }
     return html`
       <div class="agenda-empty">
         <p>No sessions match your filters.</p>
@@ -295,6 +357,7 @@ export function AgendaTimeline({ timeline, unscheduledSessions, speakerMap, room
             roomMap=${roomMap}
             categoryItemMap=${categoryItemMap}
             onClick=${onSessionClick}
+            agenda=${agenda}
           />
         `)}
       </div>
@@ -327,6 +390,8 @@ export function AgendaTimeline({ timeline, unscheduledSessions, speakerMap, room
             roomMap=${roomMap}
             categoryItemMap=${categoryItemMap}
             onSessionClick=${onSessionClick}
+            agenda=${agenda}
+            hasConflict=${conflictSlots?.has(item.data.startsAt)}
           />
         `;
       })}
@@ -388,11 +453,21 @@ function SpeakerOtherSessions({ speaker, session, sessions, onSessionClick }) {
 // SessionModal — expanded session detail overlay
 // ---------------------------------------------------------------------------
 
-export function SessionModal({ session, sessions, speakerMap, roomMap, categoryItemMap, locationQuestionId, onClose, onSessionClick }) {
+export function SessionModal({ session, sessions, speakerMap, roomMap, categoryItemMap, locationQuestionId, onClose, onSessionClick, agenda }) {
   const room = roomMap[session.roomId];
   const sessionSpeakers = (session.speakers || []).map(id => speakerMap[id]).filter(Boolean);
   const categoryTags = (session.categoryItems || []).map(id => categoryItemMap[id]).filter(Boolean);
   const modalRef = useRef(null);
+  const [shareCopied, setShareCopied] = useState(false);
+  const isSaved = agenda?.isSessionSaved(session.id);
+
+  const handleShare = useCallback(() => {
+    const url = `${window.location.origin}${window.location.pathname}#session=${session.id}`;
+    navigator.clipboard.writeText(url).then(() => {
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 2000);
+    });
+  }, [session.id]);
 
   // Focus trap: keep Tab cycling within the modal
   const handleKeyDown = useCallback((e) => {
@@ -424,12 +499,43 @@ export function SessionModal({ session, sessions, speakerMap, roomMap, categoryI
   return html`
     <div class="session-modal-overlay" onClick=${onClose} onKeyDown=${handleKeyDown}>
       <div class="session-modal" ref=${modalRef} onClick=${(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-label=${session.title}>
-        <button class="session-modal-close" onClick=${onClose} aria-label="Close">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="18" y1="6" x2="6" y2="18"/>
-            <line x1="6" y1="6" x2="18" y2="18"/>
-          </svg>
-        </button>
+        <div class="session-modal-toolbar">
+          <div class="session-modal-toolbar-left">
+            ${agenda && html`
+              <button
+                class="session-modal-bookmark ${isSaved ? 'is-saved' : ''}"
+                onClick=${() => agenda.toggleSession(session.id)}
+                aria-label=${isSaved ? 'Remove from agenda' : 'Add to agenda'}
+                aria-pressed=${isSaved}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill=${isSaved ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                </svg>
+                ${isSaved ? 'Saved' : 'Save'}
+              </button>
+            `}
+            <button class="session-modal-share" onClick=${handleShare} aria-label=${shareCopied ? 'Link copied' : 'Share session link'}>
+              ${shareCopied ? html`
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              ` : html`
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                </svg>
+              `}
+              ${shareCopied ? 'Copied!' : ''}
+            </button>
+          </div>
+          <button class="session-modal-close" onClick=${onClose} aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
 
         <div class="session-modal-body">
           <h2 class="session-modal-title">${session.title}</h2>

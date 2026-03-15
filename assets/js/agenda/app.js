@@ -1,6 +1,7 @@
 import { h, render } from 'https://esm.sh/preact@10.25.4';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'https://esm.sh/preact@10.25.4/hooks';
 import { html, parseTimeString, formatTime, shuffle } from './helpers.js';
+import { useAgenda } from './useAgenda.js';
 import {
   AgendaTimeline,
   FilterBar,
@@ -18,8 +19,15 @@ function filtersFromURL() {
   return {
     search: params.get('q') || '',
     category: params.get('cat') || '',
-    room: params.get('room') || ''
+    room: params.get('room') || '',
+    myAgenda: params.get('view') === 'my-agenda'
   };
+}
+
+/** Read session ID from URL hash (e.g. #session=12345). */
+function sessionIdFromURL() {
+  const match = window.location.hash.match(/^#session=(.+)$/);
+  return match ? match[1] : null;
 }
 
 /** Sync filter state to URL query params (replaceState, no reload). */
@@ -28,8 +36,10 @@ function filtersToURL(filters) {
   if (filters.search) params.set('q', filters.search);
   if (filters.category) params.set('cat', filters.category);
   if (filters.room) params.set('room', filters.room);
+  if (filters.myAgenda) params.set('view', 'my-agenda');
   const qs = params.toString();
-  const url = `${window.location.pathname}${qs ? '?' + qs : ''}`;
+  const hash = window.location.hash;
+  const url = `${window.location.pathname}${qs ? '?' + qs : ''}${hash}`;
   window.history.replaceState(null, '', url);
 }
 
@@ -52,6 +62,8 @@ function AgendaApp() {
   const [error, setError] = useState(null);
   const [filters, setFilters] = useState(filtersFromURL);
   const [modalSession, setModalSession] = useState(null);
+  // Track session ID from URL to open once data loads
+  const pendingSessionIdRef = useRef(sessionIdFromURL());
 
   // Read config from the DOM once (not on every render)
   const { apiId, sessionThreshold, locationQuestionId, bookendEvents } = useMemo(() => {
@@ -66,6 +78,9 @@ function AgendaApp() {
     } catch { /* use empty array */ }
     return { apiId, sessionThreshold, locationQuestionId, bookendEvents };
   }, []);
+
+  // Agenda (bookmarked sessions in localStorage)
+  const agenda = useAgenda(apiId);
 
   // Fetch Sessionize data
   useEffect(() => {
@@ -98,6 +113,33 @@ function AgendaApp() {
         setLoading(false);
       });
   }, [apiId]);
+
+  // Open modal from URL session param after data loads
+  useEffect(() => {
+    const pendingId = pendingSessionIdRef.current;
+    if (pendingId && sessions.length > 0) {
+      const found = sessions.find(s => String(s.id) === String(pendingId));
+      if (found) setModalSession(found);
+      pendingSessionIdRef.current = null;
+    }
+  }, [sessions]);
+
+  // Wrap setModalSession to sync session ID to URL hash
+  const openSessionModal = useCallback((session) => {
+    setModalSession(session);
+    if (session) {
+      const qs = window.location.search;
+      const url = `${window.location.pathname}${qs}#session=${session.id}`;
+      window.history.replaceState(null, '', url);
+    }
+  }, []);
+
+  const closeSessionModal = useCallback(() => {
+    setModalSession(null);
+    const qs = window.location.search;
+    const url = `${window.location.pathname}${qs}`;
+    window.history.replaceState(null, '', url);
+  }, []);
 
   // Debounced URL sync (300ms) to avoid replaceState churn on every keystroke
   const urlSyncTimerRef = useRef(null);
@@ -133,6 +175,11 @@ function AgendaApp() {
   // Group sessions by time slot & apply filters
   const { timeSlots, unscheduledSessions, filteredSessions } = useMemo(() => {
     let filtered = sessions.filter(s => !s.isServiceSession);
+
+    // Apply "My Agenda" filter
+    if (filters.myAgenda) {
+      filtered = filtered.filter(s => agenda.savedSet.has(s.id));
+    }
 
     // Apply search filter
     if (filters.search) {
@@ -194,7 +241,17 @@ function AgendaApp() {
     }));
 
     return { timeSlots, unscheduledSessions, filteredSessions: filtered };
-  }, [sessions, filters, speakerMap, roomMap]);
+  }, [sessions, filters, speakerMap, roomMap, agenda.savedSet]);
+
+  // Detect time-slot conflicts: slots where 2+ saved sessions overlap
+  const conflictSlots = useMemo(() => {
+    const slotCounts = {};
+    sessions.filter(s => !s.isServiceSession && s.startsAt && agenda.savedSet.has(s.id))
+      .forEach(s => {
+        slotCounts[s.startsAt] = (slotCounts[s.startsAt] || 0) + 1;
+      });
+    return new Set(Object.keys(slotCounts).filter(k => slotCounts[k] > 1));
+  }, [sessions, agenda.savedSet]);
 
   // Total scheduled sessions (unfiltered) for threshold check
   const totalScheduledCount = useMemo(() =>
@@ -249,18 +306,23 @@ function AgendaApp() {
   // Filter handlers
   const updateFilter = useCallback((key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
+    if (key === 'myAgenda') {
+      requestAnimationFrame(() => {
+        document.querySelector('.agenda-container')?.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
   }, []);
 
   const clearFilters = useCallback(() => {
-    setFilters({ search: '', category: '', room: '' });
+    setFilters({ search: '', category: '', room: '', myAgenda: false });
   }, []);
 
-  const hasFilters = !!(filters.search || filters.category || filters.room);
+  const hasFilters = !!(filters.search || filters.category || filters.room || filters.myAgenda);
 
   // Close modal on Escape
   useEffect(() => {
     if (!modalSession) return;
-    const handler = (e) => { if (e.key === 'Escape') setModalSession(null); };
+    const handler = (e) => { if (e.key === 'Escape') closeSessionModal(); };
     document.addEventListener('keydown', handler);
     return () => document.removeEventListener('keydown', handler);
   }, [modalSession]);
@@ -324,6 +386,7 @@ function AgendaApp() {
         hasFilters=${hasFilters}
         resultCount=${filteredSessions.length}
         totalCount=${sessions.filter(s => !s.isServiceSession).length}
+        savedCount=${agenda.savedCount}
       />
       <${AgendaTimeline}
         timeline=${timeline}
@@ -331,8 +394,11 @@ function AgendaApp() {
         speakerMap=${speakerMap}
         roomMap=${roomMap}
         categoryItemMap=${categoryItemMap}
-        onSessionClick=${setModalSession}
+        onSessionClick=${openSessionModal}
         hasFilters=${hasFilters}
+        agenda=${agenda}
+        isMyAgenda=${filters.myAgenda}
+        conflictSlots=${conflictSlots}
       />
     </div>
     ${modalSession && html`
@@ -343,8 +409,9 @@ function AgendaApp() {
         roomMap=${roomMap}
         categoryItemMap=${categoryItemMap}
         locationQuestionId=${locationQuestionId}
-        onClose=${() => setModalSession(null)}
-        onSessionClick=${setModalSession}
+        onClose=${closeSessionModal}
+        onSessionClick=${openSessionModal}
+        agenda=${agenda}
       />
     `}
   `;
