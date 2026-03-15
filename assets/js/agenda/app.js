@@ -332,7 +332,7 @@ function AgendaApp() {
     const handler = (e) => { if (e.key === 'Escape') closeSessionModal(); };
     document.addEventListener('keydown', handler);
     return () => document.removeEventListener('keydown', handler);
-  }, [modalSession]);
+  }, [modalSession, closeSessionModal]);
 
   // Lock body scroll when any modal is open
   useEffect(() => {

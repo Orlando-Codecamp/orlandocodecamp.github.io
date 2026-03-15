@@ -451,7 +451,7 @@ export function ImportExportModal({ mode, agenda, onClose }) {
     navigator.clipboard.writeText(agenda.exportAgenda()).then(() => {
       setExportCopied(true);
       setTimeout(() => setExportCopied(false), 2000);
-    });
+    }).catch(() => {});
   }, [agenda]);
 
   const handleExportDownload = useCallback(() => {
@@ -615,7 +615,7 @@ export function SessionModal({ session, sessions, speakerMap, roomMap, categoryI
     navigator.clipboard.writeText(url).then(() => {
       setShareCopied(true);
       setTimeout(() => setShareCopied(false), 2000);
-    });
+    }).catch(() => {});
   }, [session.id]);
 
   const handleKeyDown = useMemo(() => createFocusTrapHandler(modalRef), []);
