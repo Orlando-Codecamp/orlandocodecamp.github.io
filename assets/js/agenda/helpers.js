@@ -37,6 +37,28 @@ export function shuffle(arr) {
   return a;
 }
 
+/** Group scheduled sessions into time slots sorted chronologically. */
+export function groupByTimeSlot(sessions, roomMap) {
+  const slotMap = {};
+  sessions.forEach(s => {
+    const key = s.startsAt;
+    if (!slotMap[key]) slotMap[key] = [];
+    slotMap[key].push(s);
+  });
+  const sorted = Object.keys(slotMap).sort((a, b) => new Date(a) - new Date(b));
+  return sorted.map(key => ({
+    startsAt: key,
+    endsAt: slotMap[key][0]?.endsAt,
+    label: formatTime(key),
+    endLabel: formatTime(slotMap[key][0]?.endsAt) || '',
+    sessions: slotMap[key].sort((a, b) => {
+      const roomA = roomMap[a.roomId]?.sort ?? 999;
+      const roomB = roomMap[b.roomId]?.sort ?? 999;
+      return roomA - roomB;
+    })
+  }));
+}
+
 /** Selector for all focusable elements inside a container. */
 const FOCUSABLE_SELECTOR = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
 
