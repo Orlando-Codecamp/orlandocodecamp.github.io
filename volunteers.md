@@ -3,7 +3,7 @@ layout: page
 title: Volunteers
 permalink: /volunteers/
 description: "Join our volunteer team and help make Orlando Code Camp 2026 a success!"
-nav_order: 5
+nav_order: 4
 ---
 
 <!-- Volunteer CTA Section -->

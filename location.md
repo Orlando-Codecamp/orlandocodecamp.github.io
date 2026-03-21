@@ -3,7 +3,7 @@ layout: page
 title: Location
 permalink: /location/
 description: "Find directions, parking information, and travel details for Orlando Code Camp 2026 at Seminole State College."
-nav_order: 2
+nav_order: 1
 ---
 
 <div class="event-highlight">

@@ -10,6 +10,17 @@ body_class: schedule-page
     {% if page.description %}
     <p class="hero-description">{{ page.description }}</p>
     {% endif %}
+    {% if page.hero_cta_link %}
+    <div class="hero-register-link">
+      <a href="{{ page.hero_cta_link | relative_url }}" class="hero-register-btn">
+        <span class="register-dot"></span>
+        <span>{{ page.hero_cta_text | default: "Learn More" }}</span>
+        <svg class="register-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+    {% endif %}
   </div>
 </div>
 

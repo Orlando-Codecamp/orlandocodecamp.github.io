@@ -3,7 +3,7 @@ layout: page
 title: Sponsors
 permalink: /sponsors/
 description: "Meet the sponsors and community partners who make Orlando Code Camp possible."
-nav_order: 4
+nav_order: 5
 ---
 
 <div class="banner banner-cta">
