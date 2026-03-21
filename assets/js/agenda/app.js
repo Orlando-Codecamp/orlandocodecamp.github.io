@@ -1,14 +1,21 @@
 import { h, render } from 'https://esm.sh/preact@10.25.4';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'https://esm.sh/preact@10.25.4/hooks';
-import { html, parseTimeString, formatTime, shuffle } from './helpers.js';
-import { useAgenda } from './useAgenda.js';
+import { html, parseTimeString, formatTime, shuffle, groupByTimeSlot } from './helpers.js';
+import { useBookmarks, useAgendaBuilder } from './hooks.js';
 import {
   AgendaTimeline,
+  AgendaBuilderPanel,
   FilterBar,
   TimeSlotNav,
   SessionModal,
   ImportExportModal
 } from './components.js';
+
+// Dev mock: only loaded on localhost to avoid shipping test code in production
+const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+const { shouldMock, applyMockSchedule } = isLocalhost
+  ? await import('./dev-mock.js')
+  : { shouldMock: () => false, applyMockSchedule: () => {} };
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -17,11 +24,14 @@ import {
 /** Read URL query params into filter state. */
 function filtersFromURL() {
   const params = new URLSearchParams(window.location.search);
+  const view = params.get('view');
   return {
     search: params.get('q') || '',
     category: params.get('cat') || '',
     room: params.get('room') || '',
-    myAgenda: params.get('view') === 'my-agenda'
+    speaker: params.get('speaker') || '',
+    myBookmarks: params.get('bookmarks') === '1' || view === 'my-bookmarks' || view === 'my-agenda',
+    agendaBuilder: view === 'agenda-builder'
   };
 }
 
@@ -32,12 +42,18 @@ function sessionIdFromURL() {
 }
 
 /** Sync filter state to URL query params (replaceState, no reload). */
+const FILTER_PARAMS = new Set(['q', 'cat', 'room', 'speaker', 'view', 'bookmarks']);
+
 function filtersToURL(filters) {
-  const params = new URLSearchParams();
+  // Preserve unknown params (e.g. ?mock=schedule) by starting from current URL
+  const params = new URLSearchParams(window.location.search);
+  FILTER_PARAMS.forEach(k => params.delete(k));
   if (filters.search) params.set('q', filters.search);
   if (filters.category) params.set('cat', filters.category);
   if (filters.room) params.set('room', filters.room);
-  if (filters.myAgenda) params.set('view', 'my-agenda');
+  if (filters.speaker) params.set('speaker', filters.speaker);
+  if (filters.myBookmarks) params.set('bookmarks', '1');
+  if (filters.agendaBuilder) params.set('view', 'agenda-builder');
   const qs = params.toString();
   const hash = window.location.hash;
   const url = `${window.location.pathname}${qs ? '?' + qs : ''}${hash}`;
@@ -82,8 +98,9 @@ function AgendaApp() {
     return { apiId, sessionThreshold, locationQuestionId, bookendEvents };
   }, []);
 
-  // Agenda (bookmarked sessions in localStorage)
-  const agenda = useAgenda(apiId);
+  // Bookmarks + Agenda Builder
+  const bookmarks = useBookmarks(apiId);
+  const builder = useAgendaBuilder(apiId);
 
   // Fetch Sessionize data
   useEffect(() => {
@@ -95,6 +112,11 @@ function AgendaApp() {
       })
       .then(data => {
         const loadedSessions = data.sessions || [];
+
+        if (shouldMock()) {
+          applyMockSchedule(loadedSessions, data.rooms || []);
+        }
+
         setSessions(loadedSessions);
         setSpeakers(data.speakers || []);
         setRooms(data.rooms || []);
@@ -179,9 +201,9 @@ function AgendaApp() {
   const { timeSlots, unscheduledSessions, filteredSessions } = useMemo(() => {
     let filtered = sessions.filter(s => !s.isServiceSession);
 
-    // Apply "My Agenda" filter
-    if (filters.myAgenda) {
-      filtered = filtered.filter(s => agenda.savedSet.has(s.id));
+    // Apply "My Bookmarks" filter
+    if (filters.myBookmarks) {
+      filtered = filtered.filter(s => bookmarks.bookmarkedSet.has(s.id));
     }
 
     // Apply search filter
@@ -211,6 +233,14 @@ function AgendaApp() {
       filtered = filtered.filter(s => s.roomId === roomId);
     }
 
+    // Apply speaker filter (normalize to string since IDs may be numeric)
+    if (filters.speaker) {
+      const speakerFilter = String(filters.speaker);
+      filtered = filtered.filter(s =>
+        (s.speakers || []).some(id => String(id) === speakerFilter)
+      );
+    }
+
     // Separate scheduled vs unscheduled
     const scheduled = filtered.filter(s => s.startsAt);
     const unscheduled = filtered.filter(s => !s.startsAt);
@@ -221,42 +251,18 @@ function AgendaApp() {
       ? [...unscheduled].sort((a, b) => (orderMap.get(a.id) ?? 999) - (orderMap.get(b.id) ?? 999))
       : unscheduled;
 
-    // Group scheduled sessions by startsAt
-    const slotMap = {};
-    scheduled.forEach(s => {
-      const key = s.startsAt;
-      if (!slotMap[key]) slotMap[key] = [];
-      slotMap[key].push(s);
-    });
-
-    // Sort slots chronologically, sessions by room sort order
-    const sorted = Object.keys(slotMap).sort((a, b) => new Date(a) - new Date(b));
-    const timeSlots = sorted.map(key => ({
-      startsAt: key,
-      endsAt: slotMap[key][0]?.endsAt,
-      label: formatTime(key),
-      endLabel: formatTime(slotMap[key][0]?.endsAt) || '',
-      sessions: slotMap[key].sort((a, b) => {
-        const roomA = roomMap[a.roomId]?.sort ?? 999;
-        const roomB = roomMap[b.roomId]?.sort ?? 999;
-        return roomA - roomB;
-      })
-    }));
+    const timeSlots = groupByTimeSlot(scheduled, roomMap);
 
     return { timeSlots, unscheduledSessions, filteredSessions: filtered };
-  }, [sessions, filters, speakerMap, roomMap, agenda.savedSet]);
+  }, [sessions, filters, speakerMap, roomMap, bookmarks.bookmarkedSet]);
 
-  // Detect time-slot conflicts: slots where 2+ saved sessions overlap
-  const conflictSlots = useMemo(() => {
-    const slotCounts = {};
-    sessions.filter(s => !s.isServiceSession && s.startsAt && agenda.savedSet.has(s.id))
-      .forEach(s => {
-        slotCounts[s.startsAt] = (slotCounts[s.startsAt] || 0) + 1;
-      });
-    return new Set(Object.keys(slotCounts).filter(k => slotCounts[k] > 1));
-  }, [sessions, agenda.savedSet]);
+  // All time slots (unfiltered) for the agenda builder
+  const allTimeSlots = useMemo(() => {
+    const scheduled = sessions.filter(s => !s.isServiceSession && s.startsAt);
+    return groupByTimeSlot(scheduled, roomMap);
+  }, [sessions, roomMap]);
 
-  // Total session counts (unfiltered) — memoized to avoid refiltering on every render
+  // Total session counts (unfiltered)
   const totalScheduledCount = useMemo(() =>
     sessions.filter(s => !s.isServiceSession && s.startsAt).length,
     [sessions]
@@ -266,15 +272,14 @@ function AgendaApp() {
     [sessions]
   );
 
+  const showAgendaBuilder = totalScheduledCount >= sessionThreshold;
+
   // Unify bookend events and session time slots into one timeline
   const timeline = useMemo(() => {
     const items = [];
 
-    // Only show the full timeline once we hit critical mass of scheduled sessions
-    // (uses unfiltered count so filtering doesn't collapse the timeline)
     if (totalScheduledCount < sessionThreshold) return items;
 
-    // Convert bookend events to unified timeline items
     bookendEvents.forEach((evt, i) => {
       const slotId = `bookend-${i}`;
       items.push({
@@ -287,7 +292,6 @@ function AgendaApp() {
       });
     });
 
-    // Convert session time slots to unified timeline items
     timeSlots.forEach(slot => {
       const d = new Date(slot.startsAt);
       const mins = d.getHours() * 60 + d.getMinutes();
@@ -301,7 +305,6 @@ function AgendaApp() {
       });
     });
 
-    // Sort by time, bookend events first at same time
     items.sort((a, b) => {
       if (a.sortMinutes !== b.sortMinutes) return a.sortMinutes - b.sortMinutes;
       return a.type === 'bookend' ? -1 : 1;
@@ -313,7 +316,7 @@ function AgendaApp() {
   // Filter handlers
   const updateFilter = useCallback((key, value) => {
     setFilters(prev => ({ ...prev, [key]: value }));
-    if (key === 'myAgenda') {
+    if (key === 'myBookmarks' || key === 'agendaBuilder') {
       requestAnimationFrame(() => {
         document.querySelector('.agenda-container')?.scrollIntoView({ behavior: 'smooth' });
       });
@@ -321,10 +324,10 @@ function AgendaApp() {
   }, []);
 
   const clearFilters = useCallback(() => {
-    setFilters({ search: '', category: '', room: '', myAgenda: false });
+    setFilters({ search: '', category: '', room: '', speaker: '', myBookmarks: false, agendaBuilder: false });
   }, []);
 
-  const hasFilters = !!(filters.search || filters.category || filters.room || filters.myAgenda);
+  const hasFilters = !!(filters.search || filters.category || filters.room || filters.speaker || filters.myBookmarks || filters.agendaBuilder);
 
   // Close modal on Escape
   useEffect(() => {
@@ -386,34 +389,48 @@ function AgendaApp() {
       <${TimeSlotNav} timeline=${timeline} />
       <${FilterBar}
         filters=${filters}
-        categories=${categories}
+        categories=${categories.filter(c => c.title === 'Categories')}
+        speakers=${speakers}
         rooms=${rooms}
         onFilter=${updateFilter}
         onClear=${clearFilters}
         hasFilters=${hasFilters}
         resultCount=${filteredSessions.length}
         totalCount=${totalSessionCount}
-        savedCount=${agenda.savedSessionIds.length}
+        bookmarkCount=${bookmarks.bookmarkedIds.length}
+        showAgendaBuilder=${showAgendaBuilder}
+        builderCount=${builder.selectedCount}
         onExport=${() => setImportExportMode('export')}
         onImport=${() => setImportExportMode('import')}
       />
-      <${AgendaTimeline}
-        timeline=${timeline}
-        unscheduledSessions=${unscheduledSessions}
-        speakerMap=${speakerMap}
-        roomMap=${roomMap}
-        categoryItemMap=${categoryItemMap}
-        onSessionClick=${openSessionModal}
-        hasFilters=${hasFilters}
-        agenda=${agenda}
-        isMyAgenda=${filters.myAgenda}
-        conflictSlots=${conflictSlots}
-      />
+      ${filters.agendaBuilder ? html`
+        <${AgendaBuilderPanel}
+          timeSlots=${allTimeSlots}
+          bookmarks=${bookmarks}
+          builder=${builder}
+          speakerMap=${speakerMap}
+          roomMap=${roomMap}
+          onSessionClick=${openSessionModal}
+          filterToBookmarks=${filters.myBookmarks}
+        />
+      ` : html`
+        <${AgendaTimeline}
+          timeline=${timeline}
+          unscheduledSessions=${unscheduledSessions}
+          speakerMap=${speakerMap}
+          roomMap=${roomMap}
+          categoryItemMap=${categoryItemMap}
+          onSessionClick=${openSessionModal}
+          hasFilters=${hasFilters}
+          bookmarks=${bookmarks}
+          isMyBookmarks=${filters.myBookmarks}
+        />
+      `}
     </div>
     ${importExportMode && html`
       <${ImportExportModal}
         mode=${importExportMode}
-        agenda=${agenda}
+        bookmarks=${bookmarks}
         onClose=${() => setImportExportMode(null)}
       />
     `}
@@ -427,7 +444,7 @@ function AgendaApp() {
         locationQuestionId=${locationQuestionId}
         onClose=${closeSessionModal}
         onSessionClick=${openSessionModal}
-        agenda=${agenda}
+        bookmarks=${bookmarks}
       />
     `}
   `;
