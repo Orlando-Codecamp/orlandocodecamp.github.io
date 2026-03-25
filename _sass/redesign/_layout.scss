@@ -123,6 +123,19 @@
   }
 }
 
+.grid-center {
+  @include desktop-up {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-8);
+
+    > * {
+      width: calc((100% - 2 * var(--spacing-8)) / 3);
+    }
+  }
+}
+
 .grid-4 {
   grid-template-columns: repeat(2, 1fr);
 

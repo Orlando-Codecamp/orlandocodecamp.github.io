@@ -189,7 +189,7 @@ nav_exclude: true
       <p class="section-description">Everything you need to know about Orlando Code Camp 2026</p>
     </div>
 
-    <div class="grid grid-3 stagger-children">
+    <div class="grid grid-3 grid-center stagger-children">
       <a href="{{ '/location/' | relative_url }}" class="card card-quick-link">
         <span class="card-icon">📍</span>
         <span class="card-text">Location &amp; Directions</span>
