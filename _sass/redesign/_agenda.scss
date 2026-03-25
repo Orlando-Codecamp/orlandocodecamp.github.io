@@ -58,6 +58,11 @@
 .agenda-container {
   padding-top: var(--spacing-6);
   padding-bottom: var(--spacing-12);
+  scroll-margin-top: var(--header-height-mobile);
+
+  @include tablet-up {
+    scroll-margin-top: var(--header-height);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -157,13 +162,20 @@
   align-items: center;
   gap: var(--spacing-2);
 
-  @include tablet-up {
-    margin-bottom: var(--spacing-3);
+  @include mobile-only {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: var(--spacing-2);
   }
 
-  // Push whichever element is last (e.g. Build Agenda toggle) to the right
-  > :last-child {
-    margin-left: auto;
+  @include tablet-up {
+    margin-bottom: var(--spacing-3);
+
+    // Push whichever element is last (e.g. Build Agenda toggle) to the right
+    > :last-child {
+      margin-left: auto;
+    }
   }
 }
 
@@ -205,6 +217,7 @@
     color: var(--color-text-inverse);
   }
 }
+
 
 .bookmarks-count,
 .agenda-builder-count {
@@ -696,31 +709,6 @@
 }
 
 // ---------------------------------------------------------------------------
-// Bookmarks Controls (toggle + import/export buttons)
-// ---------------------------------------------------------------------------
-
-.bookmarks-controls {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-1);
-}
-
-.agenda-io-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border-radius: var(--radius-md);
-  color: var(--color-text-muted);
-
-  &:hover {
-    color: var(--color-accent-primary);
-  }
-}
-
-// ---------------------------------------------------------------------------
 // Import/Export Modal
 // ---------------------------------------------------------------------------
 
@@ -834,6 +822,18 @@
 }
 
 // ---------------------------------------------------------------------------
+// Bookmarks Header (shown above timeline when bookmarks view is active)
+// ---------------------------------------------------------------------------
+
+.bookmarks-view-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding-bottom: var(--spacing-4);
+}
+
+// ---------------------------------------------------------------------------
 // Agenda Builder
 // ---------------------------------------------------------------------------
 
@@ -935,6 +935,11 @@
   border-top: 1px solid var(--color-border-default);
   border-left: 3px solid var(--color-accent-primary);
   background-color: var(--color-bg-primary);
+
+  @include mobile-only {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
 }
 
 .agenda-builder-selected-info {

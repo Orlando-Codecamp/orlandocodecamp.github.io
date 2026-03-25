@@ -399,8 +399,6 @@ function AgendaApp() {
         bookmarkCount=${bookmarks.bookmarkedIds.length}
         showAgendaBuilder=${showAgendaBuilder}
         builderCount=${builder.selectedCount}
-        onExport=${() => setImportExportMode('export')}
-        onImport=${() => setImportExportMode('import')}
       />
       ${filters.agendaBuilder ? html`
         <${AgendaBuilderPanel}
@@ -423,6 +421,8 @@ function AgendaApp() {
           hasFilters=${hasFilters}
           bookmarks=${bookmarks}
           isMyBookmarks=${filters.myBookmarks}
+          onExport=${() => setImportExportMode('export')}
+          onImport=${() => setImportExportMode('import')}
         />
       `}
     </div>

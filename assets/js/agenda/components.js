@@ -66,7 +66,7 @@ export function TimeSlotNav({ timeline }) {
 // FilterBar — search, category dropdown, room dropdown
 // ---------------------------------------------------------------------------
 
-export function FilterBar({ filters, categories, speakers, rooms, onFilter, onClear, hasFilters, resultCount, totalCount, bookmarkCount, showAgendaBuilder, builderCount, onExport, onImport }) {
+export function FilterBar({ filters, categories, speakers, rooms, onFilter, onClear, hasFilters, resultCount, totalCount, bookmarkCount, showAgendaBuilder, builderCount }) {
   const [expanded, setExpanded] = useState(false);
 
   // Build sorted speaker list for dropdown (memoized)
@@ -103,46 +103,18 @@ export function FilterBar({ filters, categories, speakers, rooms, onFilter, onCl
           ${hasFilters && html`<span class="filter-count">${resultCount}</span>`}
         </button>
 
-        <div class="bookmarks-controls">
-          <button
-            class="btn bookmarks-toggle ${filters.myBookmarks ? 'active' : ''}"
-            onClick=${() => onFilter('myBookmarks', !filters.myBookmarks)}
-            aria-pressed=${filters.myBookmarks}
-            aria-label="Show my bookmarks"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill=${filters.myBookmarks ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2">
-              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
-            </svg>
-            Bookmarks
-            ${bookmarkCount > 0 && html`<span class="bookmarks-count">${bookmarkCount}</span>`}
-          </button>
-          <button
-            class="btn btn-ghost agenda-io-btn"
-            onClick=${onImport}
-            aria-label="Import bookmarks"
-            title="Import bookmarks"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="17 8 12 3 7 8"/>
-              <line x1="12" y1="3" x2="12" y2="15"/>
-            </svg>
-          </button>
-          ${bookmarkCount > 0 && html`
-            <button
-              class="btn btn-ghost agenda-io-btn"
-              onClick=${onExport}
-              aria-label="Export bookmarks"
-              title="Export bookmarks"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-              </svg>
-            </button>
-          `}
-        </div>
+        <button
+          class="btn bookmarks-toggle ${filters.myBookmarks ? 'active' : ''}"
+          onClick=${() => onFilter('myBookmarks', !filters.myBookmarks)}
+          aria-pressed=${filters.myBookmarks}
+          aria-label="Show my bookmarks"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill=${filters.myBookmarks ? 'currentColor' : 'none'} stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+          Bookmarks
+          ${bookmarkCount > 0 && html`<span class="bookmarks-count">${bookmarkCount}</span>`}
+        </button>
         ${showAgendaBuilder && html`
           <button
             class="btn agenda-builder-toggle ${filters.agendaBuilder ? 'active' : ''}"
@@ -377,13 +349,37 @@ export function TimeSlotBlock({ slot, slotId, speakerMap, roomMap, categoryItemM
 // AgendaTimeline — full day view with bookend events + session time slots
 // ---------------------------------------------------------------------------
 
-export function AgendaTimeline({ timeline, unscheduledSessions, speakerMap, roomMap, categoryItemMap, onSessionClick, hasFilters, bookmarks, isMyBookmarks }) {
+export function AgendaTimeline({ timeline, unscheduledSessions, speakerMap, roomMap, categoryItemMap, onSessionClick, hasFilters, bookmarks, isMyBookmarks, onExport, onImport }) {
   const hasScheduled = timeline.length > 0;
   const hasUnscheduled = unscheduledSessions && unscheduledSessions.length > 0;
+
+  const bookmarksViewHeader = isMyBookmarks && html`
+    <div class="bookmarks-view-header">
+      <button class="btn btn-ghost btn-sm" onClick=${onImport}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17 8 12 3 7 8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        Import
+      </button>
+      ${bookmarks.bookmarkedIds.length > 0 && html`
+        <button class="btn btn-ghost btn-sm" onClick=${onExport}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Export
+        </button>
+      `}
+    </div>
+  `;
 
   if (!hasScheduled && !hasUnscheduled && hasFilters) {
     if (isMyBookmarks) {
       return html`
+        ${bookmarksViewHeader}
         <div class="agenda-empty agenda-empty-bookmarks">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
