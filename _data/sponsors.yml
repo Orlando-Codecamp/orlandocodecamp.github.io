@@ -61,6 +61,12 @@
 #   logoStyle: standard
 #   url: https://devforge.com/
 #   level: Silver
+- name: Streamline Technologies
+  logoPath: /assets/img/sponsors/Streamline/Streamline-Horz-Color.png
+  logoStyle: wide
+  url: https://streamline.tech/
+  level: Bronze
+  description: "Streamline Technologies is a Winter Springs, Florida-based company with over 40 years of experience in stormwater modeling and flood forecasting. Their software products, StormWise and FloodWise, help engineering professionals and emergency responders forecast, prepare for, and mitigate stormwater and flooding impacts at the street and infrastructure level."
 - name: Dynabyte
   logoPath: /assets/img/sponsors/Dynabyte/dynabyte.svg
   logoStyle: standard
