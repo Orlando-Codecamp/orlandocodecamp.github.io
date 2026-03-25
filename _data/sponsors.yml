@@ -49,12 +49,13 @@
   description: "Dexian is one of the largest IT and professional staffing companies in the U.S., with nearly 12,000 employees across 70 locations worldwide. They specialize in staffing, IT, and workforce solutions, sourcing talent for areas like cloud computing, AI, machine learning, and cybersecurity."
 
 # Previous Year / Potential Sponsors (for reference)
-# - name: SNI Technology
-#   logoPath: /assets/img/sponsors/SNI-Technology/SNI-Technology-logo.jpg
-#   logoStyle: wide
-#   url: https://www.snicompanies.com/staffing-recruiting/orlando/
-#   urlLabelOverride: Orlando office
-#   level: Silver
+- name: SNI Technology
+  logoPath: /assets/img/sponsors/SNI-Technology/SNI-Technology-logo.jpg
+  logoStyle: wide
+  url: https://www.snicompanies.com/staffing-recruiting/orlando/
+  urlLabelOverride: Orlando office
+  level: Bronze
+  description: "SNI Technology is one of the fastest-growing technology recruitment companies in the country, part of SNI Companies which has over 20 years of experience and 20 locations nationwide. Their Orlando office specializes in IT staffing and recruiting, offering contract, project-based, direct hire, and executive search services for organizations ranging from startups to Fortune 100 companies."
 # - name: Tim Corey's DevForge
 #   logoPath: /assets/img/sponsors/Tim-Coreys-DevForge/Tim_Coreys_DevForge_Blue.png
 #   logoStyle: standard
