@@ -31,6 +31,18 @@ export function TimeSlotNav({ timeline }) {
     return () => observer.disconnect();
   }, [timeline]);
 
+  // Auto-scroll the nav strip horizontally so the active pill is visible
+  useEffect(() => {
+    if (!activeSlot || !navRef.current) return;
+    const strip = navRef.current.querySelector('.timeslot-nav-scroll');
+    const pill = navRef.current.querySelector('.timeslot-pill.active');
+    if (strip && pill) {
+      const target = pill.offsetLeft - strip.offsetWidth / 2 + pill.offsetWidth / 2;
+      const motion = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+      strip.scrollTo({ left: target, behavior: motion });
+    }
+  }, [activeSlot]);
+
   function scrollTo(slotId) {
     const el = document.querySelector(`[data-timeslot-id="${CSS.escape(slotId)}"]`);
     if (el) {
@@ -420,6 +432,7 @@ export function AgendaTimeline({ timeline, unscheduledSessions, speakerMap, room
   `;
 
   return html`
+    ${bookmarksViewHeader}
     <div class="agenda-timeline">
       ${!hasScheduled && unscheduledBlock}
 
