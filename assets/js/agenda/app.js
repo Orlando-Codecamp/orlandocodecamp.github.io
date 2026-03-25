@@ -1,6 +1,6 @@
 import { h, render } from 'https://esm.sh/preact@10.25.4';
 import { useState, useEffect, useCallback, useMemo, useRef } from 'https://esm.sh/preact@10.25.4/hooks';
-import { html, parseTimeString, formatTime, shuffle, groupByTimeSlot } from './helpers.js';
+import { html, parseTimeString, parseISOMinutes, formatTime, shuffle, groupByTimeSlot } from './helpers.js';
 import { useBookmarks, useAgendaBuilder } from './hooks.js';
 import {
   AgendaTimeline,
@@ -293,8 +293,7 @@ function AgendaApp() {
     });
 
     timeSlots.forEach(slot => {
-      const d = new Date(slot.startsAt);
-      const mins = d.getHours() * 60 + d.getMinutes();
+      const mins = parseISOMinutes(slot.startsAt);
       items.push({
         type: 'timeslot',
         sortMinutes: mins,

@@ -15,16 +15,31 @@ export function parseTimeString(str) {
   return h * 60 + m;
 }
 
-/** Format an ISO datetime string to "h:mm AM/PM". Returns null if invalid. */
-export function formatTime(iso) {
+/**
+ * Extract hours and minutes from an ISO datetime string using the event-local
+ * time (the time as written in the ISO string) rather than converting to the
+ * browser's timezone. Returns { h, m } or null.
+ */
+function parseISOLocal(iso) {
   if (!iso) return null;
-  const d = new Date(iso);
-  if (isNaN(d.getTime())) return null;
-  let h = d.getHours();
-  const m = d.getMinutes();
-  const ampm = h >= 12 ? 'PM' : 'AM';
-  h = h % 12 || 12;
-  return `${h}:${m.toString().padStart(2, '0')} ${ampm}`;
+  const match = iso.match(/T(\d{2}):(\d{2})/);
+  if (!match) return null;
+  return { h: parseInt(match[1], 10), m: parseInt(match[2], 10) };
+}
+
+/** Extract event-local minutes since midnight from an ISO datetime string. Returns 0 if unparseable (safe — Sessionize always provides valid ISO). */
+export function parseISOMinutes(iso) {
+  const t = parseISOLocal(iso);
+  return t ? t.h * 60 + t.m : 0;
+}
+
+/** Format an ISO datetime string to "h:mm AM/PM" in the event's local time. */
+export function formatTime(iso) {
+  const t = parseISOLocal(iso);
+  if (!t) return null;
+  const ampm = t.h >= 12 ? 'PM' : 'AM';
+  const h = t.h % 12 || 12;
+  return `${h}:${t.m.toString().padStart(2, '0')} ${ampm}`;
 }
 
 /** Fisher-Yates shuffle (returns new array). */
