@@ -47,6 +47,12 @@
   url: https://dexian.com/
   level: Silver
   description: "Dexian is one of the largest IT and professional staffing companies in the U.S., with nearly 12,000 employees across 70 locations worldwide. They specialize in staffing, IT, and workforce solutions, sourcing talent for areas like cloud computing, AI, machine learning, and cybersecurity."
+- name: Design Interactive
+  logoPath: /assets/img/sponsors/Design-Interactive/Di-abr-logo-blackandgreen-02.png
+  logoStyle: wide
+  url: https://designinteractive.net/
+  level: Silver
+  description: "Design Interactive is an Orlando-based digital transformation company founded in 1998, specializing in extended reality (XR), digital twin solutions, and human-systems integration. They serve major clients including NASA, Boeing, Lockheed Martin, and the Department of Defense, optimizing human performance through rapid XR deployment, automated performance assessment, and high-tech consulting."
 
 # Previous Year / Potential Sponsors (for reference)
 - name: SNI Technology
