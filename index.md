@@ -37,7 +37,7 @@ nav_exclude: true
       <div class="hero-register-link">
         <a href="https://www.eventbrite.com/e/orlando-code-camp-2026-registration-1982329224072" target="_blank" rel="noopener" class="hero-register-btn">
           <span class="register-dot"></span>
-          <span>Registration Now Open</span>
+          <span>Register Now (It's Free!)</span>
           <svg class="register-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
