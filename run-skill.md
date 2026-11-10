@@ -2,68 +2,61 @@ Run skill shape: full-text. This repository documents no launch procedure, so th
 
 ## Prerequisites
 
-This is a Jekyll static site built with the `github-pages` gem, which pins Jekyll 3.9.3 (`Gemfile`, `Gemfile.lock`). There is no database, no container, and no backend service.
+This is a Jekyll static site built with the `github-pages` gem. There is no database, container or service to start.
 
-- **Ruby 3.2.6.** The CI workflow pins this version and no `.ruby-version` file exists, so match it locally (`.github/workflows/pages.yml`). Check with `ruby -v`.
-- **Bundler.** `Gemfile.lock` was produced with Bundler 2.5.23 (`BUNDLED WITH` in `Gemfile.lock`). Check with `bundle -v`.
-- **Network access to rubygems.org**, to install gems (`Gemfile`).
-- **A C toolchain** may be needed if a gem with native extensions has no prebuilt version for your platform. The repository does not say which gems need one (see Human steps).
-
-Platform notes the repository does state:
-- `webrick` is in the `Gemfile` because Ruby 3.x no longer bundles it. The `Gemfile` comment says this fix comes from GitHub's "Testing your GitHub Pages site locally with Jekyll" guide.
-- On Windows the `Gemfile` conditionally adds `tzinfo`, `tzinfo-data` and `wdm`. These are installed automatically on that platform and need no manual action (`Gemfile`).
+- **Ruby 3.2.6.** CI pins this version (`.github/workflows/pages.yml`). No `.ruby-version` or `.tool-versions` file exists. Check with `ruby -v`.
+- **Bundler 2.5.23.** `Gemfile.lock` records this as `BUNDLED WITH` (`Gemfile.lock`). Check with `bundle -v`. Any bundler that accepts the lockfile should work.
+- **Network access to rubygems.org** for the gem install (`Gemfile`).
+- **Git.** The repository is used as a normal checkout.
 
 ## One-time setup
 
-Run from the repository root (the directory containing `Gemfile`).
+Run these from the repository root, the directory that holds `Gemfile`.
 
 1. Install the gems:
    ```
    bundle install
    ```
-   (`Gemfile`, `Gemfile.lock`)
-2. Check whether `Gemfile.lock` changed. The `Gemfile` no longer lists `minima`, but the committed `Gemfile.lock` still lists `minima (~> 2.0)` under `DEPENDENCIES`. `bundle install` will probably remove that line from the lockfile. This is a harmless working-tree change, but do not commit it unless the task is about dependencies (`Gemfile`, `Gemfile.lock`, `_config.yml` sets `theme: null`).
+   This pulls `github-pages ~> 228` (Jekyll 3.9.3 in the lockfile), `jekyll-feed`, and `webrick ~> 1.8`. `webrick` is needed because Ruby 3 no longer bundles it (`Gemfile`, `Gemfile.lock`).
+2. On Windows, `tzinfo`, `tzinfo-data` and `wdm` are installed only on Windows platforms (`Gemfile`). No extra step is needed on macOS or Linux.
+3. No environment variables, secrets or seed data are needed. All site content is in `_data/`, the `.md` and `.html` pages, `_includes/`, `_layouts/` and `_sass/`. The plugins `jekyll-redirect-from` and `jekyll-seo-tag` are configured in `_config.yml`.
 
-No other setup is needed. The repository has no seed data, environment files, or generated assets. Site content comes from the Markdown and HTML pages at the root and from `_data/`, `_includes/`, `_layouts/`, `_sass/` and `assets/`. `_site/` is the build output directory and is git-ignored (`.gitignore`).
+Known wrinkle: `Gemfile.lock` lists `minima (~> 2.0)` under DEPENDENCIES, but `Gemfile` no longer declares it. The `Gemfile` comment says the minima theme gem was removed. If `bundle install` complains that the lockfile and Gemfile disagree, run `bundle install` without a frozen or deployment setting so Bundler can re-resolve. This is the likely cause and I could not confirm it. CI uses `bundler-cache: true` (`.github/workflows/pages.yml`).
 
 ## Launch
 
 Run from the repository root.
 
-Development server, which blocks and rebuilds on file changes:
-```
-bundle exec jekyll serve
-```
-(`Gemfile` header comment, which documents this exact command)
-
-One-off production-style build, which exits when done and writes to `_site/`. This mirrors CI (`.github/workflows/pages.yml`):
-```
-JEKYLL_ENV=production bundle exec jekyll build
-```
-The CI workflow also passes `--baseurl "<pages base_path>"`. For a local build, `baseurl: "/"` in `_config.yml` is already correct, so omit the flag.
-
-`_config.yml` is not reloaded while `jekyll serve` runs (its own header comment says so). Stop and restart the server after editing it. Changes to pages, includes, layouts, data files and Sass are picked up automatically.
+- **Local dev server, blocking:**
+  ```
+  bundle exec jekyll serve
+  ```
+  This is the command the `Gemfile` header comment names. It runs in the foreground until stopped. `_config.yml` is not reloaded while it runs, so restart the server after editing it (`_config.yml`).
+- **One-shot build, not a server:**
+  ```
+  bundle exec jekyll build
+  ```
+  This writes the site to `_site/`, which is gitignored (`.gitignore`). The project's registered build command is this same one.
+- **Production-style build, as CI does it:**
+  ```
+  JEKYLL_ENV=production bundle exec jekyll build --baseurl ""
+  ```
+  CI passes the `--baseurl` value from `actions/configure-pages`. The empty string here is an assumption for a user site; `_config.yml` sets `baseurl: "/"` (`.github/workflows/pages.yml`, `_config.yml`).
 
 ## How to know it is up
 
-- With `jekyll serve`, the terminal prints a `Server address: http://...` line and then `Server running... press ctrl-c to stop`. Use the address printed on that line, because the repository does not configure a port.
-- An HTTP request to that address returns 200 with the homepage HTML.
-- Pages and URLs to check: `/` (`index.md`), `/sessions.html`, `/speakers/`, `/sponsors/`.
-- With `jekyll build`, success is the process exiting 0 and `_site/index.html` existing.
-- A broken build prints a Liquid or Sass error and exits non-zero. In `serve`, the error is printed and the last good build keeps being served.
+- **For `jekyll build`:** the command exits with status 0, and `_site/index.html` exists afterwards. Jekyll's output ends with a "done in N seconds" line. The build printing no error lines is the success signal.
+- **For `jekyll serve`:** Jekyll prints the address it is serving on (as `Server address: http://…`) followed by `Server running... press ctrl-c to stop`. Requesting that address returns the home page. Read the address and port from that line, because neither is set in the repository.
 
 ## Address or entry point
 
-Open the address from the `Server address:` line in a browser. The site root is `/` because `baseurl: "/"` (`_config.yml`). Pages come from the root-level `.md` and `.html` files, such as `index.md`, `sessions.html`, `speakers.md`, `sponsors.md`, `location.md`, `schedule-redirect.html` and `404.html`.
-
-The production URL is `https://orlandocodecamp.com` (`_config.yml`, `CNAME`). It deploys from GitHub Actions to GitHub Pages (`.github/workflows/pages.yml`) and cannot be reproduced locally.
-
-There is no test suite or lint configuration in the repository. Verification is building the site and viewing the pages.
+- **`jekyll serve`:** open the `Server address` URL it prints. Jekyll's own default port applies, since `_config.yml` has no `port` or `host` setting. Pages worth checking are `/`, `/speakers`, `/sessions`, `/schedule-redirect` and `/sponsors`. They come from `index.md`, `speakers.md`, `sessions.html`, `schedule-redirect.html` and `sponsors.md`.
+- **Production site:** `https://orlandocodecamp.com`. This is `url` in `_config.yml`, and `CNAME` is present. CI deploys to GitHub Pages on push to the default branch.
+- **`jekyll build` only:** the entry point is the generated `_site/` directory.
 
 ## Human steps
 
-- **Ruby installation.** The repository names no version manager and has no `.ruby-version` or `.tool-versions`. Whoever sets up the machine must install Ruby 3.2.6 by whatever means they use (rbenv, asdf, Homebrew, or similar). The repository does not say which.
-- **Native-extension build tools.** The repository does not say whether `bundle install` needs a compiler or system libraries on your platform. If it fails, read the error and install what it names. This was not confirmed because nothing was installed or run in this read-only discovery.
-- **Local port.** No port is configured in the repository. Jekyll chooses one and prints it at startup. If a specific port is wanted, or the default is taken, the reader must pass it as a `jekyll serve` option. This document does not name one.
-- **Live-site content.** `README.md` says the event is "April 11th, 2026" and that the schedule and attendee sign-up are still to come. Sessions, speakers and sponsors are probably driven by files in `_data/`, but I did not trace the content flow. Anyone who needs fresh external data (registration, the schedule, Eventbrite links) must obtain it from the event organizers. Nothing in the repository fetches it at build time.
-- **GitHub Pages deployment.** Deploying needs repository admin and Pages settings access on the `Orlando-Codecamp/orlandocodecamp.github.io` GitHub repository. This is outside local launch, and I did not verify that the account has it.
+- **Ruby 3.2.6 install.** If the machine does not have it, the reader must install it with their own version manager. The repository ships no `.ruby-version`, so nothing selects the version automatically.
+- **Local port and address.** No port is configured in the repository. If the printed address is unreachable or the port is taken, the reader must pass their own `--port` or `--host` flag to `jekyll serve`. I did not confirm a default value.
+- **Lockfile disagreement.** The `minima` mismatch above is the one thing that may need a human decision. The reader may need to run `bundle install` unfrozen and commit the updated `Gemfile.lock`, or leave it alone.
+- **Deployment.** The GitHub Pages deployment needs repository admin rights, a Pages environment and `GITHUB_TOKEN` permissions. I did not confirm any of these. Nothing in local development depends on them.
