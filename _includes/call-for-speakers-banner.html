@@ -24,9 +24,14 @@
 
   <div class="cfs-banner-footer">
     <p class="cfs-banner-details">April 17th &bull; Seminole State College</p>
-    <a href="https://sessionize.com/orlando-code-camp-2026/" target="_blank" rel="noopener" class="cfs-banner-cta">
+    {% assign call_for_speakers_url = site.call_for_speakers_url | strip %}
+    {% if call_for_speakers_url != "" %}
+    <a href="{{ call_for_speakers_url }}" target="_blank" rel="noopener" class="cfs-banner-cta">
       Submit Your Session
     </a>
+    {% else %}
+    <p class="cfs-banner-details">Session submissions open soon.</p>
+    {% endif %}
   </div>
 </div>
 

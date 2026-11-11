@@ -6,11 +6,22 @@ description: "Everything attendees need to know about Orlando Code Camp 2027 - r
 nav_order: 3
 ---
 
+{% assign registration_url = site.registration_url | strip %}
+{% if registration_url != "" %}
 ## Registration Now Open!
+{% else %}
+## Registration Coming Soon
+{% endif %}
 
 Orlando Code Camp 2027 will be held at Seminole State College in Sanford, FL on **April 17, 2027** from **7:30 AM to 5:00 PM**. We're looking forward to seeing you! Here's some helpful information about the event:
 
+{% if registration_url != "" %}
 {% include registration-banner.html %}
+{% else %}
+<div class="banner banner-info">
+  Registration for Orlando Code Camp 2027 isn't open yet. The registration link will be posted here and on the home page as soon as it is.
+</div>
+{% endif %}
 
 ## Location
 
