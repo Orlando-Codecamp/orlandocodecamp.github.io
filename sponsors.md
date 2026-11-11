@@ -18,9 +18,9 @@ nav_order: 5
 
 ---
 
-## 2026 Sponsors
+## Thank You to Our 2026 Sponsors
 
-<p class="text-muted mb-6">The sponsors listed below are our confirmed sponsors so far. Check back for updates as more sponsors come on board!</p>
+<p class="text-muted mb-6">These sponsors made Orlando Code Camp 2026 possible. We are now looking for 2027 sponsors; visit the <a href="{{ '/become-a-sponsor/' | relative_url }}">Become a Sponsor</a> page to learn how your organization can support this year's event.</p>
 
 {% for sponsor in site.data.sponsors %}
 {% if sponsor.logoPath %}
