@@ -31,6 +31,16 @@ registration_url:
 volunteer_url:
 call_for_speakers_url:
 
+# Sessionize ids for the upcoming event. Leave a value blank until the event
+# exists on Sessionize; while it is blank the page shows a "coming soon" note.
+# sessionize_embed_id drives the speakers list (/speakers/) and the sessions
+# tag cloud (/sessions-tagcloud/). sessionize_agenda_id drives the agenda and
+# schedule builder (/sessions/), and sessionize_location_question_id is the
+# optional speaker-location question the agenda shows beside each speaker.
+sessionize_embed_id:
+sessionize_agenda_id:
+sessionize_location_question_id:
+
 # Build settings
 markdown: kramdown
 

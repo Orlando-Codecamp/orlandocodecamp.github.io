@@ -2,7 +2,9 @@
 layout: full-width
 title: Sessions
 permalink: /sessions/
-description: "Browse accepted sessions and plan your day. Filter by track, room, or speaker and build your schedule."
+# Front matter is not run through Liquid, so this line cannot follow sessionize_agenda_id.
+# When the agenda id is filled in, restore: "Browse accepted sessions and plan your day. Filter by track, room, or speaker and build your schedule."
+description: "The 2027 sessions and schedule are coming soon, once speakers are selected."
 nav_order: 2
 body_class: agenda-page
 hero_cta_text: "Meet Our Speakers"
@@ -12,7 +14,7 @@ bookend_events:
   - time: "7:00 AM"
     end_time: "9:30 AM"
     title: "Check-in & Breakfast"
-    description: "Check in, grab your badge, and enjoy breakfast and coffee provided by Dunkin."
+    description: "Check in, grab your badge, and enjoy breakfast and coffee."
     location: "Breezeway (next to parking lot)"
     type: "logistics"
     show_in_nav: true
@@ -30,7 +32,7 @@ bookend_events:
   - time: "11:20 AM"
     end_time: "12:15 PM"
     title: "Lunch"
-    description: "Lunch provided by Jason's Deli."
+    description: "Lunch is provided for all attendees."
     location: "Registration Area"
     type: "logistics"
     show_in_nav: true
@@ -49,7 +51,7 @@ bookend_events:
   - time: "2:05 PM"
     end_time: "2:30 PM"
     title: "Snack Break"
-    description: "Snacks provided by Dynabyte."
+    description: "Afternoon snacks are provided."
     location: "The UP building rotunda"
     type: "social"
     show_in_nav: true
@@ -60,15 +62,17 @@ bookend_events:
     end_time: "8:00 PM"
     title: "After-Party"
     description: "Join us for food, drinks, and networking."
-    location: "4th Street Bar & Grill, Lake Mary"
-    location_link: "https://maps.google.com/?q=4th+Street+Bar+%26+Grill,+Lake+Mary+FL"
+    location: "Venue to be announced"
     type: "social"
     show_in_nav: true
     nav_clickable: true
     show_in_body: true
 ---
 
-<div id="agenda-app" data-api-id="er10xu03" data-session-threshold="50" data-location-question-id="112742">
+{% assign sessionize_agenda_id = site.sessionize_agenda_id | strip %}
+{% assign sessionize_location_question_id = site.sessionize_location_question_id | strip %}
+{% if sessionize_agenda_id != "" %}
+<div id="agenda-app" data-api-id="{{ sessionize_agenda_id }}" data-session-threshold="50"{% if sessionize_location_question_id != "" %} data-location-question-id="{{ sessionize_location_question_id }}"{% endif %}>
   <div class="agenda-loading">
     <div class="agenda-loading-spinner"></div>
     <p>Loading agenda...</p>
@@ -78,3 +82,10 @@ bookend_events:
 <script id="bookend-events-data" type="application/json">{{ page.bookend_events | jsonify }}</script>
 
 <script type="module" src="{{ '/assets/js/agenda/app.js' | relative_url }}"></script>
+{% else %}
+<div class="container section-sm">
+  <div class="banner banner-info">
+    The 2027 sessions and schedule will be posted here once speakers are selected.
+  </div>
+</div>
+{% endif %}
