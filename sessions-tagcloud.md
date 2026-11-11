@@ -2,7 +2,7 @@
 layout: page
 title: Sessions Tag Cloud
 permalink: /sessions-tagcloud/
-description: "Browse the sessions at Orlando Code Camp 2026 - technical deep dives and strategic industry insights."
+description: "Browse the sessions at Orlando Code Camp 2027 - technical deep dives and strategic industry insights."
 nav_exclude: true
 ---
 

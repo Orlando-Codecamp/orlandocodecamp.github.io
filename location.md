@@ -2,14 +2,14 @@
 layout: page
 title: Location
 permalink: /location/
-description: "Find directions, parking information, and travel details for Orlando Code Camp 2026 at Seminole State College."
+description: "Find directions, parking information, and travel details for Orlando Code Camp 2027 at Seminole State College."
 nav_order: 1
 ---
 
 <div class="event-highlight">
   <span class="highlight-icon">📍</span>
   <div class="highlight-content">
-    Orlando Code Camp 2026 will be held on <strong>April 11th, 2026</strong> at <strong>Seminole State College</strong> in Sanford, FL. Please be aware that there are several Seminole State College campuses, so be sure to navigate to the Sanford location shown below!
+    Orlando Code Camp 2027 will be held on <strong>April 17th, 2027</strong> at <strong>Seminole State College</strong> in Sanford, FL. Please be aware that there are several Seminole State College campuses, so be sure to navigate to the Sanford location shown below!
   </div>
 </div>
 

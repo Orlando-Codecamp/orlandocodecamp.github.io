@@ -17,13 +17,13 @@ nav_exclude: true
       <div class="hero-logo-group">
         <img src="{{ '/assets/img/occ-tree-logo-wht-grn.png' | relative_url }}" alt="Orlando Code Camp Logo" class="hero-logo">
         <div class="hero-title-group">
-          <span class="hero-annual">18th Annual</span>
+          <span class="hero-annual">19th Annual</span>
           <h1 class="hero-title">Orlando<br>Code Camp</h1>
-          <span class="hero-year">2026</span>
+          <span class="hero-year">2027</span>
         </div>
       </div>
 
-      <p class="hero-subtitle">April 11th, 2026 &bull; Seminole State College, Sanford, FL</p>
+      <p class="hero-subtitle">April 17th, 2027 &bull; Seminole State College, Sanford, FL</p>
       <p class="hero-description">A full day of learning, networking, and technical sessions with dozens of speakers and sessions. Free to attend!</p>
 
       <div class="hero-presented-by">
@@ -186,7 +186,7 @@ nav_exclude: true
     <div class="section-header">
       <span class="section-label">Explore</span>
       <h2 class="section-title">Event Information</h2>
-      <p class="section-description">Everything you need to know about Orlando Code Camp 2026</p>
+      <p class="section-description">Everything you need to know about Orlando Code Camp 2027</p>
     </div>
 
     <div class="grid grid-3 grid-center stagger-children">

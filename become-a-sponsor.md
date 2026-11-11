@@ -2,7 +2,7 @@
 layout: page
 title: Become a Sponsor
 permalink: /become-a-sponsor/
-description: "Partner with Orlando Code Camp 2026 and connect with 400+ developers, engineers, and tech professionals."
+description: "Partner with Orlando Code Camp 2027 and connect with 400+ developers, engineers, and tech professionals."
 nav_exclude: true
 ---
 
@@ -15,8 +15,8 @@ nav_exclude: true
 <div class="sponsor-info-page">
 
 <div class="banner banner-cta mb-8">
-  <h3 class="banner-title">18th Annual Orlando Code Camp</h3>
-  <p class="banner-description">April 11th, 2026 &mdash; Seminole State College, Sanford, FL</p>
+  <h3 class="banner-title">19th Annual Orlando Code Camp</h3>
+  <p class="banner-description">April 17th, 2027 &mdash; Seminole State College, Sanford, FL</p>
   <p class="text-muted mb-4">Join us in supporting Central Florida's largest free developer conference.</p>
   <a href="mailto:sponsors@orlandocodecamp.com" class="btn btn-primary btn-lg">Get in Touch</a>
 </div>
@@ -299,7 +299,7 @@ nav_exclude: true
 <h2>Ready to Sponsor?</h2>
 
 <div class="sponsor-cta-section">
-  <p class="text-lg mb-6">We'd love to have your organization as a sponsor for Orlando Code Camp 2026. Reach out to us to get started!</p>
+  <p class="text-lg mb-6">We'd love to have your organization as a sponsor for Orlando Code Camp 2027. Reach out to us to get started!</p>
 
   <div class="info-card info-card-highlight text-center mb-6">
     <h4 class="info-card-title">Email Us</h4>
