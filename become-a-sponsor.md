@@ -7,10 +7,10 @@ nav_exclude: true
 ---
 
 {% assign now = site.time | date: "%s" | plus: 0 %}
-{% assign after_jan31 = "2026-02-01" | date: "%s" | plus: 0 %}
-{% assign after_feb28 = "2026-03-01" | date: "%s" | plus: 0 %}
-{% assign after_mar11 = "2026-03-12" | date: "%s" | plus: 0 %}
-{% assign after_mar28 = "2026-03-29" | date: "%s" | plus: 0 %}
+{% assign after_jan31 = "2027-02-01" | date: "%s" | plus: 0 %}
+{% assign after_feb28 = "2027-03-01" | date: "%s" | plus: 0 %}
+{% assign after_mar11 = "2027-03-12" | date: "%s" | plus: 0 %}
+{% assign after_mar28 = "2027-03-29" | date: "%s" | plus: 0 %}
 
 <div class="sponsor-info-page">
 
