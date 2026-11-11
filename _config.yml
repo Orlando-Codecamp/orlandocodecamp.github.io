@@ -31,6 +31,25 @@ registration_url:
 volunteer_url:
 call_for_speakers_url:
 
+# Sessionize ids for the upcoming event. Leave a value blank until the event
+# exists on Sessionize; while it is blank the page shows a "coming soon" note.
+# sessionize_embed_id drives the speakers list (/speakers/) and the sessions
+# tag cloud (/sessions-tagcloud/). sessionize_agenda_id drives the agenda and
+# schedule builder (/sessions/), and sessionize_location_question_id is the
+# optional speaker-location question the agenda shows beside each speaker.
+sessionize_embed_id:
+sessionize_agenda_id:
+sessionize_location_question_id:
+
+# Sponsorship pricing on /become-a-sponsor/. Set show_sponsor_pricing to true
+# once this year's prices and deadline dates are final: it shows the pricing
+# rows, the additional opportunity prices, the early-payment note, and the
+# Important Deadlines section (update the dates there first). Set
+# show_sponsor_claims to true to mark each additional opportunity "Claimed by"
+# the sponsor in _data/sponsors.yml whose sponsorType matches it.
+show_sponsor_pricing: false
+show_sponsor_claims: false
+
 # Build settings
 markdown: kramdown
 

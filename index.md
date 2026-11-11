@@ -59,9 +59,9 @@ nav_exclude: true
 <section class="section-sm bg-secondary">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Thank You</span>
-      <h2 class="section-title">Our Sponsors</h2>
-      <p class="section-description">Orlando Code Camp is made possible by these generous sponsors</p>
+      <span class="section-label">Sponsors</span>
+      <h2 class="section-title">Thank You to Our 2026 Sponsors</h2>
+      <p class="section-description">These generous sponsors made Orlando Code Camp 2026 possible. We are now looking for 2027 sponsors; visit the <a href="{{ '/become-a-sponsor/' | relative_url }}">Become a Sponsor</a> page to learn more.</p>
     </div>
 
     {% assign platinum_sponsors = site.data.sponsors | where: "level", "Platinum" %}
