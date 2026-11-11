@@ -9,10 +9,15 @@ nav_order: 4
 <!-- Volunteer CTA Section -->
 <div class="volunteer-cta">
   <h2>Ready to Join Our Volunteer Team?</h2>
+  {% assign volunteer_url = site.volunteer_url | strip %}
+  {% if volunteer_url != "" %}
   <p>Sign up using the link below to register as a volunteer for Orlando Code Camp 2027!</p>
-  <a href="https://schedule.planhero.com/events/31bbd1d55/orlando-code-camp-2026" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
+  <a href="{{ volunteer_url }}" target="_blank" rel="noopener" class="btn btn-secondary btn-lg">
     Register as a Volunteer
   </a>
+  {% else %}
+  <p>Volunteer sign-up for Orlando Code Camp 2027 opens soon. The sign-up link will be posted here as soon as it's available.</p>
+  {% endif %}
   <p class="mt-4 mb-0">Have questions? Email us at <strong>volunteers@orlandocodecamp.com</strong></p>
 </div>
 

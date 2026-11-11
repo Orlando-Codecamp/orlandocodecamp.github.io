@@ -24,6 +24,13 @@ twitter_username: onetug
 github_username: onetug
 search_enabled: false
 
+# Links for the upcoming event. Leave a value blank until that event's page
+# exists; while it is blank the site shows a "coming soon" note instead of a
+# button that would point at last year's (closed) event.
+registration_url:
+volunteer_url:
+call_for_speakers_url:
+
 # Build settings
 markdown: kramdown
 
