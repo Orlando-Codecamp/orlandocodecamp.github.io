@@ -118,6 +118,7 @@ nav_exclude: true
         <td class="check-cell"><span class="check-mark">&#10003;</span></td>
       </tr>
     </tbody>
+    {% if site.show_sponsor_pricing %}
     <tfoot>
       <tr class="pricing-row discount-row{% if now >= after_jan31 %} discount-expired{% else %} discount-active{% endif %}">
         <td>Until Jan 31st {% if now >= after_jan31 %}<span class="discount-badge expired">Expired</span>{% else %}<span class="discount-badge active">20% off &mdash; Act now!</span>{% endif %}</td>
@@ -141,8 +142,15 @@ nav_exclude: true
         <td class="price-cell">$3,000</td>
       </tr>
     </tfoot>
+    {% endif %}
   </table>
 </div>
+
+{% unless site.show_sponsor_pricing %}
+<div class="banner banner-info mt-6">
+  Sponsorship pricing and deadlines for 2027 are being finalized. Email <a href="mailto:sponsors@orlandocodecamp.com">sponsors@orlandocodecamp.com</a> and we will send them to you as soon as they are ready.
+</div>
+{% endunless %}
 
 <hr>
 
@@ -153,11 +161,13 @@ nav_exclude: true
 <div class="additional-sponsorships">
   {% for opportunity in site.data.sponsor_opportunities %}
     {% assign claimed_by = nil %}
-    {% for sponsor in site.data.sponsors %}
-      {% if sponsor.sponsorType == opportunity.sponsorType %}
-        {% assign claimed_by = sponsor.name %}
-      {% endif %}
-    {% endfor %}
+    {% if site.show_sponsor_claims %}
+      {% for sponsor in site.data.sponsors %}
+        {% if sponsor.sponsorType == opportunity.sponsorType %}
+          {% assign claimed_by = sponsor.name %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
     <div class="additional-sponsor-card{% if claimed_by %} claimed{% endif %}">
       {% if claimed_by %}
         <div class="claimed-banner">Claimed by {{ claimed_by }}</div>
@@ -166,7 +176,7 @@ nav_exclude: true
       {% endif %}
       <div class="additional-sponsor-header">
         <h4>{{ opportunity.name }}</h4>
-        <span class="additional-sponsor-price">{{ opportunity.price }}</span>
+        {% if site.show_sponsor_pricing %}<span class="additional-sponsor-price">{{ opportunity.price }}</span>{% endif %}
       </div>
       <ul>
         {% for benefit in opportunity.benefits %}
@@ -177,7 +187,9 @@ nav_exclude: true
   {% endfor %}
 </div>
 
+{% if site.show_sponsor_pricing %}
 <p class="text-muted text-sm mt-4"><em>Please note: these sponsorships are for specific budget items, so we can no longer offer early-payment discounts on additional sponsorship opportunities due to increased costs in recent years.</em></p>
+{% endif %}
 
 <hr>
 
@@ -244,6 +256,7 @@ nav_exclude: true
 
 <p class="text-muted text-sm"><em>Please note: the organizers have a standing policy of not sharing attendees' personal data directly with anyone.</em></p>
 
+{% if site.show_sponsor_pricing %}
 <hr>
 
 <h2>Important Deadlines</h2>
@@ -293,6 +306,7 @@ nav_exclude: true
     {% if now >= after_mar28 %}<span class="discount-badge expired">Expired</span>{% elsif now >= after_mar11 %}<span class="discount-badge active">Coming up!</span>{% endif %}
   </div>
 </div>
+{% endif %}
 
 <hr>
 
@@ -305,10 +319,6 @@ nav_exclude: true
     <h4 class="info-card-title">Email Us</h4>
     <p><a href="mailto:sponsors@orlandocodecamp.com">sponsors@orlandocodecamp.com</a></p>
   </div>
-
-  <p class="text-center text-muted text-sm mt-6">
-    <a href="{{ '/assets/doc/Orlando-Code-Camp-2026-Sponsor-Info.pdf' | relative_url }}" target="_blank" rel="noopener">Download this information as a PDF</a>
-  </p>
 </div>
 
 </div>
