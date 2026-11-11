@@ -2,13 +2,13 @@
 layout: page
 title: Attendees
 permalink: /attendees/
-description: "Everything attendees need to know about Orlando Code Camp 2026 - registration, food, directions, and more."
+description: "Everything attendees need to know about Orlando Code Camp 2027 - registration, food, directions, and more."
 nav_order: 3
 ---
 
 ## Registration Now Open!
 
-Orlando Code Camp 2026 will be held at Seminole State College in Sanford, FL on **April 11, 2026** from **7:30 AM to 5:00 PM**. We're looking forward to seeing you! Here's some helpful information about the event:
+Orlando Code Camp 2027 will be held at Seminole State College in Sanford, FL on **April 17, 2027** from **7:30 AM to 5:00 PM**. We're looking forward to seeing you! Here's some helpful information about the event:
 
 {% include registration-banner.html %}
 
