@@ -1,0 +1,37 @@
+hall9k-task-record: 1
+task-id: 01a1c7e2-fa90-77a3-b714-7c6b30a5f185
+project: orlando-codecamp-jekyll
+type: feature
+pre-approved: off
+external-reference: github:Orlando-Codecamp/orlandocodecamp.github.io#77
+objective: The site announces the 19th annual Orlando Code Camp on Saturday, April 17, 2027 at Seminole State College instead of the April 11, 2026 event
+criteria:
+  - Every human-readable mention of the event's year, edition, or date says 2027, 19th Annual, and April 17, 2027, keeping the format each spot already uses ("April 11th, 2026" becomes "April 17th, 2027", "April 11, 2026" becomes "April 17, 2027", "April 11th" becomes "April 17th"). This covers index.md (the hero year, the "18th Annual" label, the hero subtitle, and the "Event Information" section description), _includes/hero.html, _includes/call-for-speakers-banner.html (its year, "18th Annual" label, and date line), the description in _config.yml, README.md, location.md, attendees.md, volunteers.md (its description and both body sentences that name 2026), become-a-sponsor.md (its description, the "18th Annual" banner title and date line, and the closing sponsor call to action), the countdown caption in _includes/countdown.html, and the front-matter descriptions of speakers.md and sessions-tagcloud.md.
+  - The home page countdown in _includes/countdown.html counts down to 7:30 AM EDT on April 17, 2027 (11:30 UTC), and the comment beside the target date names that date and time.
+  - The event hours (7:30 AM to 5:00 PM in attendees.md), the venue text (Seminole State College, Sanford, FL, and the Sanford/Lake Mary campus wording), and the day schedule in sessions.html are unchanged.
+  - |-
+    A case-sensitive search of the repository source, excluding _site and .git, finds no "April 11", no "18th Annual", and no "Code Camp 2026". The only remaining occurrences of "2026" are these, each left exactly as it was: URLs that contain 2026 (the Eventbrite registration link, the Sessionize call-for-speakers link, the PlanHero volunteer link, and the sponsor PDF path), the four sponsor-tier deadline dates at the top of become-a-sponsor.md, the "2026 Sponsors" heading in sponsors.md, the comment at the top of _data/sponsors.yml, and the files under assets/js.
+  - bundle exec jekyll build completes without errors, and a search of the built _site for "April 11", "18th Annual", and "Code Camp 2026" finds nothing.
+dependencies: []
+origin-owner-fingerprint: c8f5c85900dac9911ce1ada43484dc7bf91a2a3e86efa8812d9f84cfd25bf2ac
+origin-node: 01a00d41-5b80-753d-a3f1-070b25e490e4
+origin-node-name: Hallmamac-Max36
+origin-branch: task/30a5f185-the-site-announces-the-19th-an
+published: 2026-11-11 00:03:36Z
+context: |-
+  ## Scope
+
+  This is a text and date change for the 2027 event. Links and data that point at 2026-specific external pages (Eventbrite, Sessionize, PlanHero, the sponsor PDF), the sponsor-tier deadline dates in `become-a-sponsor.md`, and the 2026 sponsor list stay as they are. They need new URLs or new data that do not exist yet, so they belong to a separate cleanup. Note for the orchestrator: no follow-up task for that cleanup exists in the store yet.
+
+  ## Facts already checked
+
+  - April 17, 2027 is a Saturday, and US daylight saving time is in effect (it starts March 14, 2027), so 7:30 AM Eastern is 11:30 UTC. In `Date.UTC` the month is zero-based, so April is `3`.
+  - The site calls the 2026 event the 18th annual in four places (`index.md`, `become-a-sponsor.md`, `_includes/hero.html`, `_includes/call-for-speakers-banner.html`); the 2027 event is the 19th.
+  - `_includes/hero.html` and `_includes/call-for-speakers-banner.html` are not included by any page at this commit, so they do not show up in `_site`. Update them anyway so they are correct if they are used again.
+  - `README.md` is in the `exclude` list in `_config.yml`, so only the source check covers it.
+  - The site description in `_config.yml` is the fallback for the description meta tags (`_layouts/default.html` uses `page.description | default: site.description`), so it renders on pages without their own description, such as the home page and `404.html`, and in the `feed.xml` subtitle. Pages with their own front-matter description show that instead.
+  - `assets/js/clock02.js` (loaded only by `_includes/clock02.html`, which no page includes), `assets/js/agenda/ics.js` (a comment only; its time zone rules are generic), and `assets/js/agenda/dev-mock.js` (development fixture data) mention 2026 but are out of scope.
+
+  ## Building
+
+  The Sass step fails with `Invalid US-ASCII character "\xE2"` when the shell has no UTF-8 locale. Run the build as `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle exec jekyll build`.
